@@ -1,0 +1,238 @@
+千葉事務所でのインターンシップ（千葉日建工科生向け）記事のHTMLコードです。
+以下のコードをすべてコピーし、WordPressの投稿画面で「カスタムHTML」ブロックを追加して貼り付けてください。
+
+---
+
+<!-- WordPress投稿用HTMLコード -->
+
+<!-- SEO Meta Data Suggestion -->
+<!--
+Title: 千葉日建工科専門学校生が挑戦！千葉事務所での実務直結型CADインターンシップ（2days）実施レポート｜コモンウェルスエンジニアーズ
+Description: 千葉日建工科専門学校の学生を対象に、コモンウェルスエンジニアーズ千葉事務所にて2日間のインターンシップを実施。「学校教材」ではない「実務図面」を用いたCAD設計体験や、プロの設計環境の様子をレポートします。建築・プラント設計を目指す学生必見。
+Keywords: インターンシップ, 千葉, 建築学生, CAD, プラント設計, 実務体験
+-->
+
+<!-- スタイル調整 -->
+<style>
+.cec-article-body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: #333;
+}
+.cec-article-body h2 {
+    font-size: 30px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    line-height: 1.4;
+    font-weight: bold;
+}
+.cec-article-body h3 {
+    font-size: 24px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    border-left: 6px solid #004080;
+    padding-left: 15px;
+    line-height: 1.4;
+    font-weight: bold;
+}
+.cec-article-body h4 {
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.cec-article-body p {
+    font-size: 18px;
+    line-height: 2.0;
+    margin-bottom: 2em;
+}
+.cec-article-body li {
+    font-size: 18px;
+    line-height: 2.0;
+    margin-bottom: 0.5em;
+}
+.cec-article-body hr {
+    margin: 60px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+.cec-article-body strong {
+    font-weight: bold;
+    color: #000;
+}
+.wp-block-image figcaption {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #333;
+}
+.voice-box {
+    background-color: #f9f9f9;
+    border-left: 5px solid #004080;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.voice-text {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 0 !important;
+    font-style: italic;
+}
+</style>
+
+<div class="cec-article-body">
+
+<!-- アイキャッチ画像（確認用） -->
+<figure class="wp-block-image">
+    <img src="http://cectokyo.com/wp-content/uploads/2025/12/chiba_intern_02.jpg" alt="千葉事務所でのインターンシップの様子" />
+</figure>
+
+<h2>開催概要</h2>
+<p>
+    <strong>日程：</strong> 2日間の集中プログラム<br>
+    <strong>対象：</strong> 千葉日建工科専門学校 生徒<br>
+    <strong>場所：</strong> 株式会社コモンウェルスエンジニアーズ 千葉事務所<br>
+    <strong>テーマ：</strong> 「プラント設計の扉を開く – 実践を見据えたCAD業務体験ワーク」
+</p>
+
+<hr>
+
+<h2>学校のCADと、現場のCAD。その「決定的な違い」を体感する2日間</h2>
+
+<p>
+    「学校で習うCAD操作と、実際の仕事で使うCADは何が違うのか？」<br>
+    その答えを肌で感じるため、千葉日建工科専門学校の学生が当社の<strong>千葉事務所</strong>にて実施された「実務直結型インターンシップ」に参加しました。
+</p>
+<p>
+    今回のインターンシップの最大の特徴は、<strong>「プロと同じ目線で挑む、リアルな業務体験」</strong>です。<br>
+    一般的な職業体験では触れることの少ない、プロの設計者が実際に使用している図面や、現場で発生する「修正指示（赤字）」を教材として使用。<br>
+    エンジニア志望の学生が、将来のキャリアを本気で考えるための2日間となりました。
+</p>
+
+<hr>
+
+<h3>【Day1】プロの目はここを見る。「図面の間違い探し」</h3>
+
+<h4>いきなり描かない。まずは「読む」ことから</h4>
+<p>
+    初日は、プラント設計の基礎知識のレクチャーからスタート。<br>
+    普段、建築学科で学ぶ一般的な住宅やビルの図面とは異なり、プラント施設特有の巨大な「鉄骨構造図」が今回の課題です。
+</p>
+<p>
+    参加者が最初に驚いたのは、<strong>いきなりCADで線を描き始めない</strong>こと。<br>
+    実際の設計業務において最も重要なのは、作図スキル以前に「図面を正しく読み解く力」と「整合性をチェックする力」です。
+</p>
+
+<h4>実践ワーク：図面の整合性チェック（赤チェック）</h4>
+<p>
+    平面図と軸組図を見比べ、矛盾している箇所を見つけ出す「図面の間違い探し（赤字チェック）」に挑戦しました。
+</p>
+<ul>
+    <li>「平面図と軸組図で、部材の整合性が取れていない箇所がある」</li>
+    <li>「寸法の整合性が取れていない箇所がある」</li>
+</ul>
+<p>
+    一見正しそうに見える図面の中にある矛盾を見つけ出す作業は、高い集中力を要します。<br>
+    「ただ線を引くだけではない、設計者としての『気づく力』が試される」という講師の言葉に、学生たちの目の色は真剣そのもの。<br>
+    その後、実際にCADを使って修正作業を行い、「理解して（読み込み）、直す（作図）」という実務のサイクルを体験しました。
+</p>
+
+<hr>
+
+<h3>【Day2】難易度S級？「鉄骨詳細図」への挑戦</h3>
+
+<h4>全体図から詳細図の仕組みを学ぶ、ハイレベルな課題</h4>
+<p>
+    2日目はさらに難易度がアップ。<br>
+    一般図（全体図）から情報を読み取り、<strong>鉄骨詳細図（ディテール図）</strong>の作成プロセスを学ぶ課題に挑みました。
+</p>
+<p>
+    詳細図とは、鉄骨同士の接合部やボルトの位置などを精密に描いた図面のこと。<br>
+    「どうすれば施工しやすいか」「強度は十分か」など、実務でも若手エンジニアが頭を悩ませるポイントです。
+</p>
+
+<h4>講師社員によるマンツーマン指導</h4>
+<p>
+    講師役の社員がマンツーマンでサポートにつき、実際の業務で使われる<strong>CADコマンド</strong>やテクニック、図面表現のルールを伝授。<br>
+    単なる操作説明ではなく、「なぜこの線が必要なのか」という設計の意図を伝えながら進めました。
+</p>
+
+<blockquote class="wp-block-quote">
+    <p>
+        <strong>講師からのフィードバック：</strong><br>
+        「詳細図の仕組みを理解するのは難しかったと思いますが、この『納まりを考える苦労』こそが設計の醍醐味であり、面白さです。最後まで諦めずに、粘り強く取り組む姿勢が非常に素晴らしかったです。」
+    </p>
+</blockquote>
+
+<hr>
+
+<h3>舞台は「千葉事務所」：集中できるプロの環境</h3>
+
+<figure class="wp-block-image">
+    <img src="http://cectokyo.com/wp-content/uploads/2025/12/chiba_intern_02.jpg" alt="千葉事務所のミーティングスペース" />
+    <figcaption>千葉事務所の様子</figcaption>
+</figure>
+
+<h4>設計業務に没頭できる拠点</h4>
+<p>
+    今回の実施場所である<strong>千葉事務所</strong>は、当社の設計業務の要（かなめ）となる拠点の一つです。<br>
+    千葉エリアの学生にとってアクセスが良いだけでなく、落ち着いた環境で設計業務に集中できるのが大きな魅力。
+</p>
+
+<h4>ベテランから若手まで、リアルな職場環境</h4>
+<p>
+    千葉事務所には、経験豊富なベテランエンジニアから成長中の若手までが在籍しています。<br>
+    今回のインターンシップでは、現場の第一線で活躍する社員が直接指導にあたりました。
+</p>
+<ul>
+    <li><strong>質問しやすい雰囲気</strong>：「分からないことがあればすぐに聞ける」フラットな関係性。</li>
+    <li><strong>プロの背中</strong>：すぐ隣で先輩たちが真剣に図面に向き合っている姿を見ることができる。</li>
+</ul>
+<p>
+    「会社の雰囲気」や「社員の働き方」を肌で感じられるのも、オフィス開催型インターンシップならではのメリットです。
+</p>
+
+<hr>
+
+<h3>参加者の声（アンケートより）</h3>
+<p>実際に参加した学生からは、実務を通して「新しいことを学ぶ楽しさ」や「成長の手応え」を感じたという、前向きな感想が寄せられました。</p>
+
+<div class="voice-box">
+    <p class="voice-text">「インターンシップを通して多くを学び、貴重な経験になりました。社員の皆様が優しく教えてくださり、安心して取り組むことができました。今回の経験を今後の成長につなげていきたいと思います。ありがとうございました。」</p>
+</div>
+
+<div class="voice-box">
+    <p class="voice-text">「新しいことを学ぶ大切さを実感しました。今回の経験を活かし、毎日図面や数値を読めるように練習を続けています。」</p>
+</div>
+
+<hr>
+
+<h3>未来のエンジニアへ</h3>
+<p>
+    コモンウェルスエンジニアーズでは、今後も単なる「見学」ではなく「エンジニアの一員」として参加できる、密度の濃いインターンシップを企画してまいります。
+</p>
+<ul>
+    <li>早くプロの世界を見てみたい</li>
+    <li>設計の現場で通用するスキルを知りたい</li>
+</ul>
+<p>
+    そんな意欲ある学生の皆さん。次は、<strong>千葉事務所</strong>でその熱意をぶつけてみませんか？
+</p>
+
+<p>
+    <strong>【お問い合わせ・エントリー】</strong><br>
+    株式会社コモンウェルスエンジニアーズ<br>
+    <a href="/career/">採用情報ページはこちら</a> | <a href="/contact/">お問い合わせはこちら</a>
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+

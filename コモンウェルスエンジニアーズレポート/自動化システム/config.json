@@ -1,0 +1,15 @@
+{
+  "ga4": {
+    "property_id": "465557347",
+    "credentials_file": "credentials.json"
+  },
+  "search_console": {
+    "site_url": "https://cectokyo.com/",
+    "credentials_file": "credentials.json"
+  },
+  "output": {
+    "data_dir": "data",
+    "reports_dir": "reports"
+  }
+}
+

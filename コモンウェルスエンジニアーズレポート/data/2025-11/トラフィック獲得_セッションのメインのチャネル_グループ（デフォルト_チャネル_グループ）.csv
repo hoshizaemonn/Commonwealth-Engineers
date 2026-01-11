@@ -1,0 +1,46 @@
+# ----------------------------------------
+# トラフィック獲得: セッションのメインのチャネル グループ（デフォルト チャネル グループ）
+# アカウント: 株式会社 コモンウェルスエンジニアーズ
+# プロパティ: cectokyo.com
+# ----------------------------------------
+# 
+# すべてのユーザー
+# 開始日: 20251101
+# 終了日: 20251130
+セッションのメインのチャネル グループ（デフォルト チャネル グループ）,イベント名,セッション,新規ユーザー数,セッションあたりの平均エンゲージメント時間,セッションあたりのイベント数,イベント数
+Direct,session_start,754,0,0,1.0053050397877985,758
+Direct,page_view,752,0,0,1.2061170212765957,907
+Direct,first_visit,736,740,0,1.0054347826086956,740
+Direct,user_engagement,540,0,8.494444444444444,1.1685185185185185,631
+Organic Search,session_start,271,0,0,1,271
+Organic Search,page_view,241,0,0,3.029045643153527,730
+Organic Search,user_engagement,230,0,47.495652173913044,2.9260869565217393,673
+Organic Search,first_visit,172,172,0,1,172
+Organic Search,scroll,97,0,44.70103092783505,1.597938144329897,155
+Direct,scroll,67,0,8.597014925373134,1.0895522388059702,73
+Direct,form_start,51,0,4.0588235294117645,1,51
+Direct,contact,16,0,34.375,1,16
+Referral,session_start,14,0,0,1,14
+Referral,page_view,12,0,0,1.6666666666666667,20
+Referral,first_visit,11,11,0,1,11
+Referral,user_engagement,11,0,19.181818181818183,1.6363636363636365,18
+Organic Search,form_start,8,0,24.625,2.25,18
+Unassigned,user_engagement,8,0,8.625,1,8
+Organic Social,first_visit,7,7,0,1,7
+Organic Social,page_view,7,0,0,1.1428571428571428,8
+Organic Social,session_start,7,0,0,1,7
+Organic Search,form_submit,6,0,21.833333333333332,2.5,15
+Organic Social,user_engagement,6,0,14.666666666666666,1,6
+Unassigned,scroll,6,0,4,1.1666666666666667,7
+Organic Search,view_search_results,4,0,0,2.75,11
+Direct,form_submit,2,0,1,1,2
+Organic Search,click,2,0,11.5,1,2
+Organic Search,contact,1,0,8,1,1
+Organic Search,file_download,1,0,11,1,1
+Organic Social,scroll,1,0,0,1,1
+Referral,contact,1,0,5,1,1
+Referral,form_start,1,0,2,1,1
+Referral,scroll,1,0,19,1,1
+Unassigned,first_visit,1,1,0,1,1
+Unassigned,page_view,1,0,0,1,1
+Unassigned,session_start,1,0,0,1,1

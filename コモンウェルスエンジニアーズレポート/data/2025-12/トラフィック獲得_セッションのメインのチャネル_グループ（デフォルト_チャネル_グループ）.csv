@@ -1,0 +1,44 @@
+﻿# ----------------------------------------
+# トラフィック獲得: セッションのメインのチャネル グループ（デフォルト チャネル グループ）
+# アカウント: 株式会社 コモンウェルスエンジニアーズ
+# プロパティ: cectokyo.com
+# ----------------------------------------
+# 
+# すべてのユーザー
+# 開始日: 20251201
+# 終了日: 20251231
+セッションのメインのチャネル グループ（デフォルト チャネル グループ）,イベント名,セッション,新規ユーザー数,セッションあたりの平均エンゲージメント時間,セッションあたりのイベント数,イベント数
+Direct,session_start,476,0,0,0,478
+Direct,page_view,471,0,0,0,670
+Direct,first_visit,462,464,0,0,464
+Direct,user_engagement,263,0,0,0,410
+Direct,scroll,54,0,0,0,61
+Direct,form_start,47,0,0,0,47
+Direct,contact,15,0,0,0,15
+Direct,form_submit,2,0,0,0,2
+Organic Search,session_start,307,0,0,0,309
+Organic Search,page_view,273,0,0,0,843
+Organic Search,user_engagement,243,0,0,0,766
+Organic Search,first_visit,187,188,0,0,188
+Organic Search,scroll,114,0,0,0,180
+Organic Search,form_start,9,0,0,0,11
+Organic Search,form_submit,6,0,0,0,9
+Organic Search,contact,2,0,0,0,2
+Organic Search,file_download,1,0,0,0,1
+Organic Search,view_search_results,1,0,0,0,1
+Organic Social,page_view,1,0,0,0,1
+Organic Social,session_start,1,0,0,0,1
+Referral,session_start,16,0,0,0,16
+Referral,page_view,14,0,0,0,48
+Referral,user_engagement,13,0,0,0,41
+Referral,first_visit,12,12,0,0,12
+Referral,contact,3,0,0,0,3
+Referral,form_start,3,0,0,0,3
+Referral,scroll,3,0,0,0,7
+Unassigned,page_view,28,0,0,0,58
+Unassigned,session_start,28,0,0,0,28
+Unassigned,user_engagement,23,0,0,0,47
+Unassigned,first_visit,22,22,0,0,22
+Unassigned,scroll,9,0,0,0,10
+Unassigned,form_start,7,0,0,0,7
+Unassigned,contact,4,0,0,0,4
