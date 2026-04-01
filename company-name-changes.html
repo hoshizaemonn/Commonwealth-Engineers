@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>取引先企業 社名変更 対照表 | コモンウェルスエンジニアーズ</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Yu Gothic', 'Meiryo', sans-serif; background: #f5f5f5; color: #333; line-height: 1.8; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        .header { background: linear-gradient(135deg, #2b4c7e 0%, #1a365d 100%); color: white; padding: 40px; border-radius: 16px; margin-bottom: 30px; }
+        .header h1 { font-size: 1.8em; margin-bottom: 8px; }
+        .header .subtitle { font-size: 1em; opacity: 0.85; }
+        .header .date { margin-top: 12px; font-size: 0.9em; opacity: 0.7; }
+
+        .note-box { background: #fff3cd; border: 1px solid #ffc107; border-radius: 10px; padding: 18px 22px; margin-bottom: 30px; font-size: 0.95em; }
+        .note-box strong { color: #856404; }
+
+        .section-title { font-size: 1.3em; font-weight: bold; color: #2b4c7e; margin: 30px 0 15px; padding-left: 14px; border-left: 5px solid #2b4c7e; }
+
+        .card { background: white; border-radius: 12px; padding: 24px 28px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+        .card-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #2b4c7e; color: white; font-weight: bold; font-size: 0.85em; flex-shrink: 0; }
+        .card-title { font-size: 1.1em; font-weight: bold; }
+        .badge { display: inline-block; font-size: 0.7em; padding: 3px 12px; border-radius: 20px; font-weight: bold; color: white; }
+        .badge.delete { background: #dc3545; }
+        .badge.rename { background: #0d6efd; }
+        .badge.ok { background: #198754; }
+        .badge.ask { background: #fd7e14; }
+
+        .change-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+        .old-name { background: #fee2e2; padding: 6px 14px; border-radius: 6px; font-weight: bold; text-decoration: line-through; color: #991b1b; }
+        .arrow { font-size: 1.4em; color: #888; flex-shrink: 0; }
+        .new-name { background: #dcfce7; padding: 6px 14px; border-radius: 6px; font-weight: bold; color: #166534; }
+
+        .detail { font-size: 0.9em; color: #666; margin-top: 8px; }
+        .source { margin-top: 10px; }
+        .source a { display: inline-block; background: #e8f0fe; color: #1a56db; padding: 5px 14px; border-radius: 6px; text-decoration: none; font-size: 0.85em; word-break: break-all; }
+        .source a:hover { background: #c6dafa; }
+
+        .summary { background: white; border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-top: 30px; }
+        .summary h2 { font-size: 1.2em; color: #2b4c7e; margin-bottom: 15px; }
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+        .summary-item { text-align: center; padding: 16px; border-radius: 10px; }
+        .summary-item.rename-bg { background: #e0edff; }
+        .summary-item.delete-bg { background: #fee2e2; }
+        .summary-item.ok-bg { background: #dcfce7; }
+        .summary-item.ask-bg { background: #fff3cd; }
+        .summary-item .num { font-size: 2em; font-weight: bold; }
+        .summary-item .label { font-size: 0.85em; color: #666; margin-top: 4px; }
+
+        .site-url { background: #f0f4f8; border: 1px solid #d0d7de; border-radius: 8px; padding: 14px 18px; margin-bottom: 30px; font-size: 0.9em; }
+        .site-url strong { color: #2b4c7e; }
+        .site-url a { color: #1a56db; }
+
+        .footer { text-align: center; margin-top: 30px; color: #999; font-size: 0.85em; padding: 20px; }
+
+        @media (max-width: 600px) {
+            .change-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+            .arrow { transform: rotate(90deg); }
+            .header h1 { font-size: 1.4em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>取引先企業 社名変更 対照表</h1>
+            <p class="subtitle">コモンウェルスエンジニアーズ様 サイト掲載情報の更新確認</p>
+            <p class="date">作成日: 2026年4月1日</p>
+        </div>
+
+        <div class="site-url">
+            <strong>対象ページ:</strong> <a href="https://cectokyo.com/en/about/" target="_blank">https://cectokyo.com/en/about/</a>（取引先一覧セクション）
+        </div>
+
+        <div class="note-box">
+            <strong>ご確認のお願い:</strong> 各項目に公式発表等の根拠URLを添付しています。内容をご確認いただき、修正の可否をご指示ください。
+        </div>
+
+        <!-- ==================== 消滅・統合（削除候補） ==================== -->
+        <div class="section-title">消滅・統合により削除が必要な企業（4社）</div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-num">1</span>
+                <span class="card-title">IHIプラントエンジニアリング</span>
+                <span class="badge delete">削除</span>
+            </div>
+            <div class="change-row">
+                <span class="old-name">株式会社IHIプラントエンジニアリング</span>
+                <span class="arrow">&rarr;</span>
+                <span class="new-name">株式会社IHIプラントに統合（吸収合併）</span>
+            </div>
+            <div class="detail">2019年4月1日、IHIプラント建設がIHIプラントエンジニアリングを吸収合併し「株式会社IHIプラント」として発足。</div>
+            <div class="source">
+                <a href="https://www.ihi.co.jp/all_news/2019/resources_energy_environment/1188951_1591.html" target="_blank">IHI公式プレスリリース</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-num">2</span>
+                <span class="card-title">IHI環境エンジニアリング</span>
+                <span class="badge delete">削除</span>
+            </div>
+            <div class="change-row">
+                <span class="old-name">株式会社IHI環境エンジニアリング</span>
+                <span class="arrow">&rarr;</span>
+                <span class="new-name">株式会社IHIに吸収合併（解散）</span>
+            </div>
+            <div class="detail">2019年、廃棄物処理事業は神鋼環境ソリューションへ吸収分割、残余資産はIHI本体が吸収合併。</div>
+            <div class="source">
+                <a href="https://www.ihi.co.jp/all_news/2019/ir/__icsFiles/afieldfile/2020/03/30/8f402f7e51fbb335972b69076547ae60.pdf" target="_blank">IHI公式IR資料（PDF）</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-num">3</span>
+                <span class="card-title">バブコック日立</span>
+                <span class="badge delete">削除</span>
+            </div>
+            <div class="change-row">
+                <span class="old-name">バブコック日立株式会社</span>
+                <span class="arrow">&rarr;</span>
+                <span class="new-name">三菱日立パワーシステムズが吸収合併（解散）</span>
+            </div>
+            <div class="detail">2014年10月1日、三菱日立パワーシステムズに吸収合併され解散。</div>
+            <div class="source">
+                <a href="https://power.mhi.com/jp/news/20140729.html" target="_blank">三菱重工パワー事業 公式ニュース</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-num">4</span>
+                <span class="card-title">日揮プラントイノベーション</span>
+                <span class="badge delete">削除</span>
+            </div>
+            <div class="change-row">
+                <span class="old-name">日揮プラントイノベーション株式会社</span>
+                <span class="arrow">&rarr;</span>
+                <span class="new-name">日揮株式会社（新）に改称</span>
+            </div>
+            <div class="detail">2019年10月1日、グループ再編により「日揮株式会社」に商号変更。サイトには既に「JGC Corporation」の記載があるため、重複を避け削除が妥当。</div>
+            <div class="source">
+                <a href="https://www.jgc.com/jp/news/2019/20191001_01.html" target="_blank">日揮HD公式ニュースリリース</a>
+            </div>
+        </div>
+
+        <!-- ==================== 社名変更（修正） ==================== -->
+        <div class="section-title">社名変更により修正が必要な企業（3社）</div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-num">5</span>
+                <span class="card-title">東芝放送ネットワークエンジニアリング</span>
+                <span class="badge rename">社名修正</span>
+            </div>
+            <div class="change-row">
+                <span class="old-name">東芝放送ネットワークエンジニアリング株式会社</span>
+                <span class="arrow">&rarr;</span>
+                <span class="new-name">東芝通信インフラシステムズ株式会社</span>
+            </div>
+            <div class="detail">2012年に合併により改称。その後2023年に東芝テリーと合併。</div>
+            <div class="source">
+                <a href="https://www.toshiba-teli.co.jp/company/history.htm" target="_blank">東芝テリー公式 沿革ページ</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-num">6</span>
+                <span class="card-title">りんかい日産建設</span>
+                <span class="badge rename">社名修正</span>
+            </div>
+            <div class="change-row">
+                <span class="old-name">りんかい日産建設株式会社</span>
+                <span class="arrow">&rarr;</span>
+                <span class="new-name">RN建設株式会社</span>
+            </div>
+            <div class="detail">2026年4月1日付で商号変更。創業100周年を機にリブランディング。</div>
+            <div class="source">
+                <a href="https://www.kensetsunews.com/archives/1095845" target="_blank">建設通信新聞</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-num">7</span>
+                <span class="card-title">アルヴォス</span>
+                <span class="badge rename">社名修正</span>
+            </div>
+            <div class="change-row">
+                <span class="old-name">アルヴォス株式会社</span>
+                <span class="arrow">&rarr;</span>
+                <span class="new-name">アルヴォスホールディング合同会社</span>
+            </div>
+            <div class="detail">2025年8月1日付で商号変更（登記情報で確認済）。</div>
+            <div class="source">
+                <a href="https://toukibo.ai-con.lawyer/search-service/result/5140001094675" target="_blank">登記情報（AI-CON）</a>
+            </div>
+        </div>
+
+        <!-- ==================== 要確認 ==================== -->
+        <div class="section-title">ご判断をお願いしたい企業（1社）</div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-num">8</span>
+                <span class="card-title">三菱日立パワーシステムズ</span>
+                <span class="badge ask">要確認</span>
+            </div>
+            <div class="change-row">
+                <span class="old-name">三菱日立パワーシステムズ株式会社</span>
+                <span class="arrow">&rarr;</span>
+                <span class="new-name">三菱パワー株式会社（2020/9/1）</span>
+            </div>
+            <div class="detail">2020年9月1日に「三菱パワー」へ改称後、2021年10月1日に三菱重工業に吸収分割統合。サイトには既に「Mitsubishi Heavy Industries, Ltd.」の掲載があるため、削除 or 「三菱パワー」に修正、いずれかのご判断をお願いします。</div>
+            <div class="source">
+                <a href="https://power.mhi.com/jp/news/20200901.html" target="_blank">三菱重工パワー事業 公式ニュース（社名変更）</a>
+                <a href="https://power.mhi.com/jp/news/20210510.html" target="_blank">三菱重工統合のお知らせ</a>
+            </div>
+        </div>
+
+        <!-- ==================== 変更不要 ==================== -->
+        <div class="section-title">変更不要（既に新社名で掲載済み）（3社）</div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-num">9</span>
+                <span class="card-title">デンカ（旧: 電気化学工業）</span>
+                <span class="badge ok">変更不要</span>
+            </div>
+            <div class="detail">サイトには既に「Denka Company Limited」として掲載済み。</div>
+            <div class="source">
+                <a href="https://www.nikkei.com/article/DGXLASDZ09HMJ_Z00C15A3TJ1000/" target="_blank">日経新聞（参考）</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-num">10</span>
+                <span class="card-title">三井E&S（旧: 三井造船）</span>
+                <span class="badge ok">変更不要</span>
+            </div>
+            <div class="detail">サイトには既に「Mitsui E&S Co., Ltd.」として掲載済み。</div>
+            <div class="source">
+                <a href="https://www.mitsuipr.com/news/2023/0406-2/" target="_blank">三井広報委員会（参考）</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-num">11</span>
+                <span class="card-title">東京ガスエンジニアリングソリューションズ（旧: 東京ガス・エンジニアリング）</span>
+                <span class="badge ok">変更不要</span>
+            </div>
+            <div class="detail">サイトには既に「Tokyo Gas Engineering Solutions Corporation」として掲載済み。</div>
+            <div class="source">
+                <a href="https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E3%82%AC%E3%82%B9%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0" target="_blank">Wikipedia（参考）</a>
+            </div>
+        </div>
+
+        <!-- ==================== サマリー ==================== -->
+        <div class="summary">
+            <h2>対応サマリー</h2>
+            <div class="summary-grid">
+                <div class="summary-item delete-bg">
+                    <div class="num" style="color: #dc3545;">4社</div>
+                    <div class="label">削除（消滅・統合済）</div>
+                </div>
+                <div class="summary-item rename-bg">
+                    <div class="num" style="color: #0d6efd;">3社</div>
+                    <div class="label">社名修正</div>
+                </div>
+                <div class="summary-item ask-bg">
+                    <div class="num" style="color: #fd7e14;">1社</div>
+                    <div class="label">ご判断待ち</div>
+                </div>
+                <div class="summary-item ok-bg">
+                    <div class="num" style="color: #198754;">3社</div>
+                    <div class="label">変更不要</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            作成: 株式会社斗（hishaku） | 2026年4月1日
+        </div>
+    </div>
+</body>
+</html>
