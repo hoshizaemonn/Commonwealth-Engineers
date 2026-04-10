@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4月以降 タスクまとめ | コモンウェルスエンジニアーズ</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Yu Gothic', 'Meiryo', sans-serif; background: #f5f5f5; color: #333; line-height: 1.8; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+        .header { background: linear-gradient(135deg, #2b4c7e 0%, #1a365d 100%); color: white; padding: 44px 40px; border-radius: 16px; margin-bottom: 30px; }
+        .header h1 { font-size: 2em; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1em; opacity: 0.9; }
+        .header .date { margin-top: 14px; font-size: 0.9em; opacity: 0.75; }
+
+        .intro-box { background: white; border-left: 5px solid #2b4c7e; border-radius: 10px; padding: 22px 26px; margin-bottom: 36px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+        .intro-box p { margin: 4px 0; font-size: 0.95em; color: #555; }
+
+        /* タイムライン */
+        .timeline { position: relative; padding-left: 40px; margin-bottom: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 14px; top: 8px; bottom: 8px; width: 3px; background: linear-gradient(180deg, #2b4c7e 0%, #4a90e2 50%, #93c5fd 100%); border-radius: 2px; }
+        .tl-month { position: relative; margin-bottom: 36px; }
+        .tl-month::before { content: ''; position: absolute; left: -33px; top: 6px; width: 18px; height: 18px; border-radius: 50%; background: white; border: 4px solid #2b4c7e; box-shadow: 0 0 0 4px rgba(43,76,126,0.15); }
+        .tl-month-label { font-size: 1.4em; font-weight: bold; color: #2b4c7e; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+        .tl-month-label .month-num { background: #2b4c7e; color: white; padding: 4px 14px; border-radius: 20px; font-size: 0.7em; }
+
+        .card { background: white; border-radius: 12px; padding: 22px 26px; margin-bottom: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 4px solid #cbd5e1; transition: transform 0.15s; }
+        .card:hover { transform: translateX(2px); }
+        .card.priority { border-left-color: #dc3545; }
+        .card.easy { border-left-color: #10b981; }
+        .card.client { border-left-color: #f59e0b; }
+        .card.normal { border-left-color: #4a90e2; }
+
+        .card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+        .card-title { font-size: 1.1em; font-weight: bold; color: #1a365d; }
+        .badge { display: inline-block; font-size: 0.7em; padding: 4px 12px; border-radius: 20px; font-weight: bold; color: white; white-space: nowrap; }
+        .badge.priority-bg { background: #dc3545; }
+        .badge.easy-bg { background: #10b981; }
+        .badge.client-bg { background: #f59e0b; }
+        .badge.normal-bg { background: #4a90e2; }
+        .badge.time { background: #64748b; }
+
+        .card-body { font-size: 0.92em; color: #444; }
+        .card-body .row { display: flex; gap: 10px; margin: 6px 0; flex-wrap: wrap; }
+        .card-body .label { color: #888; min-width: 70px; font-size: 0.85em; }
+        .card-body .value { flex: 1; }
+        .kw { display: inline-block; background: #eef2ff; color: #3730a3; padding: 2px 10px; border-radius: 6px; font-size: 0.85em; margin: 2px 4px 2px 0; }
+        .arrow-flow { font-size: 0.9em; color: #555; background: #f8fafc; padding: 8px 12px; border-radius: 6px; margin-top: 6px; }
+
+        .ask-client { background: #fffbeb; border: 1px dashed #f59e0b; border-radius: 8px; padding: 10px 14px; margin-top: 10px; font-size: 0.85em; color: #92400e; }
+        .ask-client strong { color: #b45309; }
+
+        /* クライアント依頼まとめ */
+        .section-title { font-size: 1.5em; font-weight: bold; color: #2b4c7e; margin: 50px 0 20px; padding-left: 16px; border-left: 6px solid #2b4c7e; }
+        .ask-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 30px; }
+        .ask-col { background: white; border-radius: 12px; padding: 22px 26px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .ask-col h3 { font-size: 1.1em; color: #2b4c7e; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; }
+        .ask-col h3.urgent { color: #dc3545; }
+        .ask-col ol { padding-left: 22px; }
+        .ask-col li { margin-bottom: 10px; font-size: 0.9em; }
+
+        /* やらないこと */
+        .skip-box { background: #f1f5f9; border-left: 5px solid #94a3b8; border-radius: 10px; padding: 22px 26px; }
+        .skip-box h3 { color: #475569; font-size: 1.1em; margin-bottom: 12px; }
+        .skip-box ul { padding-left: 22px; }
+        .skip-box li { margin-bottom: 8px; color: #64748b; font-size: 0.9em; }
+        .skip-box li::marker { color: #94a3b8; }
+
+        /* サマリー */
+        .summary { background: white; border-radius: 14px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom: 30px; }
+        .summary h2 { font-size: 1.2em; color: #2b4c7e; margin-bottom: 18px; text-align: center; }
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
+        .summary-item { text-align: center; padding: 18px 12px; border-radius: 10px; }
+        .summary-item .num { font-size: 2.2em; font-weight: bold; }
+        .summary-item .label { font-size: 0.85em; margin-top: 4px; color: #555; }
+        .si-priority { background: #fee2e2; } .si-priority .num { color: #dc3545; }
+        .si-easy { background: #dcfce7; } .si-easy .num { color: #10b981; }
+        .si-client { background: #fff3cd; } .si-client .num { color: #f59e0b; }
+        .si-normal { background: #dbeafe; } .si-normal .num { color: #2b4c7e; }
+
+        .footer { text-align: center; margin-top: 40px; padding: 20px; color: #888; font-size: 0.85em; }
+
+        @media (max-width: 768px) {
+            .ask-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 1.5em; }
+            .timeline { padding-left: 30px; }
+            .tl-month::before { left: -25px; width: 14px; height: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>4月以降 タスクまとめ</h1>
+            <div class="subtitle">コモンウェルスエンジニアーズ HP運用 / 自分のタスク見える化</div>
+            <div class="date">作成日: 2026年4月9日｜前提: 3月レポート完了。施策整理・コンテンツ施策プランをベースに整理</div>
+        </div>
+
+        <div class="intro-box">
+            <p><strong>目的:</strong> 4〜6月の自分の動きを月別に整理し、優先順位とクライアント依頼事項を明確化する。</p>
+            <p><strong>方針:</strong> ①コンテンツ制作（ブログ）を最優先 ②すぐできる改善は並行で進める ③フォーム改善は後回し（流入を増やすのが先）</p>
+        </div>
+
+        <!-- サマリー -->
+        <div class="summary">
+            <h2>タスク内訳（4〜6月）</h2>
+            <div class="summary-grid">
+                <div class="summary-item si-priority"><div class="num">1</div><div class="label">最優先タスク</div></div>
+                <div class="summary-item si-easy"><div class="num">2</div><div class="label">すぐできる</div></div>
+                <div class="summary-item si-client"><div class="num">5</div><div class="label">クライアント依頼必要</div></div>
+                <div class="summary-item si-normal"><div class="num">12</div><div class="label">タスク総数</div></div>
+            </div>
+        </div>
+
+        <!-- タイムライン -->
+        <div class="timeline">
+
+            <!-- 4月 -->
+            <div class="tl-month">
+                <div class="tl-month-label"><span class="month-num">APR</span>4月中にやること</div>
+
+                <div class="card priority">
+                    <div class="card-head">
+                        <span class="badge priority-bg">最優先</span>
+                        <span class="card-title">ブログ記事① 制作・公開</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row"><span class="label">テーマ</span><span class="value">「未経験からプラント設計エンジニアになるには」（3,000〜4,000文字）</span></div>
+                        <div class="row"><span class="label">構成</span><span class="value"><div class="arrow-flow">プラント設計とは → CECで未経験OK → 入社後のステップ → 社員の声 → 募集要項</div></span></div>
+                        <div class="row"><span class="label">CTA</span><span class="value">/entry/（採用エントリー）へ誘導</span></div>
+                        <div class="row"><span class="label">狙うKW</span><span class="value"><span class="kw">プラントエンジニア 未経験</span><span class="kw">プラント設計 転職</span></span></div>
+                        <div class="ask-client"><strong>クライアント依頼:</strong> 入社1〜3年目の社員に15分ヒアリング、研修の流れ、使用可能な写真</div>
+                    </div>
+                </div>
+
+                <div class="card easy">
+                    <div class="card-head">
+                        <span class="badge easy-bg">すぐできる</span>
+                        <span class="badge time">0.5時間</span>
+                        <span class="card-title">CF7 メール件名テンプレート修正</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row"><span class="label">現状</span><span class="value">件名がすべて <code>[your-subject]</code> のまま</span></div>
+                        <div class="row"><span class="label">修正例</span><span class="value"><code>[CEC] お問い合わせ: [inquiry-type] - [your-company]</code></span></div>
+                        <div class="row"><span class="label">確認</span><span class="value">問い合わせ種別のドロップダウンが管理画面で正しく記録されるか</span></div>
+                        <div class="ask-client"><strong>クライアント協力:</strong> 不要（こちらで対応可能）</div>
+                    </div>
+                </div>
+
+                <div class="card easy">
+                    <div class="card-head">
+                        <span class="badge easy-bg">すぐできる</span>
+                        <span class="badge time">0.5日</span>
+                        <span class="card-title">問い合わせの質分析</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row"><span class="label">作業</span><span class="value">2〜3月の全問い合わせを「営業 / 実案件 / 採用 / その他」に分類、実案件件数を把握</span></div>
+                        <div class="row"><span class="label">営業系</span><span class="value">リードナビゲーション、キーマンデータベース、touchmatch、keymanletter、JTB、move-create、justlink、ma-navi 等</span></div>
+                        <div class="row"><span class="label">アウトプット</span><span class="value">スパム対策の方針決定</span></div>
+                    </div>
+                </div>
+
+                <div class="card client">
+                    <div class="card-head">
+                        <span class="badge client-bg">4月開始</span>
+                        <span class="card-title">X（Twitter）アカウント開設</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row"><span class="label">アカ名案</span><span class="value"><code>@cec_tokyo</code></span></div>
+                        <div class="row"><span class="label">初期投稿5本</span><span class="value">
+                            ①自己紹介（1979年創業・11か国） ②多国籍チーム紹介 ③プロジェクト紹介（伏木万葉バイオマス） ④採用情報→/career/ ⑤受賞歴（Bentley Going Digital Awards）
+                        </span></div>
+                        <div class="row"><span class="label">運用</span><span class="value"><div class="arrow-flow">斗が下書き → クライアント確認 → 投稿（週2〜3回）</div></span></div>
+                        <div class="ask-client"><strong>クライアント依頼:</strong> 開設の承認、アカウント名の確定、投稿用写真（社員・現場・オフィス）</div>
+                    </div>
+                </div>
+
+                <div class="card normal">
+                    <div class="card-head">
+                        <span class="badge normal-bg">継続</span>
+                        <span class="card-title">取引先社名変更の修正</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row"><span class="label">最優先</span><span class="value">りんかい日産建設 → RN建設（2026/4/1変更済み）</span></div>
+                        <div class="row"><span class="label">手順</span><span class="value"><div class="arrow-flow">サイト内で旧社名を検索 → 裏取り → 新社名に修正</div></span></div>
+                        <div class="row"><span class="label">対象リスト</span><span class="value">施策整理_2026-03.md に記載済み</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5月 -->
+            <div class="tl-month">
+                <div class="tl-month-label"><span class="month-num">MAY</span>5月にやること</div>
+
+                <div class="card normal">
+                    <div class="card-head">
+                        <span class="badge normal-bg">記事</span>
+                        <span class="card-title">ブログ記事② 制作・公開</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row"><span class="label">テーマ</span><span class="value">「プラント設計とは？設計フローと依頼時のポイント」（3,000〜5,000文字）</span></div>
+                        <div class="row"><span class="label">構成</span><span class="value"><div class="arrow-flow">プラント設計とは → 設計の流れ → 外部委託のチェックポイント → 費用の考え方 → CEC実績</div></span></div>
+                        <div class="row"><span class="label">CTA</span><span class="value">/contact/（お問い合わせ）へ誘導</span></div>
+                        <div class="row"><span class="label">狙うKW</span><span class="value"><span class="kw">プラント設計とは</span><span class="kw">プラント設計 費用</span></span></div>
+                        <div class="ask-client"><strong>クライアント依頼:</strong> 費用に関する記載可能範囲の確認、公開前レビュー</div>
+                    </div>
+                </div>
+
+                <div class="card normal">
+                    <div class="card-head">
+                        <span class="badge normal-bg">SNS</span>
+                        <span class="card-title">LinkedIn 企業ページ整備</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row"><span class="label">背景</span><span class="value">「commonwealth engineers」検索が伸びている（3月: 3クリック・CTR 18.8%）</span></div>
+                        <div class="row"><span class="label">作業</span><span class="value">企業ページ作成/充実化、英語での会社概要・実績・求人掲載、/en/ へのリンク</span></div>
+                        <div class="row"><span class="label">頻度</span><span class="value">週1〜2回英語投稿（X投稿の英語版転用も可）</span></div>
+                        <div class="ask-client"><strong>クライアント依頼:</strong> 企業ページ管理権限の確認、英語プロフィール文のレビュー</div>
+                    </div>
+                </div>
+
+                <div class="card client">
+                    <div class="card-head">
+                        <span class="badge client-bg">要協力</span>
+                        <span class="card-title">プロジェクト事例 詳細化（3件）</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row"><span class="label">対象</span><span class="value">伏木万葉バイオマス・千葉袖ケ浦火力・桜エコプラント</span></div>
+                        <div class="row"><span class="label">追記内容</span><span class="value">プロジェクト概要（所在地・規模・工期）、CECの担当範囲、技術的な工夫、成果</span></div>
+                        <div class="row"><span class="label">CTA</span><span class="value">各事例末尾にCTAボタン設置</span></div>
+                        <div class="ask-client"><strong>クライアント依頼（必須）:</strong> 3件の詳細情報（規模・期間・技術・工夫した点）、公開可能範囲の確認、追加写真</div>
+                    </div>
+                </div>
+
+                <div class="card normal">
+                    <div class="card-head">
+                        <span class="badge normal-bg">記事</span>
+                        <span class="card-title">社員インタビュー記事 準備</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row"><span class="label">内容</span><span class="value">/career/ の既存インタビューと連動させた単独記事</span></div>
+                        <div class="row"><span class="label">活用</span><span class="value">X・LinkedIn での発信コンテンツとしても活用</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6月 -->
+            <div class="tl-month">
+                <div class="tl-month-label"><span class="month-num">JUN</span>6月にやること</div>
+
+                <div class="card normal">
+                    <div class="card-head">
+                        <span class="card-title">仕上げ・改善フェーズ</span>
+                    </div>
+                    <div class="card-body">
+                        <ul style="padding-left: 22px;">
+                            <li>事例ページ CTA設置完了</li>
+                            <li>フォーム最適化（項目簡素化: 名前・会社名・相談内容の3つ、「2営業日以内に回答」明記）</li>
+                            <li>スパム対策実装（reCAPTCHA強化、ハニーポット設置）</li>
+                            <li>インタビュー記事公開</li>
+                            <li>/entry/ フォーム改善（3月PV 46→17と急減しているため対策必要）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- クライアント依頼まとめ -->
+        <h2 class="section-title">クライアントへの依頼事項（まとめ）</h2>
+        <div class="ask-grid">
+            <div class="ask-col">
+                <h3 class="urgent">▶ 今すぐ</h3>
+                <ol>
+                    <li><strong>ブログ①用:</strong> 入社1〜3年目の社員への簡単なヒアリング（15分程度）</li>
+                    <li><strong>X開設:</strong> 承認、アカウント名の確定、投稿用写真（社員・現場・オフィス）</li>
+                    <li><strong>事例詳細化:</strong> 伏木万葉・千葉袖ケ浦・桜エコプラントの詳細情報</li>
+                </ol>
+            </div>
+            <div class="ask-col">
+                <h3>▶ 後日</h3>
+                <ol start="4">
+                    <li><strong>ブログ②用:</strong> 費用に関する記載可能範囲の確認</li>
+                    <li><strong>LinkedIn:</strong> 企業ページの管理権限確認、英語プロフィール文のレビュー</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- やらないこと -->
+        <h2 class="section-title">やらなくていいこと（今は）</h2>
+        <div class="skip-box">
+            <h3>あえて優先順位を下げる項目</h3>
+            <ul>
+                <li><strong>採用ページ /career/ の全面改修</strong> — 指名検索内では機能中。コンテンツ制作が先</li>
+                <li><strong>月2本の技術ブログ</strong> — 重すぎる。月1本で十分</li>
+                <li><strong>フォーム改善を最優先にすること</strong> — フォームに来る人自体を増やすのが先</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            株式会社斗（hishaku） / コモンウェルスエンジニアーズ HP運用<br>
+            2026年4月9日 作成
+        </div>
+    </div>
+</body>
+</html>
