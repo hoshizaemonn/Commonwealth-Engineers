@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI活用 新卒採用強化プラン — コモンウェルスエンジニアーズ様</title>
+<style>
+  :root {
+    --primary: #1a3a5c;
+    --accent: #2563eb;
+    --accent-light: #dbeafe;
+    --success: #059669;
+    --warning: #d97706;
+    --danger: #dc2626;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+
+  /* Cover */
+  .cover {
+    background: linear-gradient(135deg, var(--primary) 0%, #0f2a44 100%);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .cover h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; letter-spacing: 0.02em; }
+  .cover .sub { font-size: 16px; opacity: 0.85; margin-bottom: 24px; }
+  .cover .meta { font-size: 13px; opacity: 0.6; }
+  .cover .highlight-box {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    padding: 12px 24px;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  /* Section */
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 28px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .card p { color: var(--muted); font-size: 14px; }
+
+  /* Problem cards */
+  .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .problem-card {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .problem-card .num { font-size: 32px; font-weight: 800; color: var(--danger); }
+  .problem-card .label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .problem-card .desc { font-size: 14px; margin-top: 8px; font-weight: 600; }
+
+  /* Comparison */
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .compare-table th {
+    background: var(--primary);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .compare-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .compare-table tr:nth-child(even) { background: #f8fafc; }
+  .compare-table .highlight-row { background: var(--accent-light) !important; }
+
+  /* Plan cards */
+  .plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+  .plan-card {
+    background: var(--card);
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 24px;
+    position: relative;
+  }
+  .plan-card.recommended {
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(37,99,235,0.12);
+  }
+  .plan-card.recommended::before {
+    content: "おすすめ";
+    position: absolute;
+    top: -12px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: white;
+    padding: 2px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .plan-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+  .plan-price { font-size: 28px; font-weight: 800; color: var(--accent); margin: 12px 0; }
+  .plan-price small { font-size: 14px; font-weight: 400; color: var(--muted); }
+  .plan-list { list-style: none; padding: 0; margin-top: 16px; }
+  .plan-list li {
+    padding: 6px 0;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .plan-list li:last-child { border-bottom: none; }
+  .plan-list li::before { content: "✓ "; color: var(--success); font-weight: 700; }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 11px; top: 4px; bottom: 4px;
+    width: 2px;
+    background: var(--accent);
+  }
+  .timeline-item { margin-bottom: 24px; position: relative; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -27px; top: 6px;
+    width: 12px; height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+  .timeline-item h4 { font-size: 15px; font-weight: 700; color: var(--primary); }
+  .timeline-item .period { font-size: 12px; color: var(--accent); font-weight: 600; }
+  .timeline-item p { font-size: 14px; color: var(--muted); margin-top: 4px; }
+
+  /* ROI box */
+  .roi-box {
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    border: 2px solid #6ee7b7;
+    border-radius: 14px;
+    padding: 28px;
+    text-align: center;
+    margin: 24px 0;
+  }
+  .roi-box .vs { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; }
+  .roi-box .vs-item { text-align: center; }
+  .roi-box .vs-item .label { font-size: 13px; color: var(--muted); }
+  .roi-box .vs-item .value { font-size: 24px; font-weight: 800; }
+  .roi-box .vs-item .value.red { color: var(--danger); }
+  .roi-box .vs-item .value.green { color: var(--success); }
+  .roi-arrow { font-size: 28px; color: var(--muted); }
+
+  /* Flow */
+  .flow-steps {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 16px 0;
+  }
+  .flow-step {
+    background: var(--accent-light);
+    border: 1px solid #93c5fd;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary);
+    text-align: center;
+    flex: 1;
+    min-width: 100px;
+  }
+  .flow-step .ai-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+  .flow-arrow { font-size: 20px; color: var(--accent); flex-shrink: 0; }
+
+  /* KPI table */
+  .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .kpi-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  .kpi-card .now { font-size: 13px; color: var(--muted); }
+  .kpi-card .arrow-down { color: var(--muted); font-size: 16px; margin: 4px 0; }
+  .kpi-card .target { font-size: 22px; font-weight: 800; color: var(--accent); }
+  .kpi-card .label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+  /* CTA */
+  .cta-box {
+    background: var(--primary);
+    color: white;
+    border-radius: 14px;
+    padding: 32px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .cta-box h2 { font-size: 22px; margin-bottom: 12px; }
+  .cta-box p { opacity: 0.8; font-size: 14px; }
+
+  /* Utility */
+  .text-sm { font-size: 13px; }
+  .text-muted { color: var(--muted); }
+  .mt-8 { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+  .mb-8 { margin-bottom: 8px; }
+  .bold { font-weight: 700; }
+  .tag {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 4px;
+  }
+  .tag-green {
+    background: #d1fae5;
+    color: var(--success);
+  }
+  .note-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 13px;
+    color: #92400e;
+    margin-top: 16px;
+  }
+
+  @media (max-width: 600px) {
+    .problem-grid, .plan-grid, .kpi-grid { grid-template-columns: 1fr; }
+    .flow-steps { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); }
+    .cover { padding: 40px 20px; }
+    .cover h1 { font-size: 22px; }
+    .roi-box .vs { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Cover -->
+  <div class="cover">
+    <div class="sub">株式会社コモンウェルスエンジニアーズ 様</div>
+    <h1>AI活用 新卒採用強化プラン</h1>
+    <p style="opacity:0.7; font-size:14px; margin-top:8px;">
+      新卒日本人エンジニアの採用を、AIの力で実現する
+    </p>
+    <div class="highlight-box">
+      採用エージェント費用 年150万円 → AI活用なら <strong>年39.6万円</strong> で採用資産が残る
+    </div>
+    <div class="meta" style="margin-top:20px;">
+      2026年4月 | 株式会社斗（hishaku）
+    </div>
+  </div>
+
+  <!-- 1. 現状認識 -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-num">1</span>現状の課題</h2>
+    <p class="mb-8">HP運用を通じて、SEO施策は着実に効果を出しています。しかし<strong>「新卒の日本人エンジニアを採用する」</strong>という目標に対しては、まだ十分な導線が整っていません。</p>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="num">0件</div>
+        <div class="label">一般キーワードからの流入</div>
+        <div class="desc">会社名を知らない求職者がサイトに辿り着けない</div>
+      </div>
+      <div class="problem-card">
+        <div class="num">0件</div>
+        <div class="label">新卒向け専用コンテンツ</div>
+        <div class="desc">/career/ は中途・新卒が混在。新卒に響く情報がない</div>
+      </div>
+      <div class="problem-card">
+        <div class="num">0件</div>
+        <div class="label">SNSでの存在</div>
+        <div class="desc">新卒が企業研究で見るInstagram・X・YouTubeに情報がない</div>
+      </div>
+      <div class="problem-card">
+        <div class="num">88%</div>
+        <div class="label">フォーム離脱率</div>
+        <div class="desc">フォームに到達しても87件中75件が離脱している</div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>新卒の企業研究プロセス:</strong><br>
+      マイナビ/リクナビで見つける → 企業名で検索 → <strong>SNS（Instagram・X）で雰囲気を確認</strong> → 採用ページを見る → エントリー<br><br>
+      今のCEC様は「検索したら出てくる」段階までは改善済み。しかし<strong>「SNSで雰囲気を確認」の段階で情報がなく離脱</strong>している可能性が高い状況です。
+    </div>
+  </div>
+
+  <!-- 2. AIで何を変えるか -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-num">2</span>AIで何を変えるか</h2>
+    <p class="mb-8">AIを「人の代わり」ではなく、<strong>「CEC様の45年の実績・技術力を、新卒が見る場所に届けるツール」</strong>として活用します。</p>
+
+    <div class="card">
+      <h3>AIが担う3つの役割</h3>
+      <table class="compare-table mt-8">
+        <tr>
+          <th style="width:30%;">課題</th>
+          <th style="width:35%;">AIがやること</th>
+          <th style="width:35%;">人がやること</th>
+        </tr>
+        <tr>
+          <td><strong>新卒に見つけてもらえない</strong></td>
+          <td>
+            <span class="tag">AI</span>採用記事・SNS投稿をAIで月産<br>
+            「プラントエンジニア 新卒」「未経験 プラント設計」で検索上位を狙う
+          </td>
+          <td>社員の声・現場写真の提供<br>（素材はCEC様側で）</td>
+        </tr>
+        <tr>
+          <td><strong>新卒に伝わるページがない</strong></td>
+          <td>
+            <span class="tag">AI</span>新卒専用の採用LP制作<br>
+            先輩の声・1日の流れ・研修制度を整理
+          </td>
+          <td>掲載内容の最終確認</td>
+        </tr>
+        <tr>
+          <td><strong>SNSに存在がない</strong></td>
+          <td>
+            <span class="tag">AI</span>X・Instagram投稿文を毎月30本生成<br>
+            <span class="tag">AI</span>採用PR動画をAIで制作
+          </td>
+          <td>投稿の実行・写真素材の撮影</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 3. 施策の全体像 -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-num">3</span>施策の全体像</h2>
+
+    <div class="card">
+      <h3>新卒が応募するまでの導線を作る</h3>
+      <div class="flow-steps mt-16">
+        <div class="flow-step">
+          採用記事<span class="ai-badge">AI</span><br>
+          <span class="text-sm text-muted">検索で見つかる</span>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          SNS投稿<span class="ai-badge">AI</span><br>
+          <span class="text-sm text-muted">会社の雰囲気が伝わる</span>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          採用LP<span class="ai-badge">AI</span><br>
+          <span class="text-sm text-muted">新卒向けに訴求</span>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          応募<br>
+          <span class="text-sm text-muted">エントリー / 面談</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3>施策①　新卒向け採用コンテンツのAI量産</h3>
+      <p>月2本の採用特化記事をAIで制作・公開。新卒が検索するキーワードで上位表示を狙います。</p>
+      <table class="compare-table mt-8">
+        <tr><th>記事テーマ（例）</th><th>狙うキーワード</th><th>ターゲット</th></tr>
+        <tr>
+          <td>未経験からプラント設計エンジニアになる方法</td>
+          <td>プラントエンジニア 未経験 / 新卒</td>
+          <td>理工系新卒</td>
+        </tr>
+        <tr>
+          <td>プラント設計エンジニアの1日【入社2年目のリアル】</td>
+          <td>プラント設計 仕事内容 / 1日</td>
+          <td>企業研究中の学生</td>
+        </tr>
+        <tr>
+          <td>文系からでもOK？CAD未経験で入社した先輩の話</td>
+          <td>CAD 未経験 就職 / 文系 エンジニア</td>
+          <td>文系学生</td>
+        </tr>
+        <tr>
+          <td>プラント設計エンジニアの年収・キャリアパス</td>
+          <td>プラントエンジニア 年収 / 将来性</td>
+          <td>待遇重視の学生</td>
+        </tr>
+      </table>
+      <div class="note-box">
+        <strong>CEC様にお願いしたいこと:</strong> 入社1〜3年目の社員に15分のヒアリング（月1回程度）。AIが記事化するので、話してもらうだけでOKです。
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3>施策②　新卒専用の採用ランディングページ制作</h3>
+      <p>今の /career/ とは別に、新卒だけに向けた1枚のページを制作します。</p>
+      <table class="compare-table mt-8">
+        <tr><th>構成要素</th><th>内容</th><th>AIの活用</th></tr>
+        <tr><td>ファーストビュー</td><td>「45年の技術×若い力」のメッセージ + 現場写真</td><td><span class="tag">AI</span>コピーライティング</td></tr>
+        <tr><td>先輩社員の声</td><td>入社1〜3年目の3名（ヒアリングから構成）</td><td><span class="tag">AI</span>インタビュー記事化</td></tr>
+        <tr><td>1日の流れ</td><td>タイムライン形式で具体的に</td><td><span class="tag">AI</span>構成・文面</td></tr>
+        <tr><td>研修・キャリアパス</td><td>未経験→独り立ちまでのロードマップ</td><td><span class="tag">AI</span>構成</td></tr>
+        <tr><td>募集要項 + CTA</td><td>「まずはカジュアル面談から」ボタン</td><td>—</td></tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3>施策③　X・Instagram開設 + AI投稿テンプレート</h3>
+      <p>新卒が企業研究で必ず見るSNSに、CEC様の存在を作ります。</p>
+      <table class="compare-table mt-8">
+        <tr><th>媒体</th><th>投稿内容（AI生成）</th><th>頻度</th></tr>
+        <tr>
+          <td><strong>X</strong></td>
+          <td>現場風景 / 社員紹介 / 技術トピック / 採用情報</td>
+          <td>週3〜5回</td>
+        </tr>
+        <tr>
+          <td><strong>Instagram</strong></td>
+          <td>社員の1日 / オフィス風景 / プロジェクト紹介</td>
+          <td>週2〜3回</td>
+        </tr>
+      </table>
+      <div class="note-box">
+        <strong>運用の仕組み:</strong> 毎月30本分の投稿文+画像キャプションをAIで一括生成してお渡しします。CEC様は写真を撮って投稿するだけ。1投稿5分で完了です。
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3>施策④　AI採用PR動画</h3>
+      <p>社員の写真・現場写真から、30〜60秒のショート動画をAIで自動制作。SNSやWantedlyで使えます。</p>
+      <table class="compare-table mt-8">
+        <tr><th>動画テーマ</th><th>内容</th><th>使用先</th></tr>
+        <tr><td>「CEC 1分でわかる会社紹介」</td><td>実績・現場・人の3要素で構成</td><td>X / Instagram / Wantedly</td></tr>
+        <tr><td>「先輩エンジニアの声」</td><td>写真+テロップ+ナレーションで構成</td><td>採用LP / SNS</td></tr>
+        <tr><td>「プラント設計の仕事とは」</td><td>現場写真で仕事の魅力を伝える</td><td>YouTube / SNS</td></tr>
+      </table>
+      <p class="text-sm text-muted mt-8">※ 弊社ではRUNBIRD様・ミチルシリカ様でAI動画制作パイプラインを運用中。同じ仕組みをCEC様向けに展開します。</p>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3>施策⑤　大学・高専へのアプローチ支援</h3>
+      <p>千葉高校でのインターンシップ実績を活かし、さらに対象を拡大します。</p>
+      <table class="compare-table mt-8">
+        <tr><th>施策</th><th>AIの活用</th><th>対象</th></tr>
+        <tr>
+          <td>大学キャリアセンター向け求人票</td>
+          <td><span class="tag">AI</span>学科別にカスタマイズした求人文面を生成</td>
+          <td>土木系 / 建築系 / 機械系の大学</td>
+        </tr>
+        <tr>
+          <td>インターンシップ募集ページ</td>
+          <td><span class="tag">AI</span>LP制作 + 千葉高校の実績を掲載</td>
+          <td>高校生・大学生</td>
+        </tr>
+        <tr>
+          <td>Wantedlyスカウト文面</td>
+          <td><span class="tag">AI</span>研究内容に応じたパーソナライズ文面</td>
+          <td>理工系学生</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 4. 費用 -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-num">4</span>費用プラン</h2>
+
+    <div class="plan-grid">
+      <div class="plan-card">
+        <h3>ライトプラン</h3>
+        <p class="text-sm text-muted">コンテンツ+SNSで新卒に届ける</p>
+        <div class="plan-price">55,000<small>円/月（税込）</small></div>
+        <p class="text-sm">現契約33,000円 + 22,000円</p>
+        <ul class="plan-list">
+          <li>AI採用記事 月2本制作・公開</li>
+          <li>SNS投稿テンプレート 月30本</li>
+          <li>X・Instagramアカウント初期設定</li>
+          <li>月次レポート（採用KPI追加）</li>
+          <li>既存HP運用（継続）</li>
+        </ul>
+      </div>
+      <div class="plan-card recommended">
+        <h3>スタンダードプラン</h3>
+        <p class="text-sm text-muted">LP+動画で採用の仕組みを構築</p>
+        <div class="plan-price">77,000<small>円/月（税込）</small></div>
+        <p class="text-sm">現契約33,000円 + 44,000円</p>
+        <ul class="plan-list">
+          <li>ライトプランの全施策</li>
+          <li>新卒専用 採用LP制作（初月）</li>
+          <li>AI採用PR動画 月1本制作</li>
+          <li>大学キャリアセンター向け求人票</li>
+          <li>Wantedlyスカウト文面生成</li>
+          <li>インターンシップ募集ページ</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>費用の比較</h3>
+      <table class="compare-table mt-8">
+        <tr>
+          <th>採用手法</th>
+          <th>年間コスト</th>
+          <th>資産として残るか</th>
+        </tr>
+        <tr>
+          <td>採用エージェント（1名採用）</td>
+          <td><strong style="color:var(--danger);">150〜200万円</strong></td>
+          <td>残らない（毎回費用が発生）</td>
+        </tr>
+        <tr>
+          <td>マイナビ・リクナビ掲載</td>
+          <td><strong style="color:var(--warning);">50〜120万円</strong></td>
+          <td>残らない（掲載期間のみ）</td>
+        </tr>
+        <tr class="highlight-row">
+          <td><strong>本プラン（スタンダード）</strong></td>
+          <td><strong style="color:var(--success);">52.8万円</strong><br><span class="text-sm text-muted">（増額分44,000円×12ヶ月）</span></td>
+          <td><strong style="color:var(--success);">全て残る</strong>（記事・LP・動画・SNSアカウント）</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="roi-box">
+      <p class="bold mb-8">エージェント1名採用 vs 本プラン1年分</p>
+      <div class="vs">
+        <div class="vs-item">
+          <div class="label">採用エージェント</div>
+          <div class="value red">150万円</div>
+          <div class="label">資産は残らない</div>
+        </div>
+        <div class="roi-arrow">→</div>
+        <div class="vs-item">
+          <div class="label">AI採用プラン（年間増額分）</div>
+          <div class="value green">52.8万円</div>
+          <div class="label">記事24本+LP+動画12本+SNSが資産に</div>
+        </div>
+      </div>
+      <p class="text-sm text-muted mt-16">エージェント費用の約1/3で、自社の採用基盤が構築できます</p>
+    </div>
+  </div>
+
+  <!-- 5. スケジュール -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-num">5</span>実施スケジュール</h2>
+
+    <div class="card">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="period">1ヶ月目（5月）</div>
+          <h4>基盤構築</h4>
+          <p>
+            新卒専用 採用LP制作・公開<br>
+            X・Instagramアカウント開設 + 初期投稿<br>
+            採用記事1本目 公開（「未経験からプラントエンジニアに」）<br>
+            社員ヒアリング実施（1〜3年目 2〜3名）
+          </p>
+        </div>
+        <div class="timeline-item">
+          <div class="period">2〜3ヶ月目（6〜7月）</div>
+          <h4>コンテンツ拡充</h4>
+          <p>
+            採用記事 計4〜6本公開<br>
+            AI採用PR動画 2本制作<br>
+            SNS投稿の定常運用開始<br>
+            Wantedly企業ページ開設 + スカウト開始<br>
+            大学キャリアセンターへの求人票送付
+          </p>
+        </div>
+        <div class="timeline-item">
+          <div class="period">4〜6ヶ月目（8〜10月）</div>
+          <h4>効果測定・最適化</h4>
+          <p>
+            採用記事のSEO効果が現れ始める<br>
+            反応の良い記事・投稿を分析→量産<br>
+            インターンシップ募集開始（秋期）<br>
+            KPI振り返り → 施策の調整
+          </p>
+        </div>
+        <div class="timeline-item">
+          <div class="period">7ヶ月目〜（11月〜）</div>
+          <h4>採用活動本格化</h4>
+          <p>
+            新卒採用シーズンに向けた広告検討<br>
+            蓄積したコンテンツを武器に説明会・面接<br>
+            採用LP・記事・動画が「自動で応募を集める仕組み」として稼働
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. KPI -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-num">6</span>目標KPI（6ヶ月後）</h2>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="now">現在: 0件</div>
+        <div class="arrow-down">↓</div>
+        <div class="target">100〜200</div>
+        <div class="label">月間検索流入（採用KW）</div>
+      </div>
+      <div class="kpi-card">
+        <div class="now">現在: 0件</div>
+        <div class="arrow-down">↓</div>
+        <div class="target">5〜10件</div>
+        <div class="label">月間エントリー数</div>
+      </div>
+      <div class="kpi-card">
+        <div class="now">現在: 0</div>
+        <div class="arrow-down">↓</div>
+        <div class="target">500+</div>
+        <div class="label">SNSフォロワー（合計）</div>
+      </div>
+    </div>
+    <p class="text-sm text-muted mt-16" style="text-align:center;">
+      ※ SEOの効果発現には3〜6ヶ月かかるため、早期着手が重要です
+    </p>
+  </div>
+
+  <!-- 7. CEC様にお願いしたいこと -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-num">7</span>CEC様にお願いしたいこと</h2>
+    <div class="card">
+      <table class="compare-table">
+        <tr>
+          <th>お願い事項</th>
+          <th>目安時間</th>
+          <th>頻度</th>
+        </tr>
+        <tr>
+          <td>入社1〜3年目の社員への15分ヒアリング</td>
+          <td>15分/人</td>
+          <td>初回2〜3名、以降月1名</td>
+        </tr>
+        <tr>
+          <td>現場・オフィスの写真撮影（スマホでOK）</td>
+          <td>10分</td>
+          <td>週1回程度</td>
+        </tr>
+        <tr>
+          <td>SNS投稿の実行（テンプレートをコピペ）</td>
+          <td>5分/回</td>
+          <td>週3〜5回</td>
+        </tr>
+        <tr>
+          <td>採用LP・記事内容の最終確認</td>
+          <td>15分</td>
+          <td>月2回</td>
+        </tr>
+      </table>
+      <p class="text-sm text-muted mt-8">
+        AIがコンテンツの90%を生成しますが、<strong>「リアルな社員の声」と「現場の空気感」</strong>だけはCEC様にしか出せません。ここに少しだけお時間をいただくことで、AIが最大限の効果を発揮します。
+      </p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h2>次のステップ</h2>
+    <p style="margin-bottom:20px;">以下の流れで進めさせていただければと思います。</p>
+    <div style="text-align:left; max-width:500px; margin:0 auto;">
+      <p><strong>1.</strong> プランの方向性をご確認（ライト or スタンダード）</p>
+      <p><strong>2.</strong> 社員ヒアリング対象者の選定（1〜3年目 2〜3名）</p>
+      <p><strong>3.</strong> 写真素材のご準備（現場・オフィス・社員）</p>
+      <p><strong>4.</strong> 5月から採用LP制作・コンテンツ制作を開始</p>
+    </div>
+    <p class="text-sm" style="margin-top:20px; opacity:0.6;">ご不明な点があればお気軽にご相談ください。</p>
+  </div>
+
+  <p class="text-sm text-muted" style="text-align:center; margin-top:32px;">
+    株式会社斗（hishaku） | 2026年4月
+  </p>
+
+</div>
+</body>
+</html>
