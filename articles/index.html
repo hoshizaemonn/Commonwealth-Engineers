@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEC 記事プレビュー一覧 | コモンウェルスエンジニアーズ</title>
+<style>
+  body {
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    max-width: 900px; margin: 0 auto; padding: 40px 24px;
+    background: #f8f9fb; color: #2d3344; line-height: 1.7;
+  }
+  h1 {
+    font-size: 32px; color: #004080; padding-bottom: 16px;
+    border-bottom: 4px solid #004080; margin-bottom: 24px;
+  }
+  .intro {
+    background: #fffbe6; border-left: 4px solid #faad14;
+    padding: 16px 20px; margin-bottom: 32px; font-size: 14px;
+  }
+  .article-grid { display: grid; gap: 24px; }
+  .article-card {
+    background: #fff; padding: 24px; border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  .article-card h2 {
+    font-size: 22px; color: #004080; margin: 0 0 12px;
+  }
+  .article-card .badge {
+    display: inline-block; padding: 4px 12px; border-radius: 4px;
+    font-size: 12px; font-weight: bold; margin-right: 8px;
+  }
+  .badge-customer { background: #d4f0e0; color: #2ea66a; }
+  .badge-recruit { background: #dfeafb; color: #3b7dd8; }
+  .article-card .meta {
+    color: #5c6478; font-size: 14px; margin: 8px 0 16px;
+  }
+  .article-card .desc {
+    color: #2d3344; font-size: 15px; margin-bottom: 16px;
+  }
+  .article-card a.read-btn {
+    display: inline-block; padding: 10px 24px;
+    background: #004080; color: #fff; text-decoration: none;
+    border-radius: 4px; font-weight: bold;
+  }
+  .article-card a.read-btn:hover { background: #0066bb; }
+  footer {
+    margin-top: 60px; padding-top: 24px; border-top: 1px solid #dce0e8;
+    color: #9aa2b1; font-size: 13px; text-align: center;
+  }
+</style>
+</head>
+<body>
+<h1>📝 CEC 記事プレビュー一覧</h1>
+
+<div class="intro">
+  <strong>📌 これは社内レビュー用のプレビューページです。</strong><br>
+  WordPressへの投稿前に内容を確認し、必要に応じて修正してください。<br>
+  公開予定日・タイトル・内容はWordPress投稿時に最終調整可能です。
+</div>
+
+<div class="article-grid">
+
+  <div class="article-card">
+    <span class="badge badge-customer">顧客向け</span>
+    <h2>プラント設計とは？基本設計から詳細設計までの流れと費用の目安</h2>
+    <div class="meta">
+      📅 生成日: 2026-05-05 / 約2,700字 / KW: プラント設計, プラント設計費用<br>
+      🎯 ゴール: 問い合わせ獲得（/contact/誘導）
+    </div>
+    <div class="desc">
+      プラント設計の発注を検討中の企業担当者向けに、基本設計（FEED）・詳細設計の流れ、期間（半年〜2年）、費用の目安（建設総額の3〜10%）、設計会社選びのポイント（実績・対応分野・BIM対応）を解説。
+    </div>
+    <a class="read-btn" href="2026-05/plant-design-flow-and-cost.html">記事を読む</a>
+  </div>
+
+  <div class="article-card">
+    <span class="badge badge-recruit">求職者向け</span>
+    <h2>プラント設計エンジニアの年収と将来性【2026年版】</h2>
+    <div class="meta">
+      📅 生成日: 2026-05-06 / 約2,700字 / KW: プラントエンジニア 年収, プラント設計 年収<br>
+      🎯 ゴール: 採用エントリー獲得（/entry/誘導）
+    </div>
+    <div class="desc">
+      プラント設計エンジニアの年収相場（2026年版）、経験年数別・職位別レンジ、年収アップの3つの道筋（スキル・資格・キャリア）、CECの年収体系を詳説。求職者の応募モチベーション喚起。
+    </div>
+    <a class="read-btn" href="2026-05/plant-engineer-salary-2026.html">記事を読む</a>
+  </div>
+
+  <div class="article-card">
+    <span class="badge badge-customer">顧客向け</span>
+    <h2>発電所設計で押さえるべき5つのポイント【火力・バイオマス・原発の実務解説】</h2>
+    <div class="meta">
+      📅 生成日: 2026-05-06 / 約2,500字 / KW: 発電所 設計, 火力発電所 設計, バイオマス 発電所<br>
+      🎯 ゴール: 問い合わせ獲得（/contact/誘導）
+    </div>
+    <div class="desc">
+      発電所設計で押さえるべき5つのポイント（安全規格・環境基準・信頼性設計・メンテナンス性・立地条件）を、CECの実績（千葉火力・伏木万葉バイオマス・桜エコ）を交えて解説。
+    </div>
+    <a class="read-btn" href="2026-05/power-plant-design-5points.html">記事を読む</a>
+  </div>
+
+</div>
+
+<footer>
+  CEC（株式会社コモンウェルスエンジニアーズ） 記事プレビュー一覧<br>
+  株式会社斗（hishaku）が運用しています。
+</footer>
+</body>
+</html>
