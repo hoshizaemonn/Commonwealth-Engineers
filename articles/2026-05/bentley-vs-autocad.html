@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Bentley製品の使い方入門｜AutoCADとの違いとプラント設計現場のリアル（プレビュー）</title>
+<style>body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;max-width:800px;margin:40px auto;padding:0 20px;line-height:1.7;}.banner{background:#fffbe6;padding:12px;border-left:4px solid #faad14;margin-bottom:30px;}.meta{background:#f0f7ff;padding:16px;border-radius:8px;margin-bottom:30px;}h1{font-size:32px;color:#1a2744;border-bottom:3px solid #2ea66a;padding-bottom:12px;}</style>
+</head><body>
+<div class="banner">📝 ローカルプレビュー用。WordPressには 20260506_Bentley製品の使い方入門【AutoCADとの違い・プラ_wp.html を貼り付け。</div>
+<div class="meta"><strong>Bentley製品の使い方入門｜AutoCADとの違いとプラント設計現場のリアル</strong><br>カテゴリ: 採用<br>タグ: Bentley, AutoCAD, プラント設計, OpenPlant, MicroStation<br>スラッグ: bentley-vs-autocad-plant-design<br>文字数: 約2750字</div>
+<h1>Bentley製品の使い方入門｜AutoCADとの違いとプラント設計現場のリアル</h1>
+<style>
+.cec-article-body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; color: #333; font-size: 1.725rem; max-width: 100%; box-sizing: border-box; }
+.cec-article-body h2 { font-size: 3rem; margin-top: 3.5rem; margin-bottom: 1.5rem; border-bottom: 3px solid #ccc; padding-bottom: 0.8rem; line-height: 1.5; font-weight: bold; }
+.cec-article-body h3 { font-size: 2.4rem; margin-top: 3rem; margin-bottom: 1.2rem; border-left: 6px solid #004080; padding-left: 15px; line-height: 1.5; font-weight: bold; }
+.cec-article-body h4 { font-size: 2.025rem; margin-top: 2.5rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.5; }
+.cec-article-body p { font-size: 1.725rem; line-height: 2.0; margin-bottom: 1.8em; }
+.cec-article-body li { font-size: 1.725rem; line-height: 2.0; margin-bottom: 0.8em; }
+.cec-article-body hr { margin: 3.5rem 0; border: 0; border-top: 2px solid #eee; }
+.cec-article-body strong { font-weight: bold; color: #000; }
+.cec-article-body table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 1.65rem; table-layout: fixed; word-wrap: break-word; }
+.cec-article-body table th, .cec-article-body table td { border: 1px solid #ddd; padding: 1rem 1.2rem; text-align: left; line-height: 1.8; }
+.cec-article-body table th { background-color: #f5f5f5; font-weight: bold; }
+.cec-article-body ul, .cec-article-body ol { margin: 1.5rem 0; padding-left: 2rem; }
+.cec-article-body a { color: #004080; text-decoration: underline; }
+.cec-article-body a:hover { color: #0066cc; text-decoration: none; }
+.cec-keypoint-box { background: #f5f9fc; border-left: 6px solid #004080; padding: 2rem 2.5rem; margin: 2.5rem 0; border-radius: 4px; }
+.cec-keypoint-box h4 { margin-top: 0; color: #004080; }
+.cec-faq-box { background: #fafafa; border: 1px solid #e0e0e0; border-radius: 6px; padding: 2rem; margin: 2rem 0; }
+.cec-faq-box h4 { margin-top: 0; color: #004080; }
+.cec-cta-box { background: #f0f4f8; border: 2px solid #004080; border-radius: 8px; padding: 2rem; margin: 3rem 0; text-align: center; }
+.cec-cta-box p { font-size: 1.875rem; margin-bottom: 1em; }
+.cec-cta-box a { display: inline-block; background: #004080; color: #fff; padding: 15px 40px; border-radius: 5px; text-decoration: none; font-size: 1.8rem; font-weight: bold; }
+.cec-cta-box a:hover { background: #0066cc; color: #fff; }
+</style>
+
+<div class="cec-article-body">
+
+<p>プラント設計の現場で長年スタンダードとされてきたAutoCADに対し、近年その存在感を急速に高めているのがBentley Systems社の3D設計プラットフォームです。OpenPlant、MicroStation、PlantWise、ProjectWiseなど一連の製品群は、配管・機器・土木建築・電気計装をひとつのモデル上で統合できる点が特徴で、大型プラント案件を中心に採用が広がっています。</p>
+
+<p>本記事では、プラント設計エンジニアを目指す方や、Bentley製品への移行を検討している実務者に向けて、AutoCADとの違い、Bentley製品の基本的な使い方、現場で実際にどのように使われているのかを、設計会社の視点から解説します。</p>
+
+<div class="cec-keypoint-box">
+<h4>この記事の要点</h4>
+<ul>
+<li>Bentley製品はプラント設計に特化した3D統合プラットフォームで、配管・機器・構造を一元管理できる</li>
+<li>AutoCADは2D図面作成に強く、Bentleyは大規模プラントの3Dモデリングと干渉チェックに強い</li>
+<li>OpenPlantで配管モデリング、MicroStationで土木建築、ProjectWiseで設計データ統合管理を行う</li>
+<li>未経験者でも基本操作は2〜3か月、実務レベルは半年〜1年で習得可能</li>
+<li>多国籍プロジェクトや海外案件ではBentleyが標準となるケースが多い</li>
+</ul>
+</div>
+
+<h2>Bentley製品とは｜プラント設計に特化した3D統合プラットフォーム</h2>
+
+<p>Bentley Systems社は、米国に本拠を置くインフラ・プラント分野の設計ソフトウェアベンダーです。鉄道、道路、橋梁、プラント、発電所など大規模インフラの設計に強みを持ち、世界中のEPC（設計・調達・建設）企業で採用されています。</p>
+
+<p>プラント設計の現場でよく使われる主要製品は次の通りです。</p>
+
+<h3>主要なBentley製品の役割</h3>
+
+<table>
+<tr><th>製品名</th><th>用途</th><th>主な利用分野</th></tr>
+<tr><td>OpenPlant</td><td>配管・機器の3Dモデリング</td><td>プロセス設計・配管設計</td></tr>
+<tr><td>MicroStation</td><td>2D/3D汎用CAD</td><td>土木・建築・電気図面</td></tr>
+<tr><td>PlantWise</td><td>初期段階のプラントレイアウト検討</td><td>FEED・基本設計</td></tr>
+<tr><td>ProjectWise</td><td>設計データの統合管理・共同作業</td><td>プロジェクト全体管理</td></tr>
+<tr><td>STAAD.Pro</td><td>構造解析</td><td>架構・基礎の設計</td></tr>
+</table>
+
+<p>これらの製品は単独でも使えますが、ProjectWiseを軸にしたデータ連携によって、各分野のエンジニアが同一モデル上で設計を進められる点が最大の強みです。</p>
+
+<h2>AutoCADとの違い｜2D中心 vs 3D統合モデル</h2>
+
+<p>AutoCADはAutodesk社が提供する汎用CADで、2D図面作成では業界標準として広く使われています。一方、Bentley製品は大規模プラントの3D統合設計に特化しており、両者は得意領域が異なります。</p>
+
+<h3>機能・運用面の比較</h3>
+
+<table>
+<tr><th>比較項目</th><th>AutoCAD</th><th>Bentley（OpenPlant等）</th></tr>
+<tr><td>得意領域</td><td>2D図面・小〜中規模設計</td><td>3D統合モデル・大規模プラント</td></tr>
+<tr><td>データ形式</td><td>DWG</td><td>DGN（i-model連携可）</td></tr>
+<tr><td>配管モデリング</td><td>AutoCAD Plant 3Dで対応可</td><td>OpenPlantで仕様書ベースの配管設計</td></tr>
+<tr><td>干渉チェック</td><td>限定的</td><td>Navigatorで全体干渉を一括確認</td></tr>
+<tr><td>共同設計</td><td>ファイル単位の共有が中心</td><td>ProjectWiseでリアルタイム共同編集</td></tr>
+<tr><td>習得難度</td><td>比較的易しい</td><td>製品ごとに専門学習が必要</td></tr>
+</table>
+
+<h3>使い分けの実態</h3>
+
+<p>実務では、最終的な納品図面はAutoCAD（DWG）で求められるケースも多いため、両者を併用するのが一般的です。Bentleyで3Dモデルを構築し、必要な平面図・断面図をDGNからDWGに変換して納品する流れが現場でよく見られます。</p>
+
+<h2>Bentley製品の基本的な使い方｜OpenPlantを中心に</h2>
+
+<p>ここでは、プラント設計現場で最もよく使われるOpenPlantの基本的な作業フローを紹介します。</p>
+
+<h3>ステップ1：プロジェクト環境のセットアップ</h3>
+
+<p>まずProjectWiseでプロジェクトを作成し、設計基準（配管仕様書・機器仕様書・コンポーネントカタログ）を読み込みます。配管クラス、材質、サイズレンジなどを事前に登録しておくことで、モデリング時の入力ミスを防ぎます。</p>
+
+<h3>ステップ2：機器配置（Equipment Placement）</h3>
+
+<p>P&ID（配管計装図）に基づき、ポンプ、熱交換器、タンクなどの機器を3D空間に配置します。OpenPlantは機器カタログから寸法情報を呼び出してモデルを生成するため、設計変更があっても寸法整合性が崩れにくい設計です。</p>
+
+<h3>ステップ3：配管ルーティング</h3>
+
+<p>配管ルートを引く際は、サイズと仕様書を選択するだけで継手・フランジが自動配置されます。AutoCAD Plant 3Dと操作感は近いものの、OpenPlantはオブジェクトベースで属性情報を保持しているため、後工程のアイソメ図出力や数量拾いが効率化されます。</p>
+
+<h3>ステップ4：干渉チェック</h3>
+
+<p>Bentley Navigatorで配管・機器・構造の干渉を一括チェックします。複数分野のモデルを統合して可視化できるため、土木建築の柱や電気計装のケーブルラックとの干渉を早期に発見できます。</p>
+
+<h3>ステップ5：図面・帳票出力</h3>
+
+<p>3Dモデルから平面図、アイソメ図、機器リスト、配管リストを自動生成します。手作業での作図量が大幅に減り、設計変更時のドキュメント更新漏れを防げる点が現場で評価されています。</p>
+
+<h2>プラント設計現場のリアル｜Bentleyが選ばれる理由</h2>
+
+<h3>大規模プロジェクトでの一元管理</h3>
+
+<p>火力発電所、バイオマス発電所、化学プラントなど、機器・配管・電気・土木建築が複雑に絡み合うプロジェクトでは、各分野のモデルを統合できるBentleyの強みが発揮されます。設計変更が発生した際、関連する分野のモデルへ即座に影響を反映できるため、手戻りを抑えられます。</p>
+
+<h3>海外・多国籍チームでの標準ツール</h3>
+
+<p>欧米のEPC企業ではBentley製品が標準採用されているケースが多く、海外発注案件や多国籍チームでの設計業務ではBentleyスキルが前提となることも珍しくありません。当社のように11か国のエンジニアが在籍する設計環境では、共通の設計プラットフォームとしてBentley製品が活用されています。</p>
+
+<h3>未経験から実務までの習得期間</h3>
+
+<p>未経験者の場合、MicroStationの基本操作は2〜3か月、OpenPlantで簡単な配管モデリングができるレベルまでは3〜4か月が目安です。実務で一人前として配管系統を任されるレベルには、半年〜1年程度の実案件経験が必要となります。当社では先輩エンジニアによるOJTを通じて、未経験からBentley製品を扱える体制を整えています。</p>
+
+<h2>AutoCADユーザーがBentleyに移行する際のポイント</h2>
+
+<p>AutoCAD経験者がBentley製品を学ぶ場合、操作体系の違いに最初は戸惑いますが、CADの基礎理解があるため習得は比較的スムーズです。押さえておきたいポイントを整理します。</p>
+
+<ul>
+<li><strong>座標系・ユニット設計</strong>：DGNファイルはAutoCADと異なる作業単位を持つため、プロジェクト初期に設定を確認する</li>
+<li><strong>レベル（Level）の概念</strong>：AutoCADの「画層」に相当するが、より階層的な管理が可能</li>
+<li><strong>セルライブラリ</strong>：AutoCADのブロックに相当。社内標準セルの整備が効率化の鍵</li>
+<li><strong>キーイン操作</strong>：ショートカットコマンドの体系がAutoCADと異なるため、頻出コマンドから覚える</li>
+<li><strong>ProjectWise運用</strong>：ファイルのチェックイン/チェックアウト方式に慣れる必要がある</li>
+</ul>
+
+<h2>よくある質問（FAQ）</h2>
+
+<div class="cec-faq-box">
+<h4>Q1. AutoCADしか使ったことがありませんが、Bentley製品を扱えるようになりますか？</h4>
+<p>CADの基礎を理解していれば、操作感の違いはあるものの十分に習得可能です。当社では未経験から先輩エンジニアによるOJTでBentleyを学ぶ環境があり、半年〜1年で実務レベルに到達するケースが一般的です。</p>
+</div>
+
+<div class="cec-faq-box">
+<h4>Q2. Bentley製品は個人で学習できますか？</h4>
+<p>Bentley社は学習者向けライセンスや公式トレーニング、オンライン講座を提供しています。ただし、配管設計や干渉チェックなどの実務知識は実案件を通じてしか身につかない部分が多く、設計会社での実務経験が習得を加速させます。</p>
+</div>
+
+<div class="cec-faq-box">
+<h4>Q3. AutoCADとBentley、どちらを優先して学ぶべきですか？</h4>
+<p>2D図面作成スキルとしてAutoCADは依然として必須です。その上で、大規模プラント案件や海外案件に携わりたい場合はBentley製品の習得が大きな武器になります。両方扱えるエンジニアは市場価値が高い傾向があります。</p>
+</div>
+
+<div class="cec-faq-box">
+<h4>Q4. Bentley製品を使う案件にはどのようなものがありますか？</h4>
+<p>火力・バイオマス発電所、化学プラント、製油所、LNG関連設備など、機器・配管・構造が大規模に絡む案件で多く採用されています。FEEDや詳細設計フェーズでの3Dモデリング、干渉チェック、施工性検討に活用されます。</p>
+</div>
+
+<div class="cec-cta-box">
+<p><strong>Bentley製品を使った実務経験を積みたい方へ</strong></p>
+<p>当社では、未経験からBentley製品を学べるOJT環境と、11か国のエンジニアが集まる多国籍チームでの設計業務をご用意しています。まずは採用ページから、業務内容や働き方をご確認ください。</p>
+<a href="/entry/">採用情報を見る</a>
+</div>
+
+</div>
+</body></html>
