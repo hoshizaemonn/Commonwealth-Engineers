@@ -3,127 +3,537 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CEC 記事プレビュー一覧 | コモンウェルスエンジニアーズ</title>
+<title>CEC 5月公開記事プレビュー一覧 | コモンウェルスエンジニアーズ</title>
 <style>
+  :root {
+    --navy: #1e3a8a;
+    --navy-dark: #0f2667;
+    --navy-light: #2f4ea8;
+    --accent: #3b7dd8;
+    --green: #2ea66a;
+    --green-bg: #e6f6ee;
+    --orange: #e89a2c;
+    --orange-bg: #fff6e3;
+    --red: #d94452;
+    --red-bg: #fde8ea;
+    --gray: #5c6478;
+    --gray-light: #9aa2b1;
+    --line: #dce0e8;
+    --bg: #f3f5fa;
+  }
+  * { box-sizing: border-box; }
   body {
     font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
-    max-width: 900px; margin: 0 auto; padding: 40px 24px;
-    background: #f8f9fb; color: #2d3344; line-height: 1.7;
+    margin: 0; padding: 0;
+    background: var(--bg); color: #2d3344; line-height: 1.75;
   }
-  h1 {
-    font-size: 32px; color: #004080; padding-bottom: 16px;
-    border-bottom: 4px solid #004080; margin-bottom: 24px;
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* ===== Hero (PDF cover style) ===== */
+  .hero {
+    background:
+      radial-gradient(circle at 85% 30%, rgba(255,255,255,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 10% 90%, rgba(255,255,255,0.06) 0%, transparent 35%),
+      linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-light) 100%);
+    color: #fff; padding: 72px 24px 88px; position: relative; overflow: hidden;
   }
-  .intro {
-    background: #fffbe6; border-left: 4px solid #faad14;
-    padding: 16px 20px; margin-bottom: 32px; font-size: 14px;
+  .hero::before {
+    content: ""; position: absolute; right: -120px; top: -120px;
+    width: 360px; height: 360px; border-radius: 50%;
+    background: rgba(255,255,255,0.04);
   }
-  .article-grid { display: grid; gap: 24px; }
-  .article-card {
-    background: #fff; padding: 24px; border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s, box-shadow 0.2s;
+  .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,0.14); padding: 6px 14px; border-radius: 4px;
+    font-size: 13px; letter-spacing: 0.05em; margin-bottom: 28px;
   }
-  .article-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  .hero-badge .b1 { background: #fff; color: var(--navy); padding: 3px 10px; border-radius: 3px; font-weight: bold; }
+  .hero h1 {
+    font-size: 42px; font-weight: 700; line-height: 1.4;
+    margin: 0 0 12px; letter-spacing: 0.02em;
   }
-  .article-card h2 {
-    font-size: 22px; color: #004080; margin: 0 0 12px;
+  .hero h1 .accent { color: #bcd4ff; }
+  .hero .sub { font-size: 16px; opacity: 0.85; margin: 16px 0 32px; max-width: 720px; }
+  .hero-divider { width: 80px; height: 2px; background: rgba(255,255,255,0.5); margin: 24px 0; }
+  .hero-meta { display: flex; gap: 48px; margin-top: 36px; flex-wrap: wrap; }
+  .hero-meta .item { font-size: 13px; opacity: 0.85; }
+  .hero-meta .item .label { display: block; font-size: 11px; opacity: 0.7; margin-bottom: 4px; letter-spacing: 0.1em; }
+  .hero-meta .item .val { font-size: 16px; font-weight: 600; }
+
+  /* ===== Section ===== */
+  section { padding: 56px 0; }
+  .section-title {
+    font-size: 26px; font-weight: 700; color: var(--navy);
+    padding-left: 16px; border-left: 6px solid var(--navy);
+    margin: 0 0 28px; line-height: 1.4;
   }
-  .article-card .badge {
-    display: inline-block; padding: 4px 12px; border-radius: 4px;
-    font-size: 12px; font-weight: bold; margin-right: 8px;
+  .section-sub { color: var(--gray); margin: -16px 0 32px; font-size: 14px; }
+
+  /* ===== Strategy matrix ===== */
+  .strategy {
+    background: #fff; border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(15,38,103,0.06);
+    padding: 32px; margin-bottom: 24px;
   }
-  .badge-customer { background: #d4f0e0; color: #2ea66a; }
-  .badge-recruit { background: #dfeafb; color: #3b7dd8; }
-  .article-card .meta {
-    color: #5c6478; font-size: 14px; margin: 8px 0 16px;
+  .strategy h3 { font-size: 18px; color: var(--navy); margin: 0 0 16px; }
+  .matrix {
+    display: grid; grid-template-columns: 100px 1fr 1fr; gap: 0;
+    border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+    font-size: 14px; margin-top: 8px;
   }
-  .article-card .desc {
-    color: #2d3344; font-size: 15px; margin-bottom: 16px;
+  .matrix .head, .matrix .row-head {
+    background: #f1f4fb; color: var(--navy); font-weight: bold;
+    padding: 14px 12px; text-align: center; border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
   }
-  .article-card a.read-btn {
-    display: inline-block; padding: 10px 24px;
-    background: #004080; color: #fff; text-decoration: none;
-    border-radius: 4px; font-weight: bold;
+  .matrix .row-head { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); writing-mode: vertical-rl; padding: 16px 8px; }
+  .matrix .cell {
+    padding: 16px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    background: #fff; min-height: 90px;
   }
-  .article-card a.read-btn:hover { background: #0066bb; }
+  .matrix .cell:last-child { border-right: 0; }
+  .matrix .row-head:last-of-type, .matrix .cell.last { border-bottom: 0; }
+  .matrix .ttl { font-weight: 600; color: var(--navy); margin-bottom: 4px; font-size: 13px; }
+  .matrix .desc { color: var(--gray); font-size: 12px; line-height: 1.6; }
+
+  /* ===== Data context cards ===== */
+  .data-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 8px; }
+  .data-card {
+    background: #fff; border-radius: 10px; padding: 18px 18px 16px;
+    box-shadow: 0 1px 8px rgba(15,38,103,0.05);
+    border-top: 4px solid var(--navy);
+  }
+  .data-card .lbl { font-size: 11px; color: var(--gray); letter-spacing: 0.05em; }
+  .data-card .num { font-size: 30px; font-weight: 700; color: var(--navy); line-height: 1.1; margin: 6px 0 4px; }
+  .data-card .delta { font-size: 12px; color: var(--gray); }
+  .data-card.good { border-top-color: var(--green); }
+  .data-card.good .num { color: var(--green); }
+  .data-card.watch { border-top-color: var(--orange); }
+  .data-card.watch .num { color: var(--orange); }
+
+  /* ===== Article cards ===== */
+  .article-list { display: grid; gap: 28px; }
+  .article {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 18px rgba(15,38,103,0.07);
+  }
+  .article-head {
+    padding: 24px 28px 20px; border-bottom: 1px solid var(--line);
+    display: flex; align-items: flex-start; gap: 16px;
+  }
+  .article-num {
+    flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+    background: var(--navy); color: #fff; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; margin-top: 4px;
+  }
+  .article-head .ttl-area { flex: 1; }
+  .badge {
+    display: inline-block; padding: 3px 10px; border-radius: 3px;
+    font-size: 11px; font-weight: bold; letter-spacing: 0.05em; margin-bottom: 8px;
+  }
+  .badge.customer { background: var(--green-bg); color: var(--green); }
+  .badge.recruit { background: #dfeafb; color: var(--accent); }
+  .article-head h2 { font-size: 20px; color: var(--navy); margin: 0 0 8px; line-height: 1.5; }
+  .article-head .meta { font-size: 12px; color: var(--gray); }
+  .article-head .meta span { margin-right: 14px; }
+
+  .article-body { padding: 24px 28px 28px; }
+  .why-title {
+    font-size: 15px; font-weight: 700; color: var(--navy);
+    display: flex; align-items: center; gap: 8px; margin: 0 0 16px;
+  }
+  .why-title::before { content: "💡"; font-size: 18px; }
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+  .why-cell {
+    background: #f6f9fd; border-radius: 8px; padding: 14px 16px;
+    border-left: 4px solid var(--accent);
+  }
+  .why-cell .h {
+    font-size: 11px; color: var(--gray); letter-spacing: 0.08em;
+    margin-bottom: 6px; font-weight: 600;
+  }
+  .why-cell .v { font-size: 14px; color: #2d3344; line-height: 1.65; }
+  .why-cell .v strong { color: var(--navy); }
+
+  .flow-title {
+    font-size: 13px; font-weight: 600; color: var(--gray);
+    margin: 18px 0 10px; letter-spacing: 0.05em;
+  }
+  .flow {
+    display: flex; align-items: stretch; gap: 0; flex-wrap: wrap;
+    background: #fafbfe; border: 1px dashed var(--line); border-radius: 8px;
+    padding: 14px; margin-bottom: 22px;
+  }
+  .flow-step {
+    flex: 1; min-width: 130px; position: relative;
+    text-align: center; padding: 8px 10px;
+  }
+  .flow-step:not(:last-child)::after {
+    content: "→"; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%); color: var(--navy-light); font-size: 18px; font-weight: bold;
+  }
+  .flow-step .s-h { font-size: 11px; color: var(--gray); margin-bottom: 4px; }
+  .flow-step .s-v { font-size: 13px; color: var(--navy); font-weight: 600; line-height: 1.5; }
+
+  .read-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 20px; border-top: 1px solid var(--line); margin-top: 4px;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .read-row .kpi { font-size: 13px; color: var(--gray); }
+  .read-row .kpi strong { color: var(--navy); }
+  .read-btn {
+    display: inline-block; padding: 11px 28px;
+    background: var(--navy); color: #fff; text-decoration: none;
+    border-radius: 6px; font-weight: bold; font-size: 14px;
+    transition: background 0.2s;
+  }
+  .read-btn:hover { background: var(--navy-light); }
+
+  /* ===== Review panel ===== */
+  .review-panel {
+    background: #fff; border-radius: 12px; padding: 28px 32px;
+    box-shadow: 0 2px 16px rgba(15,38,103,0.06);
+    border-left: 6px solid var(--red);
+  }
+  .review-panel h3 {
+    color: var(--red); margin: 0 0 12px; font-size: 18px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .review-panel ul { margin: 8px 0 0 0; padding-left: 20px; }
+  .review-panel li { margin-bottom: 6px; font-size: 14px; line-height: 1.8; }
+  .review-panel li strong { color: var(--navy); }
+  .review-panel .note { font-size: 13px; color: var(--gray); margin-top: 14px; }
+
+  /* ===== Footer ===== */
   footer {
-    margin-top: 60px; padding-top: 24px; border-top: 1px solid #dce0e8;
-    color: #9aa2b1; font-size: 13px; text-align: center;
+    background: var(--navy-dark); color: rgba(255,255,255,0.7);
+    padding: 32px 24px; text-align: center; font-size: 13px;
+  }
+  footer strong { color: #fff; }
+
+  @media (max-width: 768px) {
+    .hero { padding: 48px 20px 64px; }
+    .hero h1 { font-size: 28px; }
+    .hero-meta { gap: 24px; }
+    .data-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr; }
+    .matrix { grid-template-columns: 80px 1fr 1fr; font-size: 12px; }
+    .article-head { padding: 20px; flex-direction: column; }
+    .article-body { padding: 20px; }
+    .read-row { flex-direction: column; align-items: stretch; }
+    .read-btn { text-align: center; }
   }
 </style>
 </head>
 <body>
-<h1>📝 CEC 記事プレビュー一覧</h1>
 
-<div class="intro">
-  <strong>📌 これは社内レビュー用のプレビューページです。</strong><br>
-  WordPressへの投稿前に内容を確認し、必要に応じて修正してください。<br>
-  公開予定日・タイトル・内容はWordPress投稿時に最終調整可能です。
+<!-- ========== HERO ========== -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="b1">Article Plan</span>
+      <span>MAY 2026 / 公開記事プレビュー</span>
+    </div>
+    <h1>
+      2026年5月<br>
+      <span class="accent">公開記事プレビュー一覧</span>
+    </h1>
+    <div class="hero-divider"></div>
+    <p class="sub">
+      4月公開記事の実績データと業界平均ベンチマークを根拠に、5月は<strong style="color:#fff;">顧客向け2本＋採用向け2本</strong>のバランス型で構成しました。
+      各記事の「なぜこの記事案か」をデータ・ペルソナ・既存記事との内部リンク観点から整理しています。
+    </p>
+    <div class="hero-meta">
+      <div class="item">
+        <span class="label">CLIENT</span>
+        <span class="val">株式会社コモンウェルスエンジニアーズ様</span>
+      </div>
+      <div class="item">
+        <span class="label">PUBLISH PERIOD</span>
+        <span class="val">2026年5月</span>
+      </div>
+      <div class="item">
+        <span class="label">PREPARED BY</span>
+        <span class="val">株式会社 斗（hishaku）</span>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div style="background: #fde8ea; border-left: 4px solid #d94452; padding: 16px 20px; margin-bottom: 32px; font-size: 14px; border-radius: 4px;">
-  <strong>⚠️ レビュー時にご確認をお願いしたい点</strong>
-  <ul style="margin: 8px 0 0 20px;">
-    <li><strong>「11か国出身のエンジニアチーム」</strong>表記 → 現状の正確な国籍構成を教えてください</li>
-    <li><strong>使用CADソフトの記述</strong> → 公式サイトはAutoCAD/Plant3D/Revit/Navis中心。Bentley製品（MicroStation等）は使用していますか？</li>
-    <li><strong>クライアント案件名</strong>（千葉火力・伏木万葉バイオマス・桜エコ等） → 公開してよい案件名か確認</li>
-    <li><strong>発電所の対応分野</strong>（火力・原子力・バイオマス） → それぞれ実績があるか</li>
-    <li><strong>設計費用の目安</strong>（建設総額の3〜10%等の数値） → CECの実績と乖離がないか</li>
-    <li><strong>加盟業界団体</strong> → 加盟があれば追加で記載します</li>
-    <li><strong>法令解釈の正確性</strong>（電気事業法・原子力規制基準等） → 技術担当のご確認希望</li>
-  </ul>
-  <p style="margin-top: 12px;">これらは公式サイトで確認できなかった項目です。レビュー時にご指摘いただければ、修正版を作成します。</p>
-</div>
+<!-- ========== STRATEGY MATRIX ========== -->
+<section>
+  <div class="container">
+    <h2 class="section-title">今月の記事戦略</h2>
+    <p class="section-sub">4月実績データに基づき「顧客×採用」「基礎×深掘り」の4象限を埋める設計に</p>
 
-<div class="article-grid">
+    <!-- 4月実績データ -->
+    <div class="data-grid">
+      <div class="data-card good">
+        <div class="lbl">4月 新規記事PV</div>
+        <div class="num">28<span style="font-size:14px;">回</span></div>
+        <div class="delta">サイト内10位／/entry/より上位</div>
+      </div>
+      <div class="data-card good">
+        <div class="lbl">問い合わせ件数</div>
+        <div class="num">+8%</div>
+        <div class="delta">3月25件 → 4月27件</div>
+      </div>
+      <div class="data-card watch">
+        <div class="lbl">一般KW流入比率</div>
+        <div class="num">ほぼ0%</div>
+        <div class="delta">業界平均 30〜50% を大幅下回る</div>
+      </div>
+      <div class="data-card watch">
+        <div class="lbl">月間訪問数</div>
+        <div class="num">827<span style="font-size:14px;">回</span></div>
+        <div class="delta">業界平均1,000〜10,000 の下位</div>
+      </div>
+    </div>
 
-  <div class="article-card">
-    <span class="badge badge-customer">顧客向け</span>
-    <h2>プラント設計とは？基本設計から詳細設計までの流れと費用の目安</h2>
-    <div class="meta">
-      📅 生成日: 2026-05-05 / 約2,700字 / KW: プラント設計, プラント設計費用<br>
-      🎯 ゴール: 問い合わせ獲得（/contact/誘導）
+    <!-- 戦略マトリクス -->
+    <div class="strategy" style="margin-top:24px;">
+      <h3>🎯 5月公開記事のポジショニング</h3>
+      <div class="matrix">
+        <div class="head"></div>
+        <div class="head">顧客向け（/contact/誘導）</div>
+        <div class="head">採用向け（/entry/誘導）</div>
+
+        <div class="row-head">基礎理解</div>
+        <div class="cell">
+          <div class="ttl">① プラント設計とは？流れと費用</div>
+          <div class="desc">発注検討フェーズの担当者がまず検索する基礎KW「プラント設計 費用／流れ」を抑える。4月公開記事と相互リンクで二段構え。</div>
+        </div>
+        <div class="cell">
+          <div class="ttl">② プラント設計エンジニアの年収と将来性</div>
+          <div class="desc">転職検討初期の母集団獲得KW。脱炭素・バイオマス需要で将来性を訴求し、CEC採用ページへの動線を作る。</div>
+        </div>
+
+        <div class="row-head">専門深掘り</div>
+        <div class="cell last">
+          <div class="ttl">③ 発電所設計で押さえるべき5つのポイント</div>
+          <div class="desc">CECの実績ど真ん中（火力・バイオマス・原子力）を専門深掘りで訴求。意思決定層への信頼形成。</div>
+        </div>
+        <div class="cell last">
+          <div class="ttl">④ Bentley製品の使い方入門｜AutoCADとの違い</div>
+          <div class="desc">CADオペレーター転職検討層のロングテールKW「Bentley AutoCAD 違い」を獲得。CEC技術力の差別化要素を提示。</div>
+        </div>
+      </div>
     </div>
-    <div class="desc">
-      プラント設計の発注を検討中の企業担当者向けに、基本設計（FEED）・詳細設計の流れ、期間（半年〜2年）、費用の目安（建設総額の3〜10%）、設計会社選びのポイント（実績・対応分野・BIM対応）を解説。
-    </div>
-    <a class="read-btn" href="2026-05/plant-design-flow-and-cost.html">記事を読む</a>
   </div>
+</section>
 
-  <div class="article-card">
-    <span class="badge badge-recruit">求職者向け</span>
-    <h2>Bentley製品の使い方入門【AutoCADとの違い・プラント設計現場のリアル】</h2>
-    <div class="meta">
-      📅 生成日: 2026-05-06 / 約2,500字 / KW: Bentley AutoCAD 違い, Bentley プラント設計, MicroStation<br>
-      🎯 ゴール: 採用エントリー獲得（/entry/誘導）／技術力訴求
+<!-- ========== ARTICLE LIST ========== -->
+<section style="padding-top:0;">
+  <div class="container">
+    <h2 class="section-title">記事プレビュー（全3本）</h2>
+    <p class="section-sub">※「年収と将来性」記事は④として後日公開予定</p>
+
+    <div class="article-list">
+
+      <!-- Article 1 -->
+      <article class="article">
+        <div class="article-head">
+          <div class="article-num">1</div>
+          <div class="ttl-area">
+            <span class="badge customer">顧客向け（基礎理解）</span>
+            <h2>プラント設計とは？基本設計から詳細設計までの流れと費用の目安</h2>
+            <div class="meta">
+              <span>📅 2026-05-05</span>
+              <span>📝 約2,700字</span>
+              <span>🔑 プラント設計／費用／流れ／FEED</span>
+            </div>
+          </div>
+        </div>
+        <div class="article-body">
+          <h3 class="why-title">なぜこの記事案か（3つの根拠）</h3>
+          <div class="why-grid">
+            <div class="why-cell">
+              <div class="h">① 検索意図のど真ん中</div>
+              <div class="v"><strong>「プラント設計」</strong>は発注検討フェーズの担当者が必ず検索するKW。費用・流れの2語掛け合わせで競合の薄いロングテールを抑える。</div>
+            </div>
+            <div class="why-cell">
+              <div class="h">② 4月記事との相互補完</div>
+              <div class="v">4月公開「<strong>プラント設計とは？仕事内容</strong>」（サイト10位／月56PV相当）との<strong>内部リンク二段構え</strong>でSEO評価を厚くする。</div>
+            </div>
+            <div class="why-cell">
+              <div class="h">③ /contact/への明確な動線</div>
+              <div class="v">費用感の解説 → <strong>「見積もり依頼時に整理しておきたい情報」</strong>セクション → 問い合わせCTA、と発注検討の流れに沿った構成。</div>
+            </div>
+          </div>
+
+          <div class="flow-title">読者ジャーニー</div>
+          <div class="flow">
+            <div class="flow-step">
+              <div class="s-h">ペルソナ</div>
+              <div class="s-v">発注検討企業<br>担当者</div>
+            </div>
+            <div class="flow-step">
+              <div class="s-h">検索KW</div>
+              <div class="s-v">プラント設計<br>費用 / 流れ</div>
+            </div>
+            <div class="flow-step">
+              <div class="s-h">記事で得る情報</div>
+              <div class="s-v">FEED〜詳細設計<br>建設総額の3〜10%</div>
+            </div>
+            <div class="flow-step">
+              <div class="s-h">遷移先</div>
+              <div class="s-v">/contact/<br>（見積依頼）</div>
+            </div>
+          </div>
+
+          <div class="read-row">
+            <div class="kpi">🎯 KPI: <strong>「プラント設計 費用」</strong>での6ヶ月以内10位以内 ／ /contact/到達率2%以上</div>
+            <a class="read-btn" href="2026-05/plant-design-flow-and-cost.html">記事を読む →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="article">
+        <div class="article-head">
+          <div class="article-num">2</div>
+          <div class="ttl-area">
+            <span class="badge customer">顧客向け（専門深掘り）</span>
+            <h2>発電所設計で押さえるべき5つのポイント【火力・バイオマス・原発の実務解説】</h2>
+            <div class="meta">
+              <span>📅 2026-05-06</span>
+              <span>📝 約2,500字</span>
+              <span>🔑 発電所 設計／火力／バイオマス／原子力</span>
+            </div>
+          </div>
+        </div>
+        <div class="article-body">
+          <h3 class="why-title">なぜこの記事案か（3つの根拠）</h3>
+          <div class="why-grid">
+            <div class="why-cell">
+              <div class="h">① CEC実績ど真ん中</div>
+              <div class="v">千葉火力・伏木万葉バイオマス・桜エコ等、<strong>CECの実案件を根拠</strong>に語れる領域。E-E-A-T観点でも上位表示しやすい。</div>
+            </div>
+            <div class="why-cell">
+              <div class="h">② 脱炭素トレンドの追い風</div>
+              <div class="v">バイオマス・水素・原子力再評価で<strong>「発電所設計」KW検索ボリュームが上昇</strong>。意思決定層が情報収集する局面。</div>
+            </div>
+            <div class="why-cell">
+              <div class="h">③ 信頼形成 → 大型案件獲得</div>
+              <div class="v">5つのポイント（安全規格・環境・信頼性・メンテ・立地）を専門深掘りすることで、<strong>「分かっている会社」</strong>として認知される。</div>
+            </div>
+          </div>
+
+          <div class="flow-title">読者ジャーニー</div>
+          <div class="flow">
+            <div class="flow-step">
+              <div class="s-h">ペルソナ</div>
+              <div class="s-v">電力・エネ事業<br>意思決定層</div>
+            </div>
+            <div class="flow-step">
+              <div class="s-h">検索KW</div>
+              <div class="s-v">発電所設計<br>バイオマス</div>
+            </div>
+            <div class="flow-step">
+              <div class="s-h">記事で得る情報</div>
+              <div class="s-v">5つのポイント<br>＋CEC実績</div>
+            </div>
+            <div class="flow-step">
+              <div class="s-h">遷移先</div>
+              <div class="s-v">/contact/<br>（相談）</div>
+            </div>
+          </div>
+
+          <div class="read-row">
+            <div class="kpi">🎯 KPI: <strong>「発電所設計」「バイオマス発電所 設計」</strong>での上位表示／実績ページPV +30%</div>
+            <a class="read-btn" href="2026-05/power-plant-design-5points.html">記事を読む →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="article">
+        <div class="article-head">
+          <div class="article-num">3</div>
+          <div class="ttl-area">
+            <span class="badge recruit">採用向け（専門深掘り）</span>
+            <h2>Bentley製品の使い方入門｜AutoCADとの違いとプラント設計現場のリアル</h2>
+            <div class="meta">
+              <span>📅 2026-05-06</span>
+              <span>📝 約2,500字</span>
+              <span>🔑 Bentley AutoCAD 違い／MicroStation／OpenPlant</span>
+            </div>
+          </div>
+        </div>
+        <div class="article-body">
+          <h3 class="why-title">なぜこの記事案か（3つの根拠）</h3>
+          <div class="why-grid">
+            <div class="why-cell">
+              <div class="h">① 競合の少ないロングテール</div>
+              <div class="v"><strong>「Bentley AutoCAD 違い」</strong>は検索意図が明確で競合記事が少ない。CADオペ転職検討層の母集団獲得に直結。</div>
+            </div>
+            <div class="why-cell">
+              <div class="h">② 採用課題への直接アンサー</div>
+              <div class="v">転職検討時の最大の不安<strong>「経験ツールが違っても入れるか」</strong>に対し、未経験から半年〜1年でOJT習得可能と明示。</div>
+            </div>
+            <div class="why-cell">
+              <div class="h">③ 技術力訴求 ＝ 差別化</div>
+              <div class="v">3D統合プラットフォーム導入＝<strong>CECの技術投資水準</strong>を示せる素材。他社との差別化要素として機能する。</div>
+            </div>
+          </div>
+
+          <div class="flow-title">読者ジャーニー</div>
+          <div class="flow">
+            <div class="flow-step">
+              <div class="s-h">ペルソナ</div>
+              <div class="s-v">CADオペ／<br>転職検討者</div>
+            </div>
+            <div class="flow-step">
+              <div class="s-h">検索KW</div>
+              <div class="s-v">Bentley<br>AutoCAD 違い</div>
+            </div>
+            <div class="flow-step">
+              <div class="s-h">記事で得る情報</div>
+              <div class="s-v">ツール差／<br>習得期間</div>
+            </div>
+            <div class="flow-step">
+              <div class="s-h">遷移先</div>
+              <div class="s-v">/entry/<br>（採用応募）</div>
+            </div>
+          </div>
+
+          <div class="read-row">
+            <div class="kpi">🎯 KPI: <strong>「Bentley AutoCAD 違い」</strong>での3ヶ月以内10位以内／/entry/到達率3%以上</div>
+            <a class="read-btn" href="2026-05/bentley-vs-autocad.html">記事を読む →</a>
+          </div>
+        </div>
+      </article>
+
     </div>
-    <div class="desc">
-      Bentley製品（MicroStation・OpenPlant等）とAutoCADの違いを、プラント設計現場の実務目線で解説。CADエンジニアが転職前に知っておくべきツールの使い分けと、CECで使われている3D設計環境を紹介。
-    </div>
-    <a class="read-btn" href="2026-05/bentley-vs-autocad.html">記事を読む</a>
   </div>
+</section>
 
-  <div class="article-card">
-    <span class="badge badge-customer">顧客向け</span>
-    <h2>発電所設計で押さえるべき5つのポイント【火力・バイオマス・原発の実務解説】</h2>
-    <div class="meta">
-      📅 生成日: 2026-05-06 / 約2,500字 / KW: 発電所 設計, 火力発電所 設計, バイオマス 発電所<br>
-      🎯 ゴール: 問い合わせ獲得（/contact/誘導）
+<!-- ========== REVIEW PANEL ========== -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="review-panel">
+      <h3>⚠️ レビュー時にご確認をお願いしたい点</h3>
+      <ul>
+        <li><strong>「11か国出身のエンジニアチーム」</strong>表記 → 現状の正確な国籍構成を教えてください</li>
+        <li><strong>使用CADソフトの記述</strong> → 公式サイトはAutoCAD/Plant3D/Revit/Navis中心。Bentley製品（MicroStation等）は使用していますか？</li>
+        <li><strong>クライアント案件名</strong>（千葉火力・伏木万葉バイオマス・桜エコ等） → 公開してよい案件名か確認</li>
+        <li><strong>発電所の対応分野</strong>（火力・原子力・バイオマス） → それぞれ実績があるか</li>
+        <li><strong>設計費用の目安</strong>（建設総額の3〜10%等の数値） → CECの実績と乖離がないか</li>
+        <li><strong>加盟業界団体</strong> → 加盟があれば追加で記載します</li>
+        <li><strong>法令解釈の正確性</strong>（電気事業法・原子力規制基準等） → 技術担当のご確認希望</li>
+      </ul>
+      <p class="note">これらは公式サイトで確認できなかった項目です。レビュー時にご指摘いただければ修正版を作成します。</p>
     </div>
-    <div class="desc">
-      発電所設計で押さえるべき5つのポイント（安全規格・環境基準・信頼性設計・メンテナンス性・立地条件）を、CECの実績（千葉火力・伏木万葉バイオマス・桜エコ）を交えて解説。
-    </div>
-    <a class="read-btn" href="2026-05/power-plant-design-5points.html">記事を読む</a>
   </div>
-
-</div>
+</section>
 
 <footer>
-  CEC（株式会社コモンウェルスエンジニアーズ） 記事プレビュー一覧<br>
-  株式会社斗（hishaku）が運用しています。
+  <strong>CEC（株式会社コモンウェルスエンジニアーズ）</strong> 記事プレビュー一覧<br>
+  株式会社 斗（hishaku）が運用しています。
 </footer>
+
 </body>
 </html>
