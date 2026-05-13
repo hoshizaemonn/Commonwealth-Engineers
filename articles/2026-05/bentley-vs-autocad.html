@@ -2,36 +2,285 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>Bentley製品の使い方入門｜AutoCADとの違いとプラント設計現場のリアル（プレビュー）</title>
-<style>body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;max-width:800px;margin:40px auto;padding:0 20px;line-height:1.7;}.banner{background:#fffbe6;padding:12px;border-left:4px solid #faad14;margin-bottom:30px;}.meta{background:#f0f7ff;padding:16px;border-radius:8px;margin-bottom:30px;}h1{font-size:32px;color:#1a2744;border-bottom:3px solid #2ea66a;padding-bottom:12px;}</style>
-</head><body>
-<div class="banner">📝 ローカルプレビュー用。WordPressには 20260506_Bentley製品の使い方入門【AutoCADとの違い・プラ_wp.html を貼り付け。</div>
-<div class="meta"><strong>Bentley製品の使い方入門｜AutoCADとの違いとプラント設計現場のリアル</strong><br>カテゴリ: 採用<br>タグ: Bentley, AutoCAD, プラント設計, OpenPlant, MicroStation<br>スラッグ: bentley-vs-autocad-plant-design<br>文字数: 約2750字</div>
-<h1>Bentley製品の使い方入門｜AutoCADとの違いとプラント設計現場のリアル</h1>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bentley製品の使い方入門｜AutoCADとの違いとプラント設計現場のリアル（プレビュー）｜CEC</title>
 <style>
-.cec-article-body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; color: #333; font-size: 1.725rem; max-width: 100%; box-sizing: border-box; }
-.cec-article-body h2 { font-size: 3rem; margin-top: 3.5rem; margin-bottom: 1.5rem; border-bottom: 3px solid #ccc; padding-bottom: 0.8rem; line-height: 1.5; font-weight: bold; }
-.cec-article-body h3 { font-size: 2.4rem; margin-top: 3rem; margin-bottom: 1.2rem; border-left: 6px solid #004080; padding-left: 15px; line-height: 1.5; font-weight: bold; }
-.cec-article-body h4 { font-size: 2.025rem; margin-top: 2.5rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.5; }
-.cec-article-body p { font-size: 1.725rem; line-height: 2.0; margin-bottom: 1.8em; }
-.cec-article-body li { font-size: 1.725rem; line-height: 2.0; margin-bottom: 0.8em; }
-.cec-article-body hr { margin: 3.5rem 0; border: 0; border-top: 2px solid #eee; }
-.cec-article-body strong { font-weight: bold; color: #000; }
-.cec-article-body table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 1.65rem; table-layout: fixed; word-wrap: break-word; }
-.cec-article-body table th, .cec-article-body table td { border: 1px solid #ddd; padding: 1rem 1.2rem; text-align: left; line-height: 1.8; }
-.cec-article-body table th { background-color: #f5f5f5; font-weight: bold; }
-.cec-article-body ul, .cec-article-body ol { margin: 1.5rem 0; padding-left: 2rem; }
-.cec-article-body a { color: #004080; text-decoration: underline; }
-.cec-article-body a:hover { color: #0066cc; text-decoration: none; }
-.cec-keypoint-box { background: #f5f9fc; border-left: 6px solid #004080; padding: 2rem 2.5rem; margin: 2.5rem 0; border-radius: 4px; }
-.cec-keypoint-box h4 { margin-top: 0; color: #004080; }
-.cec-faq-box { background: #fafafa; border: 1px solid #e0e0e0; border-radius: 6px; padding: 2rem; margin: 2rem 0; }
-.cec-faq-box h4 { margin-top: 0; color: #004080; }
-.cec-cta-box { background: #f0f4f8; border: 2px solid #004080; border-radius: 8px; padding: 2rem; margin: 3rem 0; text-align: center; }
-.cec-cta-box p { font-size: 1.875rem; margin-bottom: 1em; }
-.cec-cta-box a { display: inline-block; background: #004080; color: #fff; padding: 15px 40px; border-radius: 5px; text-decoration: none; font-size: 1.8rem; font-weight: bold; }
-.cec-cta-box a:hover { background: #0066cc; color: #fff; }
+  :root {
+    --navy: #1e3a8a;
+    --navy-dark: #0f2667;
+    --navy-light: #2f4ea8;
+    --accent: #3b7dd8;
+    --green: #2ea66a;
+    --green-bg: #e6f6ee;
+    --gray: #5c6478;
+    --line: #dce0e8;
+    --bg: #f3f5fa;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    background: var(--bg); color: #2d3344; line-height: 1.85;
+  }
+
+  /* ===== Preview Notice ===== */
+  .notice {
+    background: #fffbe6; border-bottom: 1px solid #f0d97c;
+    padding: 10px 24px; font-size: 12px; color: #8a6d1c;
+    text-align: center;
+  }
+  .notice strong { color: #6b5215; }
+  .notice a { color: #8a6d1c; text-decoration: underline; }
+
+  /* ===== Hero (PDF cover style) ===== */
+  .hero {
+    background:
+      radial-gradient(circle at 85% 30%, rgba(255,255,255,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 10% 90%, rgba(255,255,255,0.06) 0%, transparent 35%),
+      linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-light) 100%);
+    color: #fff; padding: 56px 24px 68px; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ""; position: absolute; right: -120px; top: -120px;
+    width: 320px; height: 320px; border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,0.14); padding: 6px 14px; border-radius: 4px;
+    font-size: 12px; letter-spacing: 0.08em; margin-bottom: 24px;
+  }
+  .hero-badge .b1 {
+    background: #fff; color: var(--navy); padding: 3px 10px; border-radius: 3px;
+    font-weight: bold; font-size: 11px;
+  }
+  .hero h1 {
+    font-size: 34px; font-weight: 700; line-height: 1.45;
+    margin: 0 0 10px; letter-spacing: 0.01em;
+  }
+  .hero h1 .accent { color: #bcd4ff; font-size: 22px; display: block; font-weight: 500; margin-top: 10px; }
+  .hero-divider { width: 60px; height: 2px; background: rgba(255,255,255,0.5); margin: 22px 0 18px; }
+  .meta-row {
+    display: flex; gap: 36px; flex-wrap: wrap;
+    margin-top: 18px; font-size: 12px;
+  }
+  .meta-row .item .label {
+    display: block; font-size: 10px; opacity: 0.7;
+    letter-spacing: 0.12em; margin-bottom: 4px;
+  }
+  .meta-row .item .val { font-size: 14px; font-weight: 600; }
+
+  /* ===== Article container ===== */
+  .article-wrap {
+    max-width: 860px; margin: -32px auto 60px; padding: 0 24px;
+    position: relative; z-index: 2;
+  }
+  .article-paper {
+    background: #fff; border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(15,38,103,0.08);
+    padding: 48px 56px 56px;
+  }
+  .tag-row { margin-bottom: 24px; }
+  .tag-row .badge {
+    display: inline-block; padding: 4px 12px; border-radius: 3px;
+    font-size: 11px; font-weight: bold; letter-spacing: 0.05em; margin-right: 8px;
+  }
+  .badge.customer { background: var(--green-bg); color: var(--green); }
+  .badge.recruit { background: #dfeafb; color: var(--accent); }
+  .tag-list { display: inline-flex; flex-wrap: wrap; gap: 6px; vertical-align: middle; }
+  .tag-list span {
+    background: #f1f4fb; color: var(--gray); font-size: 11px;
+    padding: 3px 10px; border-radius: 12px;
+  }
+
+  /* ===== Article body OVERRIDE (preview-friendly sizes) ===== */
+  .cec-article-body,
+  .cec-article-body * {
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif !important;
+  }
+  .cec-article-body {
+    font-size: 16px !important; color: #2d3344 !important;
+    max-width: none !important;
+  }
+  .cec-article-body h2 {
+    font-size: 24px !important; color: var(--navy) !important;
+    margin-top: 48px !important; margin-bottom: 16px !important;
+    padding-bottom: 12px !important;
+    border-bottom: 3px solid var(--navy) !important;
+    line-height: 1.5 !important; font-weight: 700 !important;
+  }
+  .cec-article-body h3 {
+    font-size: 19px !important; color: var(--navy) !important;
+    margin-top: 32px !important; margin-bottom: 12px !important;
+    padding-left: 14px !important;
+    border-left: 5px solid var(--navy) !important;
+    line-height: 1.5 !important; font-weight: 700 !important;
+  }
+  .cec-article-body h4 {
+    font-size: 16px !important; margin-top: 24px !important;
+    margin-bottom: 10px !important; font-weight: 700 !important;
+    color: var(--navy) !important;
+  }
+  .cec-article-body p {
+    font-size: 15px !important; line-height: 1.95 !important;
+    margin-bottom: 1.4em !important;
+  }
+  .cec-article-body li {
+    font-size: 15px !important; line-height: 1.9 !important;
+    margin-bottom: 0.5em !important;
+  }
+  .cec-article-body ul, .cec-article-body ol {
+    margin: 1.2rem 0 !important; padding-left: 1.6rem !important;
+  }
+  .cec-article-body table {
+    width: 100% !important; border-collapse: collapse !important;
+    margin: 1.6rem 0 !important; font-size: 14px !important;
+    border-radius: 8px !important; overflow: hidden !important;
+    box-shadow: 0 1px 4px rgba(15,38,103,0.06) !important;
+  }
+  .cec-article-body table th,
+  .cec-article-body table td {
+    border: 1px solid #e5e8ef !important; padding: 12px 16px !important;
+    text-align: left !important; line-height: 1.7 !important;
+  }
+  .cec-article-body table th {
+    background: linear-gradient(180deg, #f6f9fd 0%, #eef2fa 100%) !important;
+    color: var(--navy) !important; font-weight: 700 !important;
+    font-size: 13px !important;
+  }
+  .cec-article-body hr {
+    margin: 2.5rem 0 !important; border: 0 !important;
+    border-top: 2px solid #eef2fa !important;
+  }
+  .cec-article-body strong {
+    font-weight: 700 !important; color: var(--navy) !important;
+  }
+  .cec-article-body a {
+    color: var(--accent) !important; text-decoration: underline !important;
+  }
+  .cec-article-body a:hover { color: var(--navy) !important; }
+
+  .cec-keypoint-box {
+    background: linear-gradient(180deg, #f6f9fd 0%, #eef2fa 100%) !important;
+    border-left: 6px solid var(--navy) !important;
+    padding: 24px 28px !important; margin: 28px 0 !important;
+    border-radius: 8px !important;
+  }
+  .cec-keypoint-box h4 {
+    margin-top: 0 !important; color: var(--navy) !important;
+    font-size: 17px !important;
+  }
+
+  .cec-faq-box {
+    background: #fafbfe !important; border: 1px solid #e5e8ef !important;
+    border-radius: 10px !important; padding: 20px 24px !important;
+    margin: 16px 0 !important;
+  }
+  .cec-faq-box h4 {
+    margin-top: 0 !important; color: var(--navy) !important;
+    font-size: 15px !important; padding-bottom: 8px !important;
+    border-bottom: 1px solid #eef2fa !important;
+  }
+
+  .cec-cta-box {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%) !important;
+    border: 0 !important; border-radius: 12px !important;
+    padding: 32px !important; margin: 40px 0 !important;
+    text-align: center !important;
+  }
+  .cec-cta-box p {
+    color: #fff !important; font-size: 16px !important;
+    margin-bottom: 1em !important;
+  }
+  .cec-cta-box p strong { color: #fff !important; }
+  .cec-cta-box a {
+    display: inline-block !important;
+    background: #fff !important; color: var(--navy) !important;
+    padding: 14px 36px !important; border-radius: 6px !important;
+    text-decoration: none !important; font-size: 15px !important;
+    font-weight: bold !important; margin-top: 4px !important;
+  }
+  .cec-cta-box a:hover {
+    background: #f0f4f8 !important; color: var(--navy-dark) !important;
+  }
+
+  /* ===== Back link ===== */
+  .back-row {
+    max-width: 860px; margin: -32px auto 40px; padding: 0 24px; text-align: center;
+  }
+  .back-link {
+    display: inline-block; padding: 10px 24px; background: #fff;
+    color: var(--navy); text-decoration: none; border-radius: 6px;
+    font-size: 13px; font-weight: 600;
+    box-shadow: 0 1px 6px rgba(15,38,103,0.08);
+  }
+  .back-link:hover { background: var(--navy); color: #fff; }
+
+  /* ===== Footer ===== */
+  footer {
+    background: var(--navy-dark); color: rgba(255,255,255,0.7);
+    padding: 28px 24px; text-align: center; font-size: 12px;
+  }
+  footer strong { color: #fff; }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 56px; }
+    .hero h1 { font-size: 24px; }
+    .hero h1 .accent { font-size: 16px; }
+    .article-paper { padding: 28px 22px 32px; }
+    .meta-row { gap: 20px; }
+  }
 </style>
+</head>
+<body>
+
+<div class="notice">
+  📝 <strong>社内レビュー用プレビュー</strong>です。WordPress投稿には
+  <a href="https://github.com/hoshizaemonn/Commonwealth-Engineers">20260505_◯◯_wp.html</a>
+  を貼り付けます。
+</div>
+
+<!-- ========== HERO ========== -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="b1">CEC ARTICLE</span>
+      <span>2026-05-06 / 採用向け</span>
+    </div>
+    <h1>
+      Bentley製品の使い方入門
+      <span class="accent">AutoCADとの違いとプラント設計現場のリアル</span>
+    </h1>
+    <div class="hero-divider"></div>
+    <div class="meta-row">
+      <div class="item">
+        <span class="label">PUBLISH DATE</span>
+        <span class="val">2026-05-06</span>
+      </div>
+      <div class="item">
+        <span class="label">LENGTH</span>
+        <span class="val">約2,500字</span>
+      </div>
+      <div class="item">
+        <span class="label">ARTICLE GOAL</span>
+        <span class="val">採用エントリー獲得（/entry/誘導）</span>
+      </div>
+      <div class="item">
+        <span class="label">SLUG</span>
+        <span class="val">/bentley-vs-autocad/</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ARTICLE ========== -->
+<div class="article-wrap">
+  <div class="article-paper">
+    <div class="tag-row">
+      <span class="badge recruit">採用向け</span>
+      <span class="tag-list"><span>Bentley</span><span>AutoCAD</span><span>プラント設計</span><span>OpenPlant</span><span>MicroStation</span></span>
+    </div>
 
 <div class="cec-article-body">
 
@@ -168,4 +417,18 @@
 </div>
 
 </div>
-</body></html>
+
+  </div>
+</div>
+
+<div class="back-row">
+  <a class="back-link" href="../index.html">← 記事一覧に戻る</a>
+</div>
+
+<footer>
+  <strong>CEC（株式会社コモンウェルスエンジニアーズ）</strong> 記事プレビュー<br>
+  株式会社 斗（hishaku）が運用しています。
+</footer>
+
+</body>
+</html>
