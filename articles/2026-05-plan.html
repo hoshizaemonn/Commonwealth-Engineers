@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年5月 記事企画レポート｜株式会社コモンウェルスエンジニアーズ様</title>
+<style>
+  :root {
+    --navy: #1e3a8a;
+    --navy-dark: #15295e;
+    --navy-deep: #0f2155;
+    --navy-light: #3a5cb8;
+    --accent-blue: #4a7cd8;
+    --accent-light: #7aa3ec;
+    --green: #2ea66a;
+    --green-bg: #e6f6ee;
+    --orange: #e89a2c;
+    --orange-bg: #fff6e3;
+    --purple: #6d5dd3;
+    --gray: #5c6478;
+    --gray-light: #9aa2b1;
+    --line: #e1e5ee;
+    --bg: #eef1f7;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+    background: var(--bg);
+    color: #2d3344;
+    line-height: 1.7;
+  }
+
+  /* ============ SLIDE FRAME (16:9) ============ */
+  .slide {
+    width: 100%;
+    max-width: 1280px;
+    aspect-ratio: 16 / 9;
+    margin: 24px auto;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(15,33,85,0.12);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .slide-footer {
+    position: absolute;
+    bottom: 16px;
+    left: 32px; right: 32px;
+    display: flex; justify-content: space-between;
+    font-size: 11px; color: var(--gray-light);
+  }
+
+  /* ============ SLIDE 1: COVER ============ */
+  .cover {
+    background:
+      radial-gradient(circle at 88% 25%, rgba(255,255,255,0.06) 0%, transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(255,255,255,0.05) 0%, transparent 40%),
+      linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 60%, var(--navy-light) 100%);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 48px;
+    position: relative;
+  }
+  .cover::before {
+    content: ""; position: absolute; right: -140px; top: -140px;
+    width: 420px; height: 420px; border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .cover::after {
+    content: ""; position: absolute; left: -80px; bottom: -80px;
+    width: 280px; height: 280px; border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+  .cover-inner { position: relative; z-index: 1; max-width: 900px; }
+  .cover-tag {
+    display: inline-flex; gap: 0; align-items: center;
+    margin-bottom: 40px;
+    font-size: 13px; letter-spacing: 0.08em;
+  }
+  .cover-tag .t1 {
+    background: var(--accent-blue); color: #fff; padding: 6px 16px;
+    font-weight: bold; font-size: 13px;
+  }
+  .cover-tag .t2 {
+    background: rgba(255,255,255,0.15); padding: 6px 16px;
+    color: #fff; font-size: 12px; letter-spacing: 0.12em;
+  }
+  .cover h1 {
+    font-size: 54px; font-weight: 700; line-height: 1.4;
+    margin: 0 0 12px; letter-spacing: 0.02em;
+  }
+  .cover h1 .sub-title {
+    display: block; color: var(--accent-light); font-size: 44px;
+    margin-top: 8px;
+  }
+  .cover-divider {
+    width: 100px; height: 2px; background: rgba(255,255,255,0.5);
+    margin: 40px auto;
+  }
+  .cover-client {
+    font-size: 22px; opacity: 0.95; margin-bottom: 0;
+  }
+  .cover-meta {
+    position: absolute; bottom: 48px; left: 48px; right: 48px;
+    display: flex; gap: 48px; justify-content: center;
+    color: rgba(255,255,255,0.85); font-size: 13px;
+  }
+  .cover-meta .item {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .cover-meta .icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .cover-meta .lbl { display: block; font-size: 11px; opacity: 0.7; }
+  .cover-meta .val { font-size: 14px; font-weight: 600; color: #fff; }
+  .cover-brand {
+    position: absolute; bottom: 32px; right: 48px;
+    font-size: 11px; color: rgba(255,255,255,0.6);
+    text-align: right; line-height: 1.4;
+  }
+  .cover-brand strong { color: #fff; font-size: 12px; }
+
+  /* ============ STANDARD SLIDE (content) ============ */
+  .content-slide { padding: 0; background: #fff; }
+  .slide-head {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: #fff; padding: 28px 48px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    position: relative;
+  }
+  .slide-head::after {
+    content: ""; position: absolute; right: 0; top: 0; bottom: 0;
+    width: 200px;
+    background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.06) 100%);
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+  }
+  .slide-head h2 {
+    margin: 0; font-size: 26px; font-weight: 700;
+    padding-left: 16px; border-left: 5px solid #fff;
+    line-height: 1.4; z-index: 1; position: relative;
+  }
+  .slide-head .head-r {
+    font-size: 12px; opacity: 0.85; z-index: 1; position: relative;
+  }
+  .slide-body { padding: 32px 48px; flex: 1; }
+
+  /* Two columns layout */
+  .two-col {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  }
+  .col-title {
+    font-size: 20px; font-weight: 700;
+    display: flex; align-items: center; gap: 10px;
+    padding-bottom: 12px; margin-bottom: 18px;
+  }
+  .col-title.good { color: var(--green); border-bottom: 2px solid var(--green); }
+  .col-title.watch { color: var(--orange); border-bottom: 2px solid var(--orange); }
+  .col-title .ic {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--green-bg); display: inline-flex;
+    align-items: center; justify-content: center; font-size: 14px;
+  }
+  .col-title.watch .ic { background: var(--orange-bg); }
+
+  /* Highlight card */
+  .h-card {
+    background: #fff; border: 1px solid var(--line);
+    border-radius: 10px; padding: 16px 18px; margin-bottom: 14px;
+    border-left: 4px solid var(--green);
+    box-shadow: 0 1px 4px rgba(15,33,85,0.04);
+    display: flex; align-items: flex-start; gap: 14px;
+  }
+  .h-card.watch { border-left-color: var(--orange); }
+  .h-card .icon-wrap {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--green-bg); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .h-card.watch .icon-wrap { background: var(--orange-bg); }
+  .h-card .body { flex: 1; }
+  .h-card .h-lbl { font-size: 13px; font-weight: 700; color: #2d3344; margin-bottom: 2px; }
+  .h-card .h-num {
+    font-size: 22px; font-weight: 700;
+    line-height: 1.1;
+  }
+  .h-card .h-num .from { color: var(--gray-light); font-weight: 500; }
+  .h-card .h-num .to { color: var(--green); }
+  .h-card.watch .h-num .to { color: var(--orange); }
+  .h-card .h-sub { font-size: 11px; color: var(--gray); margin-top: 4px; }
+  .h-analyze {
+    background: var(--orange-bg); border-radius: 6px;
+    padding: 10px 12px; margin-top: 8px;
+    font-size: 11px; line-height: 1.6; color: #7a5a18;
+  }
+  .h-analyze strong { color: #5e4513; display: block; margin-bottom: 2px; font-size: 11px; }
+
+  /* ============ ARTICLE SLIDE ============ */
+  .article-banner {
+    background: linear-gradient(90deg, #f4f6fc 0%, #eef2fa 100%);
+    padding: 18px 24px; border-radius: 10px; margin-bottom: 24px;
+    display: flex; align-items: center; gap: 18px;
+    border-left: 5px solid var(--navy);
+  }
+  .article-banner .ab-icon {
+    width: 44px; height: 44px; border-radius: 8px;
+    background: var(--navy); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 700; flex-shrink: 0;
+  }
+  .article-banner .ab-title {
+    font-size: 14px; font-weight: 700; color: var(--navy);
+    margin-bottom: 2px;
+  }
+  .article-banner .ab-desc {
+    font-size: 12px; color: var(--gray);
+  }
+  .article-banner .ab-meta {
+    margin-left: auto; font-size: 11px;
+    background: var(--navy); color: #fff;
+    padding: 5px 12px; border-radius: 12px;
+  }
+  .article-banner.recruit { border-left-color: var(--accent-blue); }
+  .article-banner.recruit .ab-icon { background: var(--accent-blue); }
+  .article-banner.recruit .ab-title { color: var(--accent-blue); }
+  .article-banner.recruit .ab-meta { background: var(--accent-blue); }
+
+  /* Why-cards (3 columns) */
+  .why-row {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    margin-bottom: 18px;
+  }
+  .why-card {
+    background: #fff; border: 1px solid var(--line);
+    border-radius: 10px; padding: 18px 18px 14px;
+    box-shadow: 0 1px 6px rgba(15,33,85,0.04);
+    position: relative;
+  }
+  .why-card .num-badge {
+    position: absolute; top: -10px; left: 16px;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--navy); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
+  }
+  .why-card.recruit .num-badge { background: var(--accent-blue); }
+  .why-card .why-title {
+    font-size: 13px; font-weight: 700; color: var(--navy);
+    margin: 10px 0 8px; line-height: 1.4;
+  }
+  .why-card.recruit .why-title { color: var(--accent-blue); }
+  .why-card .why-body {
+    font-size: 11.5px; color: #2d3344; line-height: 1.7;
+  }
+  .why-card .why-body strong { color: var(--navy); }
+  .why-card.recruit .why-body strong { color: var(--accent-blue); }
+
+  /* Bottom data row (KPI + Goal) */
+  .bottom-row {
+    display: grid; grid-template-columns: 2fr 1fr; gap: 16px;
+    margin-top: 10px;
+  }
+  .kpi-card {
+    background: #2d3344; color: #fff; border-radius: 10px;
+    padding: 16px 20px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .kpi-card .kpi-lbl {
+    font-size: 11px; color: var(--gray-light); margin-bottom: 4px;
+    letter-spacing: 0.08em;
+  }
+  .kpi-card .kpi-val {
+    font-size: 13px; font-weight: 600; line-height: 1.5;
+  }
+  .kpi-card .kpi-val strong { color: var(--accent-light); }
+  .goal-card {
+    background: var(--green-bg); border-radius: 10px;
+    padding: 14px 18px; border: 1px solid #c8e9d6;
+  }
+  .goal-card.recruit { background: #e8efff; border-color: #c4d5f5; }
+  .goal-card .goal-lbl {
+    font-size: 11px; color: var(--green); font-weight: 700;
+    letter-spacing: 0.05em; margin-bottom: 6px;
+  }
+  .goal-card.recruit .goal-lbl { color: var(--accent-blue); }
+  .goal-card .goal-val {
+    font-size: 13px; color: #2d3344; font-weight: 600;
+    line-height: 1.5;
+  }
+
+  /* ============ STRATEGY MATRIX SLIDE ============ */
+  .strategy-intro {
+    background: var(--green-bg); border-radius: 10px;
+    padding: 14px 20px; margin-bottom: 22px;
+    border-left: 5px solid var(--green);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .strategy-intro .ic { font-size: 22px; }
+  .strategy-intro .txt { font-size: 13px; line-height: 1.7; }
+  .strategy-intro .txt strong { color: var(--green); }
+
+  .matrix-grid {
+    display: grid; grid-template-columns: 90px 1fr 1fr; gap: 0;
+    border-radius: 10px; overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .matrix-grid .m-head, .matrix-grid .m-rowhead {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: #fff; font-weight: 700; font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 14px 12px;
+  }
+  .matrix-grid .m-head { border-right: 1px solid rgba(255,255,255,0.2); }
+  .matrix-grid .m-head:last-of-type { border-right: 0; }
+  .matrix-grid .m-rowhead {
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 100%);
+    writing-mode: vertical-rl;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 13px;
+  }
+  .matrix-grid .m-cell {
+    background: #fff; padding: 18px 20px;
+    border-top: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+  }
+  .matrix-grid .m-cell:last-child { border-right: 0; }
+  .matrix-grid .m-cell .m-badge {
+    display: inline-block; padding: 3px 10px; border-radius: 3px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+  .matrix-grid .m-cell .m-badge.customer { background: var(--green-bg); color: var(--green); }
+  .matrix-grid .m-cell .m-badge.recruit { background: #e8efff; color: var(--accent-blue); }
+  .matrix-grid .m-cell .m-ttl {
+    font-size: 14px; font-weight: 700; color: var(--navy);
+    margin-bottom: 6px; line-height: 1.5;
+  }
+  .matrix-grid .m-cell .m-desc {
+    font-size: 11.5px; color: var(--gray); line-height: 1.7;
+  }
+  .matrix-grid .m-cell .m-kw {
+    margin-top: 8px; font-size: 10px; color: var(--navy-light);
+    background: #f4f6fc; padding: 4px 8px; border-radius: 4px;
+    display: inline-block;
+  }
+
+  /* ============ DATA CARDS (large numbers) ============ */
+  .data-row {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 14px; margin-bottom: 22px;
+  }
+  .data-card {
+    background: #fff; border-radius: 10px;
+    padding: 18px 18px; border-top: 4px solid var(--navy);
+    box-shadow: 0 1px 6px rgba(15,33,85,0.05);
+  }
+  .data-card.good { border-top-color: var(--green); }
+  .data-card.watch { border-top-color: var(--orange); }
+  .data-card .lbl {
+    font-size: 11px; color: var(--gray); letter-spacing: 0.05em;
+  }
+  .data-card .num {
+    font-size: 28px; font-weight: 700; color: var(--navy);
+    line-height: 1.1; margin: 6px 0 4px;
+  }
+  .data-card.good .num { color: var(--green); }
+  .data-card.watch .num { color: var(--orange); }
+  .data-card .delta { font-size: 11px; color: var(--gray); line-height: 1.5; }
+
+  /* ============ READ MORE LINK ============ */
+  .read-link {
+    display: inline-block; margin-top: 8px;
+    background: var(--navy); color: #fff;
+    padding: 8px 18px; border-radius: 4px;
+    text-decoration: none; font-size: 12px; font-weight: 700;
+  }
+  .read-link.recruit { background: var(--accent-blue); }
+  .read-link:hover { opacity: 0.85; }
+
+  /* ============ FINAL SLIDE (closing) ============ */
+  .closing {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+    color: #fff; text-align: center; padding: 60px 48px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .closing h2 {
+    font-size: 36px; font-weight: 700; margin: 0 0 16px;
+    line-height: 1.4;
+  }
+  .closing .accent { color: var(--accent-light); }
+  .closing .lead {
+    font-size: 16px; opacity: 0.9; max-width: 700px; margin: 0 auto 32px;
+    line-height: 1.8;
+  }
+  .closing .cta-row {
+    display: flex; gap: 16px; margin-top: 16px;
+  }
+  .closing .cta-btn {
+    background: #fff; color: var(--navy); padding: 14px 32px;
+    border-radius: 6px; text-decoration: none; font-weight: 700;
+    font-size: 14px;
+  }
+  .closing .cta-btn.outline {
+    background: transparent; border: 2px solid #fff; color: #fff;
+  }
+
+  /* Mobile fallback */
+  @media (max-width: 900px) {
+    .slide {
+      aspect-ratio: auto; height: auto;
+    }
+    .cover h1 { font-size: 32px; }
+    .cover h1 .sub-title { font-size: 24px; }
+    .cover-meta { position: static; padding-top: 24px; flex-direction: column; align-items: center; gap: 12px; }
+    .cover-brand { display: none; }
+    .two-col, .why-row, .data-row { grid-template-columns: 1fr; }
+    .bottom-row { grid-template-columns: 1fr; }
+    .slide-body { padding: 24px 20px; }
+    .slide-head { padding: 20px 24px; }
+    .slide-head h2 { font-size: 20px; }
+    .matrix-grid { grid-template-columns: 60px 1fr 1fr; }
+    .matrix-grid .m-rowhead { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ====================== SLIDE 1 : COVER ====================== -->
+<div class="slide cover">
+  <div class="cover-inner">
+    <div class="cover-tag">
+      <span class="t1">Article Plan</span>
+      <span class="t2">CONTENT STRATEGY</span>
+    </div>
+    <h1>
+      2026年5月
+      <span class="sub-title">記事企画レポート</span>
+    </h1>
+    <div class="cover-divider"></div>
+    <div class="cover-client">株式会社コモンウェルスエンジニアーズ様</div>
+  </div>
+  <div class="cover-meta">
+    <div class="item">
+      <div class="icon">📅</div>
+      <div>
+        <span class="lbl">作成日</span>
+        <span class="val">2026年5月13日</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="icon">📝</div>
+      <div>
+        <span class="lbl">公開記事</span>
+        <span class="val">顧客向け 2本 ＋ 採用向け 1本</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-brand">
+    <strong>株式会社 斗（hishaku）</strong><br>
+    HP運用パートナー
+  </div>
+</div>
+
+<!-- ====================== SLIDE 2 : APRIL RESULT (良かった点 / 確認中の項目) ====================== -->
+<div class="slide content-slide">
+  <div class="slide-head">
+    <h2>4月公開記事の振り返り</h2>
+    <div class="head-r">2026年5月 記事企画レポート</div>
+  </div>
+  <div class="slide-body">
+    <div class="two-col">
+      <!-- 良かった点 -->
+      <div>
+        <div class="col-title good"><span class="ic">👍</span>良かった点</div>
+
+        <div class="h-card">
+          <div class="icon-wrap">👥</div>
+          <div class="body">
+            <div class="h-lbl">記事PVがサイト10位入り</div>
+            <div class="h-num"><span class="to">28回</span> <span style="font-size:13px;color:var(--gray);">／公開後3週間</span></div>
+            <div class="h-sub">/entry/（16PV）より上位 → 一定の関心獲得</div>
+          </div>
+        </div>
+
+        <div class="h-card">
+          <div class="icon-wrap">📧</div>
+          <div class="body">
+            <div class="h-lbl">問い合わせ件数が増加</div>
+            <div class="h-num"><span class="from">25件</span> → <span class="to">27件 (+8%)</span></div>
+            <div class="h-sub">記事公開タイミングと連動</div>
+          </div>
+        </div>
+
+        <div class="h-card">
+          <div class="icon-wrap">🔗</div>
+          <div class="body">
+            <div class="h-lbl">内部リンクが機能</div>
+            <div class="h-num" style="font-size:18px;color:var(--green);">トップ / about / business から動線確立</div>
+            <div class="h-sub">サイト内回遊として価値あり</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 確認中の項目 -->
+      <div>
+        <div class="col-title watch"><span class="ic">🔍</span>確認中の項目</div>
+
+        <div class="h-card watch">
+          <div class="icon-wrap">🔎</div>
+          <div class="body">
+            <div class="h-lbl">検索からの流入はまだ少ない</div>
+            <div class="h-num" style="font-size:18px;color:var(--orange);">指名検索 中心</div>
+            <div class="h-analyze">
+              <strong>📊 分析状況</strong>
+              SEO評価が固まるのは公開後3〜6ヶ月。5月以降の記事追加で複合効果を狙う段階。
+            </div>
+          </div>
+        </div>
+
+        <div class="h-card watch">
+          <div class="icon-wrap">⚠️</div>
+          <div class="body">
+            <div class="h-lbl">一般KW流入比率の業界平均との乖離</div>
+            <div class="h-num"><span class="from">業界平均 30〜50%</span> → <span class="to">CEC ほぼ 0%</span></div>
+            <div class="h-analyze">
+              <strong>📊 分析状況</strong>
+              ロングテール記事の本数が不足。5月は「顧客×採用」「基礎×深掘り」で穴埋め。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>株式会社コモンウェルスエンジニアーズ様 2026年5月記事企画レポート</span>
+    <span>2 / 6</span>
+  </div>
+</div>
+
+<!-- ====================== SLIDE 3 : STRATEGY MATRIX ====================== -->
+<div class="slide content-slide">
+  <div class="slide-head">
+    <h2>5月公開記事のポジショニング</h2>
+    <div class="head-r">2026年5月 記事企画レポート</div>
+  </div>
+  <div class="slide-body">
+    <div class="strategy-intro">
+      <div class="ic">🎯</div>
+      <div class="txt">
+        4月の課題（一般KW流入0%）を埋めるため、<strong>「顧客 × 採用」「基礎 × 深掘り」の4象限</strong>を意識して3本を配置。それぞれ違う検索意図に当てる設計です。
+      </div>
+    </div>
+
+    <div class="matrix-grid">
+      <div class="m-head"></div>
+      <div class="m-head">顧客向け（/contact/誘導）</div>
+      <div class="m-head">採用向け（/entry/誘導）</div>
+
+      <div class="m-rowhead">基礎理解</div>
+      <div class="m-cell">
+        <span class="m-badge customer">記事①</span>
+        <div class="m-ttl">プラント設計とは？流れと費用</div>
+        <div class="m-desc">発注検討フェーズの担当者がまず検索する基礎KWを抑え、4月公開記事と相互リンクで二段構え。</div>
+        <div class="m-kw">🔑 プラント設計 費用 / 流れ</div>
+      </div>
+      <div class="m-cell">
+        <span class="m-badge recruit">（候補）</span>
+        <div class="m-ttl">プラント設計エンジニアの年収と将来性</div>
+        <div class="m-desc">転職検討初期の母集団獲得KW。脱炭素・バイオマス需要で将来性を訴求。<strong>※後日公開予定。</strong></div>
+        <div class="m-kw">🔑 プラント設計 年収 / 将来性</div>
+      </div>
+
+      <div class="m-rowhead">専門深掘り</div>
+      <div class="m-cell">
+        <span class="m-badge customer">記事②</span>
+        <div class="m-ttl">発電所設計で押さえるべき5つのポイント</div>
+        <div class="m-desc">CECの実績ど真ん中（火力・バイオマス・原子力）。E-E-A-T観点で上位表示しやすい領域。</div>
+        <div class="m-kw">🔑 発電所設計 / バイオマス 発電所</div>
+      </div>
+      <div class="m-cell">
+        <span class="m-badge recruit">記事③</span>
+        <div class="m-ttl">Bentley製品の使い方入門｜AutoCADとの違い</div>
+        <div class="m-desc">CADオペ転職検討層のロングテールKW。CECの技術投資水準を差別化要素として提示。</div>
+        <div class="m-kw">🔑 Bentley AutoCAD 違い</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>株式会社コモンウェルスエンジニアーズ様 2026年5月記事企画レポート</span>
+    <span>3 / 6</span>
+  </div>
+</div>
+
+<!-- ====================== SLIDE 4 : 記事① ====================== -->
+<div class="slide content-slide">
+  <div class="slide-head">
+    <h2>記事①：プラント設計とは？流れと費用の目安</h2>
+    <div class="head-r">2026年5月 記事企画レポート</div>
+  </div>
+  <div class="slide-body">
+    <div class="article-banner">
+      <div class="ab-icon">1</div>
+      <div>
+        <div class="ab-title">プラント設計とは？基本設計から詳細設計までの流れと費用の目安</div>
+        <div class="ab-desc">📅 2026-05-05 ／ 約2,700字 ／ 🎯 /contact/ 誘導</div>
+      </div>
+      <div class="ab-meta">顧客向け × 基礎理解</div>
+    </div>
+
+    <div class="why-row">
+      <div class="why-card">
+        <div class="num-badge">1</div>
+        <div class="why-title">検索意図のど真ん中</div>
+        <div class="why-body">
+          <strong>「プラント設計」</strong>は発注検討フェーズの担当者が必ず検索するKW。
+          <strong>「費用」「流れ」</strong>の2語掛け合わせで競合の薄いロングテールを抑える。
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="num-badge">2</div>
+        <div class="why-title">4月記事との相互補完</div>
+        <div class="why-body">
+          4月公開「<strong>プラント設計とは？仕事内容</strong>」（サイト10位/月56PV相当）との
+          <strong>内部リンク二段構え</strong>でSEO評価を厚くする。
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="num-badge">3</div>
+        <div class="why-title">/contact/ への明確な動線</div>
+        <div class="why-body">
+          費用感の解説 → <strong>「見積もり依頼時に整理しておきたい情報」</strong>セクション →
+          問い合わせCTA、と発注検討の流れに沿った構成。
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <div class="kpi-card">
+        <div>
+          <div class="kpi-lbl">🎯 6ヶ月目標 KPI</div>
+          <div class="kpi-val">
+            <strong>「プラント設計 費用」</strong>で10位以内 ／ /contact/ 到達率 <strong>2%以上</strong>
+          </div>
+        </div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-lbl">▶ ARTICLE GOAL</div>
+        <div class="goal-val">問い合わせ獲得<br>（/contact/誘導）</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>株式会社コモンウェルスエンジニアーズ様 2026年5月記事企画レポート</span>
+    <span>4 / 6</span>
+  </div>
+</div>
+
+<!-- ====================== SLIDE 5 : 記事② ====================== -->
+<div class="slide content-slide">
+  <div class="slide-head">
+    <h2>記事②：発電所設計で押さえるべき5つのポイント</h2>
+    <div class="head-r">2026年5月 記事企画レポート</div>
+  </div>
+  <div class="slide-body">
+    <div class="article-banner">
+      <div class="ab-icon">2</div>
+      <div>
+        <div class="ab-title">発電所設計で押さえるべき5つのポイント【火力・バイオマス・原発の実務解説】</div>
+        <div class="ab-desc">📅 2026-05-06 ／ 約2,500字 ／ 🎯 /contact/ 誘導</div>
+      </div>
+      <div class="ab-meta">顧客向け × 専門深掘り</div>
+    </div>
+
+    <div class="why-row">
+      <div class="why-card">
+        <div class="num-badge">1</div>
+        <div class="why-title">CEC実績ど真ん中</div>
+        <div class="why-body">
+          千葉火力・伏木万葉バイオマス・桜エコ等、<strong>CECの実案件を根拠</strong>に語れる領域。
+          E-E-A-T観点でも上位表示しやすい。
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="num-badge">2</div>
+        <div class="why-title">脱炭素トレンドの追い風</div>
+        <div class="why-body">
+          バイオマス・水素・原子力再評価で<strong>「発電所設計」KW検索ボリュームが上昇</strong>。
+          意思決定層が情報収集する局面。
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="num-badge">3</div>
+        <div class="why-title">信頼形成 → 大型案件獲得</div>
+        <div class="why-body">
+          5つのポイント（安全規格・環境・信頼性・メンテ・立地）を専門深掘りすることで、
+          <strong>「分かっている会社」</strong>として認知される。
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <div class="kpi-card">
+        <div>
+          <div class="kpi-lbl">🎯 6ヶ月目標 KPI</div>
+          <div class="kpi-val">
+            <strong>「発電所設計」「バイオマス発電所」</strong>で上位表示 ／ 実績ページPV <strong>+30%</strong>
+          </div>
+        </div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-lbl">▶ ARTICLE GOAL</div>
+        <div class="goal-val">大型案件相談<br>（/contact/誘導）</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>株式会社コモンウェルスエンジニアーズ様 2026年5月記事企画レポート</span>
+    <span>5 / 6</span>
+  </div>
+</div>
+
+<!-- ====================== SLIDE 6 : 記事③ ====================== -->
+<div class="slide content-slide">
+  <div class="slide-head">
+    <h2>記事③：Bentley製品の使い方入門｜AutoCADとの違い</h2>
+    <div class="head-r">2026年5月 記事企画レポート</div>
+  </div>
+  <div class="slide-body">
+    <div class="article-banner recruit">
+      <div class="ab-icon">3</div>
+      <div>
+        <div class="ab-title">Bentley製品の使い方入門｜AutoCADとの違いとプラント設計現場のリアル</div>
+        <div class="ab-desc">📅 2026-05-06 ／ 約2,500字 ／ 🎯 /entry/ 誘導</div>
+      </div>
+      <div class="ab-meta">採用向け × 専門深掘り</div>
+    </div>
+
+    <div class="why-row">
+      <div class="why-card recruit">
+        <div class="num-badge">1</div>
+        <div class="why-title">競合の少ないロングテール</div>
+        <div class="why-body">
+          <strong>「Bentley AutoCAD 違い」</strong>は検索意図が明確で競合記事が少ない。
+          CADオペ転職検討層の母集団獲得に直結。
+        </div>
+      </div>
+      <div class="why-card recruit">
+        <div class="num-badge">2</div>
+        <div class="why-title">採用課題への直接アンサー</div>
+        <div class="why-body">
+          転職検討時の最大の不安<strong>「経験ツールが違っても入れるか」</strong>に対し、
+          未経験から半年〜1年でOJT習得可能と明示。
+        </div>
+      </div>
+      <div class="why-card recruit">
+        <div class="num-badge">3</div>
+        <div class="why-title">技術力訴求 ＝ 差別化</div>
+        <div class="why-body">
+          3D統合プラットフォーム導入＝<strong>CECの技術投資水準</strong>を示せる素材。
+          他社との差別化要素として機能する。
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <div class="kpi-card">
+        <div>
+          <div class="kpi-lbl">🎯 3ヶ月目標 KPI</div>
+          <div class="kpi-val">
+            <strong>「Bentley AutoCAD 違い」</strong>で10位以内 ／ /entry/ 到達率 <strong>3%以上</strong>
+          </div>
+        </div>
+      </div>
+      <div class="goal-card recruit">
+        <div class="goal-lbl">▶ ARTICLE GOAL</div>
+        <div class="goal-val">採用エントリー獲得<br>（/entry/誘導）</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>株式会社コモンウェルスエンジニアーズ様 2026年5月記事企画レポート</span>
+    <span>6 / 6</span>
+  </div>
+</div>
+
+<!-- ====================== SLIDE 7 : CLOSING ====================== -->
+<div class="slide closing">
+  <h2>
+    記事プレビューは<br>
+    <span class="accent">こちらからご確認いただけます</span>
+  </h2>
+  <p class="lead">
+    各記事の本文プレビューをご確認のうえ、内容にお気づきの点・確認事項がございましたらお気軽にご連絡ください。
+    レビュー後、WordPress公開作業を進めさせていただきます。
+  </p>
+  <div class="cta-row">
+    <a href="./index.html" class="cta-btn">📝 記事プレビュー一覧へ</a>
+    <a href="./2026-05/plant-design-flow-and-cost.html" class="cta-btn outline">記事① を読む</a>
+  </div>
+</div>
+
+</body>
+</html>
