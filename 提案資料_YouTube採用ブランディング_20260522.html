@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube採用ブランディング戦略のご提案 — コモンウェルスエンジニアーズ様</title>
+<style>
+  :root {
+    --primary: #1a3a5c;
+    --accent: #2563eb;
+    --accent-light: #dbeafe;
+    --success: #059669;
+    --warning: #d97706;
+    --danger: #dc2626;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  .cover {
+    background: linear-gradient(135deg, var(--primary) 0%, #0f2a44 100%);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 0 0 24px 24px;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .cover .to { font-size: 14px; opacity: 0.7; margin-bottom: 8px; letter-spacing: 0.1em; }
+  .cover h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; letter-spacing: 0.02em; line-height: 1.4; }
+  .cover .sub { font-size: 16px; opacity: 0.85; margin-bottom: 24px; }
+  .cover .meta { font-size: 13px; opacity: 0.6; }
+  .cover .highlight-box {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    padding: 14px 28px;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px 56px;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #999;
+    margin-bottom: 12px;
+  }
+  .section-heading {
+    text-align: center;
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+  .section-heading .accent { color: var(--accent); }
+
+  /* ===== Phase divider ===== */
+  .phase-divider {
+    max-width: 960px;
+    margin: 24px auto 32px;
+    padding: 0 24px;
+  }
+  .phase-banner {
+    border-radius: 16px;
+    padding: 28px 36px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .phase-banner.phase-1 {
+    background: linear-gradient(135deg, var(--accent) 0%, #1e40af 100%);
+  }
+  .phase-banner.phase-2 {
+    background: linear-gradient(135deg, var(--success) 0%, #047857 100%);
+  }
+  .phase-banner .phase-label {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .phase-banner .phase-text h3 {
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+  }
+  .phase-banner .phase-text p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+
+  /* ===== Premise ===== */
+  .premise-box {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    margin-bottom: 24px;
+  }
+  .premise-box h4 {
+    font-size: 1.05rem;
+    color: var(--primary);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-light);
+  }
+  .premise-box ul { list-style: none; padding: 0; }
+  .premise-box li {
+    padding: 8px 0 8px 24px;
+    position: relative;
+    font-size: 0.95rem;
+  }
+  .premise-box li::before {
+    content: "▸";
+    color: var(--accent);
+    position: absolute;
+    left: 4px;
+    font-weight: 700;
+  }
+
+  /* ===== Conclusion ===== */
+  .conclusion-box {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-left: 6px solid var(--accent);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-bottom: 24px;
+  }
+  .conclusion-box h3 {
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+  .conclusion-box p {
+    color: #334155;
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  /* ===== 3 Steps ===== */
+  .step-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  .step-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    text-align: center;
+    position: relative;
+  }
+  .step-card .step-num {
+    display: inline-block;
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+  }
+  .step-card h4 {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+  }
+  .step-card p {
+    font-size: 0.88rem;
+    color: #475569;
+    line-height: 1.75;
+    text-align: left;
+  }
+  .step-arrow {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin: 8px 0;
+  }
+
+  /* ===== HP embed simple ===== */
+  .hp-simple-box {
+    background: white;
+    border-radius: 12px;
+    padding: 24px 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    margin-bottom: 16px;
+  }
+  .hp-simple-box h5 {
+    color: var(--primary);
+    margin-bottom: 12px;
+    font-size: 1rem;
+  }
+  .hp-simple-box ul { list-style: none; padding: 0; }
+  .hp-simple-box li {
+    padding: 8px 0 8px 26px;
+    position: relative;
+    font-size: 0.92rem;
+    color: #475569;
+    border-bottom: 1px dashed var(--border);
+  }
+  .hp-simple-box li:last-child { border-bottom: none; }
+  .hp-simple-box li::before {
+    content: "📍";
+    position: absolute;
+    left: 0;
+  }
+  .hp-simple-box li strong { color: var(--primary); }
+
+  /* ===== Video grid ===== */
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 16px;
+  }
+  .video-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .video-card .video-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-card iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .video-card .video-info { padding: 14px 18px; }
+  .video-card .video-tag {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .video-card h5 {
+    font-size: 0.92rem;
+    color: var(--primary);
+    margin-bottom: 4px;
+    line-height: 1.5;
+  }
+  .video-card .video-meta {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ===== Option cards (Phase 2) ===== */
+  .option-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border-left: 5px solid var(--success);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 22px;
+    align-items: center;
+  }
+  .option-card .option-icon {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  .option-card .option-body h4 {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+  .option-card .option-body p {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.8;
+  }
+  .option-card .option-tag {
+    display: inline-block;
+    background: #d1fae5;
+    color: var(--success);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* ===== Quick start summary ===== */
+  .summary-box {
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    border-radius: 16px;
+    padding: 28px 36px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .summary-box h4 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 14px;
+  }
+  .summary-box .summary-flow {
+    background: white;
+    border-radius: 10px;
+    padding: 18px 24px;
+    font-size: 0.95rem;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .summary-box .summary-flow .arrow {
+    color: var(--accent);
+    margin: 0 10px;
+  }
+
+  /* ===== CTA ===== */
+  .cta {
+    background: var(--primary);
+    color: white;
+    padding: 40px 36px;
+    border-radius: 16px;
+    text-align: center;
+    margin: 48px auto;
+    max-width: 960px;
+  }
+  .cta h3 { font-size: 1.4rem; margin-bottom: 16px; }
+  .cta p { opacity: 0.85; font-size: 0.95rem; line-height: 1.8; }
+
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 720px) {
+    .step-grid, .video-grid { grid-template-columns: 1fr; }
+    .option-card { grid-template-columns: 1fr; text-align: center; }
+    .phase-banner { flex-direction: column; text-align: center; }
+    .cover h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Cover ===== -->
+<div class="cover">
+  <div class="to">FOR COMMONWEALTH ENGINEERS</div>
+  <h1>YouTube採用ブランディング戦略のご提案</h1>
+  <div class="sub">Bentley公認 Staad Pro動画を「採用」と「売上」に繋げる</div>
+  <div class="highlight-box">
+    まずはシンプルに始める「3ステップ」<br>
+    運用を継続するなら「発展オプション」
+  </div>
+  <div class="meta" style="margin-top: 20px;">2026年5月22日 / 株式会社 斗</div>
+</div>
+
+<!-- ===== 0. 前提整理 ===== -->
+<section>
+  <div class="section-title">CONTEXT</div>
+  <h2 class="section-heading">前提整理</h2>
+
+  <div class="premise-box">
+    <h4>御社からのご相談</h4>
+    <ul>
+      <li>BentleyからStaad Pro操作動画のYouTube公開許諾を取得済み</li>
+      <li>このアイディアを採用・売上UPに繋げたい</li>
+      <li>新卒・中途両方の採用ターゲットに「ここで働きたい」と思わせたい</li>
+    </ul>
+  </div>
+
+  <div class="conclusion-box">
+    <h3>本提案のスタンス</h3>
+    <p>
+      最初から大きく構えず、<strong>まずは小さく始めて、運用しながら発展させる</strong> 2段階構成でご提案します。Phase 1で土台を作り、Phase 2で差別化を進める形です。
+    </p>
+  </div>
+</section>
+
+<!-- ===== Phase 1 Banner ===== -->
+<div class="phase-divider">
+  <div class="phase-banner phase-1">
+    <div class="phase-label">01</div>
+    <div class="phase-text">
+      <h3>Phase 1：まずシンプルに始める</h3>
+      <p>YouTube開設 → 動画制作 → HP埋め込み の3ステップ</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 1. 3ステップ ===== -->
+<section>
+  <div class="section-title">QUICK START</div>
+  <h2 class="section-heading">最初の3ステップ</h2>
+
+  <div class="step-grid">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <h4>YouTubeチャンネル開設</h4>
+      <p>「コモンウェルスエンジニアーズ公式」としてチャンネル開設。Bentley公認の旨をチャンネル概要に明記して、信用の土台を作る。</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <h4>動画を制作・公開</h4>
+      <p>Staad Pro解説 ＋ それを使う社員のリアル業務・本人語りを1本に収録。実務者にも採用候補者にも届く構成にする。</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <h4>技術記事に埋め込む</h4>
+      <p>動画を「Staad Pro技術記事」の中に埋め込んで公開。記事は検索流入を取り、動画は深い理解を提供。SEOと信用が同時に積み上がる。</p>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h4>まずはこの流れで小さく始める</h4>
+    <div class="summary-flow">
+      YouTube開設<span class="arrow">→</span>動画制作<span class="arrow">→</span>技術記事に埋め込み
+    </div>
+    <p style="color: #475569; font-size: 0.92rem;">
+      最初は2〜3本作って、HPに埋め込み、効果を見ながら次に進む。<br>
+      <strong>「やらないと分からない」領域なので、まず小さく試す</strong> のがおすすめです。
+    </p>
+  </div>
+</section>
+
+<!-- ===== 2. 技術記事への埋め込み ===== -->
+<section>
+  <div class="section-title">ARTICLE INTEGRATION</div>
+  <h2 class="section-heading">技術記事に埋め込むことで<br><span class="accent">SEOと信用が同時に積み上がる</span></h2>
+
+  <p style="text-align: center; color: #475569; font-size: 0.95rem; margin-bottom: 20px;">
+    動画を単体公開するだけでは検索流入が取れません。<br><strong>技術記事のなかに動画を埋め込む</strong>のが最初の正解です。
+  </p>
+
+  <div class="hp-simple-box">
+    <h5>記事 × 動画の組み合わせ例</h5>
+    <ul>
+      <li><strong>「Staad Proで梁モデルを作る基本手順」</strong>記事 ＋ 解説動画</li>
+      <li><strong>「橋梁構造解析の実例：荷重と支点の設定」</strong>記事 ＋ 実演動画</li>
+      <li><strong>「構造設計エンジニアが教えるStaad Proの落とし穴」</strong>記事 ＋ 経験談動画</li>
+      <li><strong>「Bentley公認パートナーが解説：Staad Pro導入ガイド」</strong>記事 ＋ 紹介動画</li>
+    </ul>
+  </div>
+
+  <div style="background: #eff6ff; border-radius: 10px; padding: 18px 22px; font-size: 0.92rem; color: #334155; line-height: 1.85;">
+    <strong style="color: var(--accent);">なぜ技術記事への埋め込みが効くのか</strong>
+    <ul style="list-style: none; padding: 0; margin-top: 10px;">
+      <li style="padding: 4px 0;">▸ 記事は <strong>検索流入</strong>（「Staad Pro 使い方」「構造解析 計算」等）を獲得</li>
+      <li style="padding: 4px 0;">▸ 動画は <strong>深い理解</strong> を提供し、滞在時間を3〜5倍に</li>
+      <li style="padding: 4px 0;">▸ <strong>SEO評価UP</strong>＝検索順位向上＝採用・受注両方の流入増</li>
+      <li style="padding: 4px 0;">▸ 既存の記事制作フロー（CECで運用中）にそのまま組み込める</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== Phase 2 Banner ===== -->
+<div class="phase-divider">
+  <div class="phase-banner phase-2">
+    <div class="phase-label">02</div>
+    <div class="phase-text">
+      <h3>Phase 2：運用していくならば</h3>
+      <p>動画が定着してきたら検討したい発展オプション</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 4. 発展オプション ===== -->
+<section>
+  <div class="section-title">GROWTH OPTIONS</div>
+  <h2 class="section-heading">運用が回ってきたら<br><span class="accent">こんな展開が見えてくる</span></h2>
+
+  <p style="text-align: center; color: #475569; font-size: 0.95rem; margin-bottom: 24px;">
+    Phase 1で動画が定着し、効果が見え始めたら、以下の発展オプションを段階的に検討。<br>すべてを最初からやる必要はありません。
+  </p>
+
+  <div class="option-card">
+    <div class="option-icon">📱</div>
+    <div class="option-body">
+      <h4>SNS横展開（Shorts・LinkedIn）<span class="option-tag">リーチ拡大</span></h4>
+      <p>動画の人物パートをShortsに切り出してTikTok・YouTube Shorts・インスタリールへ。中途エンジニア層にはLinkedInも有効。1本の素材を複数媒体で活用。</p>
+    </div>
+  </div>
+
+  <div class="option-card">
+    <div class="option-icon">💰</div>
+    <div class="option-body">
+      <h4>動画から構造解析の受託案件へ<span class="option-tag">売上化</span></h4>
+      <p>動画を見る人の中には<strong>「自社ではStaad Proを使えないけど、構造計算だけ外注したい」設計事務所・ゼネコン</strong>が含まれます。動画概要欄や記事末尾に「<strong>構造解析・モデリングの依頼はこちら</strong>」というボタンを設置することで、CECの<strong>解析受託・スポット案件の新しい入口</strong>になります。</p>
+    </div>
+  </div>
+
+  <div class="option-card">
+    <div class="option-icon">🌐</div>
+    <div class="option-body">
+      <h4>YouTube字幕の多言語化（無料）<span class="option-tag">外国人採用</span></h4>
+      <p>YouTubeには <strong>「字幕の自動翻訳機能」</strong>が標準搭載されています。日本語で作った動画にYouTube側で字幕（日本語）を入れておけば、視聴者が <strong>言語切替ボタンで英語・中国語・ベトナム語などに自動翻訳</strong>して見られます。<br>追加コスト・追加作業はほぼゼロで、CECの「11カ国人材」「海外案件」の強みと連動した外国人エンジニア採用への発信が可能です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. なぜこの順序か ===== -->
+<section>
+  <div class="section-title">WHY THIS ORDER</div>
+  <h2 class="section-heading">なぜ<span class="accent">「まず小さく始める」</span>がいいのか</h2>
+
+  <div class="premise-box">
+    <ul>
+      <li><strong>動画は出してみないと反応が分からない</strong>。机上の戦略より、まず2〜3本出して数字を見たほうが早い。</li>
+      <li><strong>HPに埋め込むだけでも採用ページの信用が変わる</strong>。Phase 1だけでも採用効果は確実に出る。</li>
+      <li><strong>Phase 2の発展オプションは「動画運用ノウハウが溜まってから」のほうが成功率が高い</strong>。AIアバターも業界インタビューも、土台があってこそ効く。</li>
+      <li><strong>Bentley公認許諾という強みは焦って使う必要がない</strong>。むしろ運用が定着してから公認パートナー申請したほうが説得力が出る。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<div class="cta">
+  <h3>次のステップ</h3>
+  <p>
+    新横浜ヒアリングの議題に「YouTube戦略」を加え、まずPhase 1の進め方について方向性のすり合わせをお願いいたします。<br>
+    撮影スケジュール・HP埋め込みの技術仕様は、方向性合意後に別途ご提案いたします。
+  </p>
+</div>
+
+<footer>
+  <p>株式会社 斗（hishaku）／ コモンウェルスエンジニアーズ様 専用提案資料</p>
+  <p style="margin-top: 6px;">2026年5月22日作成</p>
+</footer>
+
+</body>
+</html>
