@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>インターン受け入れを「採用×営業×産学連携」に活かす提案｜株式会社コモンウェルスエンジニアーズ様</title>
+<style>
+  :root {
+    --navy: #1e3a8a;
+    --navy-dark: #15295e;
+    --navy-deep: #0f2155;
+    --navy-light: #3a5cb8;
+    --accent-blue: #4a7cd8;
+    --accent-light: #7aa3ec;
+    --green: #2ea66a;
+    --green-bg: #e6f6ee;
+    --orange: #e89a2c;
+    --orange-bg: #fff6e3;
+    --red: #d04040;
+    --red-bg: #fceaea;
+    --purple: #6d5dd3;
+    --purple-bg: #f0edfb;
+    --gray: #5c6478;
+    --gray-light: #9aa2b1;
+    --line: #e1e5ee;
+    --bg: #eef1f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+    background: var(--bg);
+    color: #2d3344;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  .cover {
+    background:
+      radial-gradient(circle at 85% 20%, rgba(255,255,255,0.06) 0%, transparent 45%),
+      linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 60%, var(--navy-light) 100%);
+    color: #fff;
+    padding: 60px 40px 50px;
+    text-align: center;
+  }
+  .cover .tag {
+    display: inline-block; background: var(--accent-blue);
+    color: #fff; padding: 6px 16px; font-size: 12px; letter-spacing: 0.15em;
+    margin-bottom: 24px; font-weight: 700;
+  }
+  .cover h1 { font-size: 30px; font-weight: 800; line-height: 1.5; margin-bottom: 10px; }
+  .cover .sub { color: var(--accent-light); font-size: 17px; margin-bottom: 24px; }
+  .cover .client { font-size: 14px; opacity: 0.85; }
+  .cover .meta { margin-top: 20px; font-size: 12px; opacity: 0.6; letter-spacing: 0.05em; }
+
+  section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+
+  .urgency {
+    background: linear-gradient(135deg, #fff6e3 0%, #fef0d1 100%);
+    border-left: 6px solid var(--orange);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 32px;
+  }
+  .urgency h2 {
+    color: var(--orange);
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .urgency p {
+    color: #78350f;
+    font-size: 14.5px;
+    line-height: 1.9;
+  }
+  .urgency strong { color: #78350f; font-weight: 800; }
+
+  .section-label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--gray-light);
+    margin-bottom: 8px;
+  }
+  .section-heading {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+  .section-heading .accent { color: var(--accent-blue); }
+
+  .proposal-block {
+    margin-bottom: 40px;
+  }
+  .proposal-head {
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 10px 10px 0 0;
+    font-size: 17px;
+    font-weight: 700;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .proposal-head.a { background: linear-gradient(135deg, var(--accent-blue) 0%, #6389d8 100%); }
+  .proposal-head.b { background: linear-gradient(135deg, var(--green) 0%, #4dbb85 100%); }
+  .proposal-head.c { background: linear-gradient(135deg, var(--purple) 0%, #8974e0 100%); }
+
+  .proposal-body {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 24px 26px;
+  }
+
+  .idea {
+    padding: 18px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .idea:last-child { border-bottom: none; padding-bottom: 0; }
+  .idea:first-child { padding-top: 4px; }
+  .idea h4 {
+    font-size: 16px;
+    color: var(--navy);
+    margin-bottom: 10px;
+    display: flex; gap: 10px; align-items: baseline;
+  }
+  .idea h4 .no {
+    background: var(--navy);
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    letter-spacing: 0.05em;
+  }
+  .proposal-block.b .idea h4 .no { background: var(--green); }
+  .proposal-block.c .idea h4 .no { background: var(--purple); }
+  .idea .idea-body {
+    font-size: 13.5px;
+    color: #334155;
+    line-height: 1.9;
+    padding-left: 4px;
+  }
+  .idea .idea-body p {
+    margin-bottom: 6px;
+  }
+  .idea .idea-body strong.why { color: var(--accent-blue); }
+  .proposal-block.b .idea .idea-body strong.why { color: var(--green); }
+  .proposal-block.c .idea .idea-body strong.why { color: var(--purple); }
+  .idea .idea-body strong.imp { color: var(--gray); }
+
+  .top3 {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-radius: 14px;
+    padding: 32px 34px;
+    margin-bottom: 24px;
+    border-left: 6px solid var(--accent-blue);
+  }
+  .top3 h3 {
+    color: var(--navy);
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .top3 .rank {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 12px;
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 18px;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(15,33,85,0.06);
+  }
+  .top3 .rank:last-child { margin-bottom: 0; }
+  .top3 .rank .badge {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, #6389d8 100%);
+    color: #fff;
+    text-align: center;
+    padding: 12px 8px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+  .top3 .rank .badge .sub { display: block; font-size: 10px; opacity: 0.85; margin-top: 4px; letter-spacing: 0.05em; }
+  .top3 .rank h5 { color: var(--navy); font-size: 15px; margin-bottom: 6px; }
+  .top3 .rank p { font-size: 13px; color: #475569; line-height: 1.8; }
+  .top3 .rank p strong { color: var(--red); }
+
+  .ask {
+    background: var(--navy);
+    color: #fff;
+    padding: 40px 32px;
+    border-radius: 14px;
+    text-align: center;
+    margin-top: 32px;
+  }
+  .ask h3 { font-size: 22px; margin-bottom: 14px; }
+  .ask p { font-size: 14px; opacity: 0.9; line-height: 1.9; }
+
+  footer {
+    text-align: center;
+    padding: 32px 20px 40px;
+    color: var(--gray);
+    font-size: 12px;
+  }
+
+  @media (max-width: 700px) {
+    .cover h1 { font-size: 22px; }
+    .top3 .rank { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="tag">PROPOSAL — INTERNSHIP LEVERAGE</div>
+  <h1>インターン受け入れを<br>「採用 × 営業 × 産学連携」に活かす提案</h1>
+  <div class="sub">ものつくり大学 長期インターン受け入れの実績を最大化する12施策</div>
+  <div class="client">株式会社コモンウェルスエンジニアーズ様</div>
+  <div class="meta">2026年7月12日 ／ 株式会社 斗（hishaku）</div>
+</div>
+
+<section>
+  <div class="urgency">
+    <h2>⏰ 前提の捉え方：時間的制約</h2>
+    <p>
+      ものつくり大学インターンは <strong>8/7 まで残り約4週間</strong>（本日7/12時点）。<br>
+      <strong>今この瞬間しか撮れない素材</strong>（指導風景・成長過程・多国籍チームとの協働）を記録できるかどうかで、本提案ほぼすべての実現可否が決まります。<br>
+      まず <strong>「記録開始」だけ今週決めてください</strong>。
+    </p>
+  </div>
+
+  <!-- 提案A -->
+  <div class="proposal-block a">
+    <div class="proposal-head a">🎯 提案A ｜ 採用への波及</div>
+    <div class="proposal-body">
+
+      <div class="idea">
+        <h4><span class="no">A-1</span>「未経験2年生がStaad Proを触れるようになるまでの60日」実録記事</h4>
+        <div class="idea-body">
+          <p><strong class="why">なぜ効くか：</strong>中途エンジニアが本当に見たいのは理念ではなく「この会社の教え方の中身」。教育カリキュラムを実名の実話で見せる会社は派遣業界にほぼ無く、plant-design-guideで実証済みのコンテンツSEO（「構造設計 教育」「Staad Pro 学習」等）にもそのまま乗る。</p>
+          <p><strong class="imp">実装：</strong>週1で指導担当が5分メモ→当社が記事化。8月末に /career/ 配下へ公開、トップ（月250PV）から導線設置。</p>
+          <p><strong class="imp">素材：</strong>週次の作業写真・指導メモ・本人一言コメント。</p>
+        </div>
+      </div>
+
+      <div class="idea">
+        <h4><span class="no">A-2</span> 主役を「教える側」の中堅エンジニアに置いたコンテンツ設計</h4>
+        <div class="idea-body">
+          <p><strong class="why">なぜ効くか：</strong>中途候補者はインターン生ではなく指導者に自己投影する。「入社2〜3年でこう教えられる側→教える側になる」という成長の先まで見せられ、多国籍チーム（11か国）が日本語×英語で教える画は他社が真似できない。</p>
+          <p><strong class="imp">実装：</strong>A-1の記事内で指導者インタビューを対で入れる。撮影追加不要。</p>
+        </div>
+      </div>
+
+      <div class="idea">
+        <h4><span class="no">A-3</span> Bentley公認動画 × インターン教材化 の「入社後学習環境」訴求</h4>
+        <div class="idea-body">
+          <p><strong class="why">なぜ効くか：</strong>公開許諾済みのStaad Pro動画を「実際にインターン生が学んでいる教材」として見せると、YouTube採用ブランディング提案（別途進行中）に実利用の証拠が付く。「入社したらこの教材で立ち上がれる」は即戦力層の転職不安（キャッチアップ）に直接刺さる。</p>
+          <p><strong class="imp">実装：</strong>動画概要欄と /career/ に相互リンク。素材はほぼ既存流用。</p>
+        </div>
+      </div>
+
+      <div class="idea">
+        <h4><span class="no">A-4</span> フォーム離脱対策「カジュアル面談（教育制度の話を聞く）」CTA新設</h4>
+        <div class="idea-body">
+          <p><strong class="why">なぜ効くか：</strong>問い合わせ22件中フォーム完了7件という離脱は、応募の心理ハードルが高い証拠。「応募」の手前に「育成の話だけ聞く」入口を作ると、A-1〜3で温まった読者を受け止められる。</p>
+          <p><strong class="imp">実装：</strong>/career/ に1ボタン追加＋フォーム項目を最小化。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 提案B -->
+  <div class="proposal-block b">
+    <div class="proposal-head b">💼 提案B ｜ 営業への波及</div>
+    <div class="proposal-body">
+
+      <div class="idea">
+        <h4><span class="no">B-1</span> 営業提案書に「人材育成力」スライド1枚を標準搭載</h4>
+        <div class="idea-body">
+          <p><strong class="why">なぜ効くか：</strong>派遣の発注側の最大の不安は「来る人の質が読めない」。大学初の長期インターンを預かれる＝教育を体系化できている会社、という第三者的証拠は単価交渉の材料にもなる。</p>
+          <p><strong class="imp">実装：</strong>「育成カリキュラム図＋ものつくり大学・磯子工業高校の受け入れ実績」を1枚化し、既存提案書に差し込むだけ。明日から使える。</p>
+          <p><strong class="imp">素材：</strong>カリキュラムの箇条書きと写真2枚。</p>
+        </div>
+      </div>
+
+      <div class="idea">
+        <h4><span class="no">B-2</span> 8月上旬のインターン成果発表会を「オープンデー」化し取引先を招待</h4>
+        <div class="idea-body">
+          <p><strong class="why">なぜ効くか：</strong>HPの反響をくれる程度に認知のある既存客先こそ、若手育成に悩んでいる。発表会に招けば「CECの育て方」を体感してもらえ、その場が自然に案件相談の場になる。営業訪問より圧倒的に強い接点。</p>
+          <p><strong class="imp">実装：</strong>8/7前後に高田馬場で1時間（発表30分＋懇談30分）。招待は打合せ先3〜5社に絞る。<strong style="color: var(--red);">日程確定だけ今週必要。</strong></p>
+        </div>
+      </div>
+
+      <div class="idea">
+        <h4><span class="no">B-3</span> ものつくり大学と共同のプレスリリース発信</h4>
+        <div class="idea-body">
+          <p><strong class="why">なぜ効くか：</strong>大学側にも広報メリットがあるため共同発信が通りやすく、「大学公式サイトに載る」＝営業時に効く第三者言及と、SEO上価値の高い教育機関ドメインからの被リンクを同時取得。</p>
+          <p><strong class="imp">実装：</strong>リリース文案は当社がドラフト→大学キャリアセンターへ提案。費用ほぼゼロ。</p>
+        </div>
+      </div>
+
+      <div class="idea">
+        <h4><span class="no">B-4</span>「教育を仕組み化できる会社」訴求でシステム開発受託にも展開</h4>
+        <div class="idea-body">
+          <p><strong class="why">なぜ効くか：</strong>カリキュラム化・ドキュメント化できる組織は、開発の要件定義・引き継ぎ品質の証拠にもなる。派遣とシステム開発の複合業態だからこそ、一つの実績を両事業の営業に使い回せる。</p>
+          <p><strong class="imp">実装：</strong>B-1のスライドを開発提案用に文言差し替えた版を用意。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 提案C -->
+  <div class="proposal-block c">
+    <div class="proposal-head c">🎓 提案C ｜ 産学連携の中長期発展</div>
+    <div class="proposal-body">
+
+      <div class="idea">
+        <h4><span class="no">C-1</span> 大学への「成果報告書」提出＋次年度受け入れ枠の文書提案</h4>
+        <div class="idea-body">
+          <p><strong class="why">なぜ効くか：</strong>口頭の「また来年も」で終わらせず文書化すると、キャリアセンター内でCECが「推薦先リスト」に載る。指定校推薦ルートの初手。</p>
+          <p><strong class="imp">実装：</strong>A-1の記事を再編集して報告書化（二次利用なので工数小）。9月に提出。</p>
+        </div>
+      </div>
+
+      <div class="idea">
+        <h4><span class="no">C-2</span> インターン生の「学内報告用スライド」を一緒に作る</h4>
+        <div class="idea-body">
+          <p><strong class="why">なぜ効くか：</strong>学生は帰校後ほぼ必ず報告の機会がある。その資料をCECロゴ入りで一緒に作り込めば、学内での口コミが「その場しのぎの感想」から「広報物」に変わる。費用ゼロで最も確実な学内認知施策。</p>
+          <p><strong class="imp">実装：</strong>最終週に1時間、報告スライド作成を課題として実施。</p>
+        </div>
+      </div>
+
+      <div class="idea">
+        <h4><span class="no">C-3</span> 磯子工業高校の「毎年恒例」ブランド化（8/18〜20）</h4>
+        <div class="idea-body">
+          <p><strong class="why">なぜ効くか：</strong>2年連続は既に「継続受け入れ企業」。3日間の様子を毎年同フォーマットで記事化し続けると、高校の進路指導部との関係資産＋「高卒採用もできる会社」の実績が積み上がる。</p>
+          <p><strong class="imp">実装：</strong>今年から記事テンプレを固定。撮影は初日と最終日の2回のみ。</p>
+        </div>
+      </div>
+
+      <div class="idea">
+        <h4><span class="no">C-4</span> Bentley動画の授業補助教材としての提供打診</h4>
+        <div class="idea-body">
+          <p><strong class="why">なぜ効くか：</strong>公開許諾済み動画を大学に「無償教材」として提案すれば、産学連携が「受け入れ」から「教育コンテンツ提供」へ格上げされ、Bentley公認ポジションも強化。共同研究への布石になる。</p>
+          <p><strong class="imp">実装：</strong>C-1の報告書提出時に1項目として添える。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOP3 -->
+  <div class="top3">
+    <h3>🚀 まず着手すべき TOP3</h3>
+    <div class="rank">
+      <div class="badge">1位<span class="sub">今週中</span></div>
+      <div>
+        <h5>インターン記録の即時開始（A-1の素材収集）</h5>
+        <p>残り4週間。週1の写真＋指導メモだけ今週から。<strong>これが無いとA・B・Cほぼ全案の素材が消滅する。</strong>コストは週15分。</p>
+      </div>
+    </div>
+    <div class="rank">
+      <div class="badge">2位<span class="sub">7月中〜下旬</span></div>
+      <div>
+        <h5>成果発表会オープンデーの日程確定（B-2）</h5>
+        <p>8/7前後の開催なら招待状送付は7月中旬〜下旬がリミット。<strong>開催日とご招待先（3〜5社）のご判断</strong>だけ尾上様にお願いしたい部分。</p>
+      </div>
+    </div>
+    <div class="rank">
+      <div class="badge">3位<span class="sub">来週から</span></div>
+      <div>
+        <h5>営業資料「人材育成力」1枚の作成（B-1）</h5>
+        <p>素材が揃う前でも受け入れ実績ベースで作れて、<strong>来週の打合せから即使える</strong>。当社でドラフトします。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ask">
+    <h3>今週ご判断いただきたいのは2点だけ</h3>
+    <p>
+      ① インターン記録開始のGO（週1回・15分程度、記事化は当社対応）<br>
+      ② 成果発表会オープンデーの開催可否・日程<br><br>
+      その他の施策は素材が集まってからのご判断で問題ありません。<br>
+      <strong>「記録だけは始めておく」ことで、選択肢をすべて残せます。</strong>
+    </p>
+  </div>
+</section>
+
+<footer>
+  株式会社 斗（hishaku）／ 株式会社コモンウェルスエンジニアーズ様 専用提案資料<br>
+  2026年7月12日 作成
+</footer>
+
+</body>
+</html>
