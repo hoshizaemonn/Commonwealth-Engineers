@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年6月 HP運用月次レポート｜株式会社コモンウェルスエンジニアーズ様</title>
+<style>
+  :root {
+    --navy: #1e3a8a;
+    --navy-dark: #15295e;
+    --navy-deep: #0f2155;
+    --navy-light: #3a5cb8;
+    --accent-blue: #4a7cd8;
+    --accent-light: #7aa3ec;
+    --green: #2ea66a;
+    --green-bg: #e6f6ee;
+    --orange: #e89a2c;
+    --orange-bg: #fff6e3;
+    --red: #d04040;
+    --red-bg: #fceaea;
+    --purple: #6d5dd3;
+    --gray: #5c6478;
+    --gray-light: #9aa2b1;
+    --line: #e1e5ee;
+    --bg: #eef1f7;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; background: var(--bg); color: #2d3344; line-height: 1.7; }
+  .slide { width: 100%; max-width: 1280px; aspect-ratio: 16 / 9; margin: 24px auto; background: #fff; box-shadow: 0 4px 24px rgba(15,33,85,0.12); border-radius: 6px; overflow: hidden; position: relative; display: flex; flex-direction: column; }
+  .slide-footer { position: absolute; bottom: 16px; left: 32px; right: 32px; display: flex; justify-content: space-between; font-size: 11px; color: var(--gray-light); }
+  .cover { background: radial-gradient(circle at 88% 25%, rgba(255,255,255,0.06) 0%, transparent 45%), radial-gradient(circle at 10% 90%, rgba(255,255,255,0.05) 0%, transparent 40%), linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 60%, var(--navy-light) 100%); color: #fff; display: flex; align-items: center; justify-content: center; text-align: center; padding: 48px; position: relative; }
+  .cover::before { content: ""; position: absolute; right: -140px; top: -140px; width: 420px; height: 420px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+  .cover::after { content: ""; position: absolute; left: -80px; bottom: -80px; width: 280px; height: 280px; border-radius: 50%; background: rgba(255,255,255,0.03); }
+  .cover-inner { position: relative; z-index: 1; max-width: 900px; }
+  .cover-tag { display: inline-flex; gap: 0; align-items: center; margin-bottom: 40px; font-size: 13px; letter-spacing: 0.08em; }
+  .cover-tag .t1 { background: var(--accent-blue); color: #fff; padding: 6px 16px; font-weight: bold; font-size: 13px; }
+  .cover-tag .t2 { background: rgba(255,255,255,0.15); padding: 6px 16px; color: #fff; font-size: 12px; letter-spacing: 0.12em; }
+  .cover h1 { font-size: 54px; font-weight: 700; line-height: 1.4; margin: 0 0 12px; letter-spacing: 0.02em; }
+  .cover h1 .sub-title { display: block; color: var(--accent-light); font-size: 44px; margin-top: 8px; }
+  .cover-divider { width: 100px; height: 2px; background: rgba(255,255,255,0.5); margin: 40px auto; }
+  .cover-client { font-size: 22px; opacity: 0.95; }
+  .cover-meta { position: absolute; bottom: 48px; left: 48px; right: 48px; display: flex; gap: 48px; justify-content: center; color: rgba(255,255,255,0.85); font-size: 13px; }
+  .cover-meta .item { display: flex; align-items: center; gap: 12px; }
+  .cover-meta .icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .cover-meta .lbl { display: block; font-size: 11px; opacity: 0.7; }
+  .cover-meta .val { font-size: 14px; font-weight: 600; color: #fff; }
+  .cover-brand { position: absolute; bottom: 32px; right: 48px; font-size: 11px; color: rgba(255,255,255,0.6); text-align: right; line-height: 1.4; }
+  .cover-brand strong { color: #fff; font-size: 12px; }
+  .content-slide { padding: 0; background: #fff; }
+  .slide-head { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: #fff; padding: 24px 48px 22px; display: flex; justify-content: space-between; align-items: center; position: relative; }
+  .slide-head::after { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 200px; background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.06) 100%); clip-path: polygon(100% 0, 0 0, 100% 100%); }
+  .slide-head h2 { margin: 0; font-size: 24px; font-weight: 700; padding-left: 16px; border-left: 5px solid #fff; line-height: 1.4; z-index: 1; position: relative; }
+  .slide-head .head-r { font-size: 12px; opacity: 0.85; z-index: 1; position: relative; }
+  .slide-body { padding: 28px 48px; flex: 1; }
+  .data-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
+  .data-card { background: #fff; border-radius: 10px; padding: 16px 18px; border-top: 4px solid var(--navy); box-shadow: 0 1px 6px rgba(15,33,85,0.05); }
+  .data-card.good { border-top-color: var(--green); }
+  .data-card.watch { border-top-color: var(--orange); }
+  .data-card.bad { border-top-color: var(--red); }
+  .data-card .lbl { font-size: 11px; color: var(--gray); letter-spacing: 0.05em; }
+  .data-card .num { font-size: 30px; font-weight: 700; color: var(--navy); line-height: 1.1; margin: 6px 0 4px; }
+  .data-card.good .num { color: var(--green); }
+  .data-card.watch .num { color: var(--orange); }
+  .data-card.bad .num { color: var(--red); }
+  .data-card .delta { font-size: 11px; color: var(--gray); line-height: 1.5; }
+  .data-card .delta strong.up { color: var(--green); }
+  .data-card .delta strong.down { color: var(--red); }
+  .channel-block { background: #f4f6fc; border-radius: 10px; padding: 18px 22px; }
+  .channel-block h4 { font-size: 13px; color: var(--navy); margin: 0 0 14px; letter-spacing: 0.05em; }
+  .ch-row { display: grid; grid-template-columns: 120px 1fr 80px; gap: 10px; align-items: center; padding: 6px 0; }
+  .ch-row .name { font-size: 12px; font-weight: 600; color: #2d3344; }
+  .ch-row .bar-wrap { background: #fff; border-radius: 4px; overflow: hidden; height: 16px; position: relative; }
+  .ch-row .bar { background: linear-gradient(90deg, var(--navy) 0%, var(--navy-light) 100%); height: 100%; border-radius: 4px; }
+  .ch-row .bar.organic { background: linear-gradient(90deg, var(--green) 0%, #58c789 100%); }
+  .ch-row .bar.direct { background: linear-gradient(90deg, var(--navy) 0%, var(--navy-light) 100%); }
+  .ch-row .bar.referral { background: linear-gradient(90deg, var(--purple) 0%, #9b8de8 100%); }
+  .ch-row .bar.unassigned { background: linear-gradient(90deg, var(--gray) 0%, var(--gray-light) 100%); }
+  .ch-row .val { font-size: 12px; font-weight: 700; color: var(--navy); text-align: right; }
+  .ch-row .val .delta { font-size: 10px; color: var(--gray); font-weight: 500; display: block; }
+  .ch-row .val .delta.up { color: var(--green); }
+  .ch-row .val .delta.down { color: var(--red); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .col-title { font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 10px; padding-bottom: 10px; margin-bottom: 16px; }
+  .col-title.good { color: var(--green); border-bottom: 2px solid var(--green); }
+  .col-title.watch { color: var(--orange); border-bottom: 2px solid var(--orange); }
+  .col-title .ic { width: 28px; height: 28px; border-radius: 50%; background: var(--green-bg); display: inline-flex; align-items: center; justify-content: center; font-size: 14px; }
+  .col-title.watch .ic { background: var(--orange-bg); }
+  .h-card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; border-left: 4px solid var(--green); box-shadow: 0 1px 4px rgba(15,33,85,0.04); display: flex; align-items: flex-start; gap: 14px; }
+  .h-card.watch { border-left-color: var(--orange); }
+  .h-card .icon-wrap { width: 38px; height: 38px; border-radius: 50%; background: var(--green-bg); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .h-card.watch .icon-wrap { background: var(--orange-bg); }
+  .h-card .body { flex: 1; }
+  .h-card .h-lbl { font-size: 13px; font-weight: 700; color: #2d3344; margin-bottom: 2px; }
+  .h-card .h-num { font-size: 20px; font-weight: 700; line-height: 1.2; }
+  .h-card .h-num .from { color: var(--gray-light); font-weight: 500; font-size: 14px; }
+  .h-card .h-num .arrow { color: var(--gray-light); font-weight: 500; margin: 0 4px; }
+  .h-card .h-num .to { color: var(--green); }
+  .h-card.watch .h-num .to { color: var(--orange); }
+  .h-card .h-sub { font-size: 11px; color: var(--gray); margin-top: 4px; }
+  .data-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; font-size: 12px; }
+  .data-table th { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: #fff; padding: 10px 12px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; }
+  .data-table td { padding: 9px 12px; border-bottom: 1px solid var(--line); color: #2d3344; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) td { background: #fafbfd; }
+  .data-table .num-cell { text-align: right; font-weight: 600; }
+  .data-table .path { font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: var(--navy); }
+  .data-table .up { color: var(--green); font-weight: 700; }
+  .data-table .down { color: var(--red); font-weight: 700; }
+  .action-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 14px; }
+  .action-card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 18px 18px 14px; box-shadow: 0 1px 6px rgba(15,33,85,0.04); position: relative; border-top: 4px solid var(--navy); }
+  .action-card.recruit { border-top-color: var(--accent-blue); }
+  .action-card.content { border-top-color: var(--green); }
+  .action-card .num-badge { position: absolute; top: -12px; left: 16px; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
+  .action-card.recruit .num-badge { background: var(--accent-blue); }
+  .action-card.content .num-badge { background: var(--green); }
+  .action-card .tag { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 3px; background: #f4f6fc; color: var(--navy); margin-top: 8px; margin-bottom: 6px; font-weight: 700; }
+  .action-card.recruit .tag { background: #e8efff; color: var(--accent-blue); }
+  .action-card.content .tag { background: var(--green-bg); color: var(--green); }
+  .action-card .title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.5; }
+  .action-card ul { padding-left: 18px; margin: 0; font-size: 11.5px; line-height: 1.7; color: #2d3344; }
+  .action-card ul li { margin-bottom: 4px; }
+  .insight { background: var(--green-bg); border-radius: 10px; padding: 14px 18px; margin-bottom: 18px; border-left: 5px solid var(--green); display: flex; align-items: center; gap: 12px; }
+  .insight.watch { background: var(--orange-bg); border-left-color: var(--orange); }
+  .insight.bad { background: var(--red-bg); border-left-color: var(--red); }
+  .insight .ic { font-size: 22px; }
+  .insight .txt { font-size: 13px; line-height: 1.7; }
+  .insight .txt strong { color: var(--green); }
+  .insight.watch .txt strong { color: var(--orange); }
+  .insight.bad .txt strong { color: var(--red); }
+  .closing { background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%); color: #fff; text-align: center; padding: 60px 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .closing h2 { font-size: 36px; font-weight: 700; margin: 0 0 16px; line-height: 1.4; }
+  .closing .accent { color: var(--accent-light); }
+  .closing .lead { font-size: 16px; opacity: 0.9; max-width: 700px; margin: 0 auto 24px; line-height: 1.8; }
+  .closing .signoff { margin-top: 24px; font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+  .closing .signoff strong { color: #fff; font-size: 14px; }
+  @media (max-width: 900px) {
+    .slide { aspect-ratio: auto; height: auto; }
+    .cover h1 { font-size: 32px; }
+    .cover h1 .sub-title { font-size: 24px; }
+    .cover-meta { position: static; padding-top: 24px; flex-direction: column; align-items: center; gap: 12px; }
+    .cover-brand { display: none; }
+    .two-col, .data-row, .action-row { grid-template-columns: 1fr; }
+    .slide-body { padding: 22px 18px; }
+    .slide-head { padding: 18px 22px; }
+    .slide-head h2 { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 : COVER -->
+<div class="slide cover">
+  <div class="cover-inner">
+    <div class="cover-tag">
+      <span class="t1">Monthly Report</span>
+      <span class="t2">HP OPERATION</span>
+    </div>
+    <h1>
+      2026年6月
+      <span class="sub-title">HP運用月次レポート</span>
+    </h1>
+    <div class="cover-divider"></div>
+    <div class="cover-client">株式会社コモンウェルスエンジニアーズ様</div>
+  </div>
+  <div class="cover-meta">
+    <div class="item">
+      <div class="icon">📅</div>
+      <div>
+        <span class="lbl">対象期間</span>
+        <span class="val">2026/6/1 〜 2026/6/30</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="icon">🌐</div>
+      <div>
+        <span class="lbl">対象サイト</span>
+        <span class="val">cectokyo.com</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-brand">
+    <strong>株式会社 斗（hishaku）</strong><br>
+    HP運用パートナー
+  </div>
+</div>
+
+<!-- SLIDE 2 : OVERALL SUMMARY -->
+<div class="slide content-slide">
+  <div class="slide-head">
+    <h2>全体数値サマリー</h2>
+    <div class="head-r">2026年6月 HP運用月次レポート</div>
+  </div>
+  <div class="slide-body">
+    <div class="insight">
+      <div class="ic">📈</div>
+      <div class="txt">6月は <strong>訪問数・問い合わせが回復</strong>。5月に落ち込んだDirect流入も戻り、<strong>/about/・/business/ の検索順位改善が進行</strong>。<strong>4月公開記事①がGSCで表示454回・5クリック</strong>まで伸び、コンテンツSEOが2ヶ月遅れで効き始めたのが最大トピックです。</div>
+    </div>
+
+    <div class="data-row">
+      <div class="data-card good">
+        <div class="lbl">訪問数（セッション）</div>
+        <div class="num">737</div>
+        <div class="delta">前月 678 ／ <strong class="up">+8.7%</strong></div>
+      </div>
+      <div class="data-card watch">
+        <div class="lbl">ページビュー</div>
+        <div class="num">1,591</div>
+        <div class="delta">前月 1,663 ／ <strong class="down">−4.3%</strong></div>
+      </div>
+      <div class="data-card good">
+        <div class="lbl">問い合わせ（contactイベント）</div>
+        <div class="num">22件</div>
+        <div class="delta">前月 17件 ／ <strong class="up">+29.4%</strong></div>
+      </div>
+      <div class="data-card bad">
+        <div class="lbl">フォーム送信</div>
+        <div class="num">7件</div>
+        <div class="delta">前月 11件 ／ <strong class="down">−36.4%</strong></div>
+      </div>
+    </div>
+
+    <div class="data-row">
+      <div class="data-card watch">
+        <div class="lbl">GSC クリック数</div>
+        <div class="num">65回</div>
+        <div class="delta">前月 77回 ／ <strong class="down">−15.6%</strong></div>
+      </div>
+      <div class="data-card good">
+        <div class="lbl">GSC 表示回数</div>
+        <div class="num">1,465回</div>
+        <div class="delta">前月 1,264回 ／ <strong class="up">+15.9%</strong></div>
+      </div>
+      <div class="data-card watch">
+        <div class="lbl">GSC 平均CTR</div>
+        <div class="num">4.44%</div>
+        <div class="delta">前月 6.09% ／ <strong class="down">−1.65pt</strong></div>
+      </div>
+      <div class="data-card watch">
+        <div class="lbl">フォーム開始数</div>
+        <div class="num">77件</div>
+        <div class="delta">前月 89件 ／ <strong class="down">−13.5%</strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>株式会社コモンウェルスエンジニアーズ様 2026年6月 HP運用月次レポート</span>
+    <span>2 / 7</span>
+  </div>
+</div>
+
+<!-- SLIDE 3 : CHANNEL BREAKDOWN -->
+<div class="slide content-slide">
+  <div class="slide-head">
+    <h2>流入チャネル分析</h2>
+    <div class="head-r">2026年6月 HP運用月次レポート</div>
+  </div>
+  <div class="slide-body">
+    <div class="insight">
+      <div class="ic">🎯</div>
+      <div class="txt">5月に減少した <strong>Direct流入が回復（+21%）</strong>し、Organic Search も微増。<strong>指名検索での安定した集客が戻ってきた</strong>月です。</div>
+    </div>
+
+    <div class="two-col">
+      <div class="channel-block">
+        <h4>📊 2026年6月 流入チャネル別セッション数</h4>
+        <div class="ch-row">
+          <span class="name">Direct</span>
+          <div class="bar-wrap"><div class="bar direct" style="width:100%;"></div></div>
+          <div class="val">375<span class="delta up">前月 310（+21.0%）</span></div>
+        </div>
+        <div class="ch-row">
+          <span class="name">Organic Search</span>
+          <div class="bar-wrap"><div class="bar organic" style="width:92.8%;"></div></div>
+          <div class="val">348<span class="delta up">前月 320（+8.8%）</span></div>
+        </div>
+        <div class="ch-row">
+          <span class="name">Referral</span>
+          <div class="bar-wrap"><div class="bar referral" style="width:3.5%;"></div></div>
+          <div class="val">13<span class="delta down">前月 14</span></div>
+        </div>
+        <div class="ch-row">
+          <span class="name">Unassigned</span>
+          <div class="bar-wrap"><div class="bar unassigned" style="width:0.3%;"></div></div>
+          <div class="val">1<span class="delta">前月 34</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="col-title good"><span class="ic">✅</span>ポジティブな兆候</div>
+        <div class="h-card">
+          <div class="icon-wrap">🔄</div>
+          <div class="body">
+            <div class="h-lbl">Direct流入が完全回復</div>
+            <div class="h-num"><span class="from">310</span><span class="arrow">→</span><span class="to">375</span></div>
+            <div class="h-sub">5月の一時的減少から反転。指名検索・ブックマークが元の水準に</div>
+          </div>
+        </div>
+        <div class="h-card">
+          <div class="icon-wrap">📈</div>
+          <div class="body">
+            <div class="h-lbl">Organic Search も微増</div>
+            <div class="h-num"><span class="from">320</span><span class="arrow">→</span><span class="to">348</span></div>
+            <div class="h-sub">SEO経由の自然流入は5ヶ月連続で3桁を維持</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>株式会社コモンウェルスエンジニアーズ様 2026年6月 HP運用月次レポート</span>
+    <span>3 / 7</span>
+  </div>
+</div>
+
+<!-- SLIDE 4 : SEARCH PERFORMANCE -->
+<div class="slide content-slide">
+  <div class="slide-head">
+    <h2>検索パフォーマンス（GSC）</h2>
+    <div class="head-r">2026年6月 HP運用月次レポート</div>
+  </div>
+  <div class="slide-body">
+    <div class="insight">
+      <div class="ic">🌱</div>
+      <div class="txt">最大トピックは <strong>4月公開記事「plant-design-guide」がGSCで表示454回・5クリック</strong>獲得。<strong>コンテンツSEOが2ヶ月遅れで結果を出し始めた</strong>証拠です。/about/ クリック +56%、/business/ クリック +133%と主要ページの検索評価も着実に進展。</div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="col-title good"><span class="ic">📈</span>トップ検索クエリ（6月）</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>クエリ</th>
+              <th class="num-cell">クリック</th>
+              <th class="num-cell">表示</th>
+              <th class="num-cell">順位</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>コモンウェルスエンジニアーズ</td><td class="num-cell">40</td><td class="num-cell">61</td><td class="num-cell">1.1</td></tr>
+            <tr><td>株式会社コモンウェルスエンジニアーズ</td><td class="num-cell up">20 ↑</td><td class="num-cell">40</td><td class="num-cell">1.0</td></tr>
+            <tr><td>cec tokyo</td><td class="num-cell">2</td><td class="num-cell">16</td><td class="num-cell">2.4</td></tr>
+            <tr><td>commonwealth engineers</td><td class="num-cell">2</td><td class="num-cell">14</td><td class="num-cell">8.4</td></tr>
+            <tr><td>長尾和樹（担当者名）</td><td class="num-cell">1</td><td class="num-cell">5</td><td class="num-cell">22.2</td></tr>
+            <tr><td>採用についてのお問い合わせ</td><td class="num-cell">0</td><td class="num-cell">4</td><td class="num-cell">32.8</td></tr>
+          </tbody>
+        </table>
+        <div style="margin-top:10px; font-size: 11px; color: var(--gray);">
+          ★<strong style="color: var(--green);">「株式会社コモンウェルスエンジニアーズ」</strong>クリックが 5→20（+300%）。担当者名や採用KWでの検索も出現し、<strong>指名検索の質が上がった月</strong>。
+        </div>
+      </div>
+
+      <div>
+        <div class="col-title good"><span class="ic">📄</span>ページ別 GSC パフォーマンス</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ページ</th>
+              <th class="num-cell">クリック</th>
+              <th class="num-cell">表示</th>
+              <th class="num-cell">順位</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="path">/</td><td class="num-cell">96</td><td class="num-cell">1,448</td><td class="num-cell">9.66</td></tr>
+            <tr><td class="path">/about/</td><td class="num-cell up">39 ↑</td><td class="num-cell">693</td><td class="num-cell">4.34</td></tr>
+            <tr><td class="path">/en/</td><td class="num-cell">13</td><td class="num-cell">287</td><td class="num-cell">8.80</td></tr>
+            <tr><td class="path">/business/</td><td class="num-cell up">7 ↑↑</td><td class="num-cell">245</td><td class="num-cell up">2.55</td></tr>
+            <tr><td class="path">/en/about/</td><td class="num-cell">7</td><td class="num-cell">530</td><td class="num-cell">7.68</td></tr>
+            <tr><td class="path">/plant-design-guide/</td><td class="num-cell up">5 🌱</td><td class="num-cell">454</td><td class="num-cell">8.67</td></tr>
+            <tr><td class="path">/internship-1/</td><td class="num-cell">2</td><td class="num-cell">26</td><td class="num-cell">7.00</td></tr>
+          </tbody>
+        </table>
+        <div style="margin-top:10px; font-size: 11px; color: var(--gray);">
+          ★<strong style="color: var(--green);">/plant-design-guide/</strong>（4月公開記事）がTOP10入り。<strong>コンテンツ資産化の第1号</strong>。
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>株式会社コモンウェルスエンジニアーズ様 2026年6月 HP運用月次レポート</span>
+    <span>4 / 7</span>
+  </div>
+</div>
+
+<!-- SLIDE 5 : EVALUATION -->
+<div class="slide content-slide">
+  <div class="slide-head">
+    <h2>6月の評価：成果と課題</h2>
+    <div class="head-r">2026年6月 HP運用月次レポート</div>
+  </div>
+  <div class="slide-body">
+    <div class="two-col">
+      <div>
+        <div class="col-title good"><span class="ic">👍</span>良かった点</div>
+
+        <div class="h-card">
+          <div class="icon-wrap">🌱</div>
+          <div class="body">
+            <div class="h-lbl">4月公開記事①がSEOで実を結ぶ</div>
+            <div class="h-num"><span class="to">表示 454回 / クリック 5</span></div>
+            <div class="h-sub">/plant-design-guide/ が公開2ヶ月でTOP10入り。記事の効果が2ヶ月遅れで顕在化</div>
+          </div>
+        </div>
+
+        <div class="h-card">
+          <div class="icon-wrap">📊</div>
+          <div class="body">
+            <div class="h-lbl">/about/ の露出が大幅増</div>
+            <div class="h-num"><span class="from">25クリック</span><span class="arrow">→</span><span class="to">39クリック（+56%）</span></div>
+            <div class="h-sub">表示回数も 455→693 と +52%</div>
+          </div>
+        </div>
+
+        <div class="h-card">
+          <div class="icon-wrap">💼</div>
+          <div class="body">
+            <div class="h-lbl">/business/ の検索順位改善</div>
+            <div class="h-num"><span class="from">2.84位/3クリック</span><span class="arrow">→</span><span class="to">2.55位/7クリック</span></div>
+            <div class="h-sub">「プラント設計」関連KWで1ページ目突破間近</div>
+          </div>
+        </div>
+
+        <div class="h-card">
+          <div class="icon-wrap">📧</div>
+          <div class="body">
+            <div class="h-lbl">問い合わせ件数が回復</div>
+            <div class="h-num"><span class="from">17件</span><span class="arrow">→</span><span class="to">22件（+29%）</span></div>
+            <div class="h-sub">5月の落ち込みから反転</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="col-title watch"><span class="ic">⚠️</span>課題と対策論点</div>
+
+        <div class="h-card watch">
+          <div class="icon-wrap">📉</div>
+          <div class="body">
+            <div class="h-lbl">フォーム送信の減少継続</div>
+            <div class="h-num"><span class="from">11件</span><span class="arrow">→</span><span class="to">7件</span></div>
+            <div class="h-sub">フォーム開始 77件に対し送信 7件（完了率9%）。<strong>フォーム改修が最優先課題</strong></div>
+          </div>
+        </div>
+
+        <div class="h-card watch">
+          <div class="icon-wrap">👤</div>
+          <div class="body">
+            <div class="h-lbl">/career/ の検索経由流入が弱い</div>
+            <div class="h-num"><span class="to">GSC露出まだ限定的</span></div>
+            <div class="h-sub">中途採用注力の方針に対し、採用ページのSEO/コンテンツ強化が急務</div>
+          </div>
+        </div>
+
+        <div class="h-card watch">
+          <div class="icon-wrap">🔍</div>
+          <div class="body">
+            <div class="h-lbl">CTRの見かけ上の低下</div>
+            <div class="h-num"><span class="from">6.09%</span><span class="arrow">→</span><span class="to">4.44%</span></div>
+            <div class="h-sub">5月に上振れした反動。表示回数は増えており、クリック絶対数は健全</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>株式会社コモンウェルスエンジニアーズ様 2026年6月 HP運用月次レポート</span>
+    <span>5 / 7</span>
+  </div>
+</div>
+
+<!-- SLIDE 6 : ACTION PLAN -->
+<div class="slide content-slide">
+  <div class="slide-head">
+    <h2>7月の取り組み</h2>
+    <div class="head-r">2026年6月 HP運用月次レポート</div>
+  </div>
+  <div class="slide-body">
+    <div class="insight">
+      <div class="ic">🎯</div>
+      <div class="txt">御社より <strong>「即戦力の中途採用向け記事の発信を強化」</strong> とのご方針を頂戴しました。7月は <strong>採用系記事の量産</strong> と <strong>フォーム改修</strong> の2軸で進めます。</div>
+    </div>
+
+    <div class="action-row">
+      <div class="action-card recruit">
+        <div class="num-badge">01</div>
+        <div class="tag">採用 / 中途エンジニア向け</div>
+        <div class="title">中途採用記事の連載スタート</div>
+        <ul>
+          <li>「即戦力 中途採用向け」記事を月2〜3本ご提案</li>
+          <li>「プラント設計3年目からのキャリアパス」など具体テーマ</li>
+          <li>「11か国チームで働く」「海外案件のリアル」で御社の強み訴求</li>
+        </ul>
+      </div>
+
+      <div class="action-card">
+        <div class="num-badge">02</div>
+        <div class="tag">CVR改善 / 最優先</div>
+        <div class="title">フォーム送信率の改修</div>
+        <ul>
+          <li>フォーム完了率9%は要改善（開始77件→送信7件）</li>
+          <li>入力項目の見直し・エラーメッセージ改善</li>
+          <li>スマホ入力体験の最適化</li>
+        </ul>
+      </div>
+
+      <div class="action-card content">
+        <div class="num-badge">03</div>
+        <div class="tag">採用ブランディング</div>
+        <div class="title">インターン受け入れの記事化</div>
+        <ul>
+          <li>ものつくり大学 長期インターン（6/11〜8/7）の様子を記事化</li>
+          <li>磯子工業高校 短期インターン（8/18〜20）の紹介</li>
+          <li>「教える文化・多国籍チーム」ブランディングに直結</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="background: #f4f6fc; border-radius: 10px; padding: 14px 18px; margin-top: 16px; font-size: 12px; color: var(--gray); line-height: 1.7;">
+      <strong style="color: var(--navy);">📝 補足：顧客向け記事・Bentley/Staad Pro記事について</strong><br>
+      御社ご方針により、顧客向け記事および Bentley/Staad Pro に関する記事は <strong>御社にて下書きをご作成</strong>いただき、当社でSEO・読みやすさ観点で仕上げる形で進めます。下書きを頂戴次第、公開準備に入ります。
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>株式会社コモンウェルスエンジニアーズ様 2026年6月 HP運用月次レポート</span>
+    <span>6 / 7</span>
+  </div>
+</div>
+
+<!-- SLIDE 7 : CLOSING -->
+<div class="slide closing">
+  <h2>コンテンツSEOが <span class="accent">実を結び始めた月</span><br>7月は中途採用記事を軸に加速します</h2>
+  <div class="lead">
+    4月公開記事のSEO効果が2ヶ月遅れで顕在化し、<strong>/about/・/business/</strong> の順位も着実に改善。<br>
+    御社ご方針を踏まえ、7月からは <strong>中途採用向け記事</strong> と <strong>フォーム改修</strong>で成果を積み上げていきます。
+  </div>
+  <div class="signoff">
+    <strong>株式会社 斗（hishaku）</strong><br>
+    HP運用パートナー ／ お問い合わせは担当までお気軽にどうぞ
+  </div>
+</div>
+
+</body>
+</html>
