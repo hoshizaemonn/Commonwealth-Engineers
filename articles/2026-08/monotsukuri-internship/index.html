@@ -121,6 +121,7 @@ body {
 .cec-article-body strong {
     font-weight: bold;
     color: #000;
+    font-size: inherit;
 }
 .cec-article-body table {
     width: 100%;
@@ -136,41 +137,47 @@ body {
     padding: 1rem 1.2rem;
     text-align: left;
     line-height: 1.8;
+    font-size: 1.65rem;
 }
 .cec-article-body table th {
     background-color: #f5f5f5;
     font-weight: bold;
+    font-size: 1.725rem;
 }
-.cec-article-body ul, .cec-article-body ol {
+.cec-article-body table td strong {
+    font-size: inherit;
+    font-weight: bold;
+}
+.cec-article-body ul {
     margin: 1.5rem 0;
     padding-left: 2rem;
+}
+.cec-article-body ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    font-size: 1.725rem;
+    line-height: 2.0;
+}
+.cec-article-body hr + p strong {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 0.5em;
 }
 .cec-article-body a {
     color: #004080;
     text-decoration: underline;
+    font-size: inherit;
 }
 .cec-article-body a:hover {
     color: #0066cc;
     text-decoration: none;
-}
-.cec-voice-box {
-    background-color: #f9f9f9;
-    border-left: 6px solid #004080;
-    padding: 2rem 2.5rem;
-    margin: 2rem 0;
-    border-radius: 4px;
-}
-.cec-voice-box p {
-    font-size: 1.725rem;
-    line-height: 2.0;
-    margin-bottom: 0 !important;
 }
 .cec-cta-box {
     background: #f0f4f8;
     border: 2px solid #004080;
     border-radius: 8px;
     padding: 2rem;
-    margin: 3rem 0;
+    margin: 2.5rem 0;
     text-align: center;
 }
 .cec-cta-box p {
@@ -186,11 +193,23 @@ body {
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: bold;
-    margin: 0 0.5rem 0.5rem 0;
 }
 .cec-cta-box a:hover {
     background: #0066cc;
     color: #fff;
+}
+/* --- 本記事の追加分（インターン生の声の引用ボックス） --- */
+.cec-voice-box {
+    background-color: #f9f9f9;
+    border-left: 6px solid #004080;
+    padding: 2rem 2.5rem;
+    margin: 2rem 0;
+    border-radius: 4px;
+}
+.cec-voice-box p {
+    font-size: 1.725rem;
+    line-height: 2.0;
+    margin-bottom: 0;
 }
 </style>
 
@@ -202,33 +221,57 @@ body {
 <h2>実施概要</h2>
 
 <table>
-<tbody>
-<tr><th>期間</th><td>2026年6月11日〜8月6日（およそ2か月間）</td></tr>
-<tr><th>対象</th><td>ものつくり大学 建設学科2年生</td></tr>
-<tr><th>内容</th><td>AutoCADによる図面作成、数量拾い、3Dモデルを使った寸法測定など、設計実務の補助</td></tr>
-<tr><th>指導体制</th><td>複数の社員が指導担当</td></tr>
-</tbody>
+    <tbody>
+        <tr>
+            <th>期間</th>
+            <td>2026年6月11日〜8月6日（およそ2か月間）</td>
+        </tr>
+        <tr>
+            <th>対象</th>
+            <td>ものつくり大学 建設学科2年生</td>
+        </tr>
+        <tr>
+            <th>内容</th>
+            <td>AutoCADによる図面作成、数量拾い、3Dモデルを使った寸法測定など、設計実務の補助</td>
+        </tr>
+        <tr>
+            <th>指導体制</th>
+            <td>複数の社員が指導担当</td>
+        </tr>
+    </tbody>
 </table>
 
-<p>2026年6月11日から8月6日までのおよそ2か月間、ものつくり大学建設学科2年生のインターンシップ受け入れを行いました。</p>
+<p>
+    2026年6月11日から8月6日までのおよそ2か月間、ものつくり大学建設学科2年生のインターンシップ受け入れを行いました。
+</p>
 
-<p>当社ではこれまで、高校生や専門学校生を対象とした2〜3日間の短期プログラムを中心にインターンシップを実施してきました。今回は<strong>約2か月という長期での受け入れ</strong>となり、これまでとは異なる形での実施となりました。</p>
+<p>
+    当社ではこれまで、高校生や専門学校生を対象とした2〜3日間の短期プログラムを中心にインターンシップを実施してきました。今回は<strong>約2か月という長期での受け入れ</strong>となり、これまでとは異なる形での実施となりました。
+</p>
 
 <hr>
 
 <h2>期間中に体験していただいたこと</h2>
 
-<p>期間中は、<strong>AutoCADによる図面作成や数量拾い、3Dモデルを使った寸法測定</strong>など、実際の設計実務の補助を体験していただきました。</p>
+<p>
+    期間中は、<strong>AutoCADによる図面作成や数量拾い、3Dモデルを使った寸法測定</strong>など、実際の設計実務の補助を体験していただきました。
+</p>
 
-<p>短期のプログラムでは、あらかじめ用意した課題に取り組んでいただく形が中心になります。今回は期間に余裕があったため、日々の設計業務の流れそのものに関わっていただく形をとりました。図面を描くこと自体よりも、<strong>描いた内容が前後の工程とつながっていること</strong>を体感していただける期間になったのではないかと考えています。</p>
+<p>
+    短期のプログラムでは、あらかじめ用意した課題に取り組んでいただく形が中心になります。今回は期間に余裕があったため、日々の設計業務の流れそのものに関わっていただく形をとりました。図面を描くこと自体よりも、<strong>描いた内容が前後の工程とつながっていること</strong>を体感していただける期間になったのではないかと考えています。
+</p>
 
 <hr>
 
 <h2>複数の社員が指導担当となりました</h2>
 
-<p>2か月という長期間だったため、複数の社員が指導担当者となりました。その結果、<strong>社員側にも気づきや学びを得る貴重な機会</strong>となりました。</p>
+<p>
+    2か月という長期間だったため、複数の社員が指導担当者となりました。その結果、<strong>社員側にも気づきや学びを得る貴重な機会</strong>となりました。
+</p>
 
-<p>教える立場に立つと、普段は手が覚えている手順であっても、「なぜこの手順で進めるのか」を言葉にして説明する必要が出てきます。日常業務のなかでは意識しにくい部分を改めて整理する場面も多く、指導にあたった社員にとっても学びの多い2か月間となりました。</p>
+<p>
+    教える立場に立つと、普段は手が覚えている手順であっても、「なぜこの手順で進めるのか」を言葉にして説明する必要が出てきます。日常業務のなかでは意識しにくい部分を改めて整理する場面も多く、指導にあたった社員にとっても学びの多い2か月間となりました。
+</p>
 
 <!-- ★空き枠：指導担当社員のコメント（1〜2行）を尾上様からいただけた場合、下記の形式でここに差し込みます
 <blockquote class="wp-block-quote">
@@ -240,58 +283,91 @@ body {
 
 <h2>インターン生の声</h2>
 
-<p>インターンシップの締めくくりに行われた成果報告会の原稿より、ご本人の言葉をそのまま掲載します。</p>
+<p>
+    インターンシップの締めくくりに行われた成果報告会の原稿より、ご本人の言葉をそのまま掲載します。
+</p>
 
 <h3>課題と工夫</h3>
 
 <div class="cec-voice-box">
-<p>CADの保存忘れによるデータ消失や、苦手な計算・単位換算への苦戦、変更時の図面間のズレといった失敗・課題に対し、こまめな保存、計算シートでの二重チェック、全体の見直しによる整合性の確認を徹底して対応しました。</p>
+    <p>CADの保存忘れによるデータ消失や、苦手な計算・単位換算への苦戦、変更時の図面間のズレといった失敗・課題に対し、こまめな保存、計算シートでの二重チェック、全体の見直しによる整合性の確認を徹底して対応しました。</p>
 </div>
 
 <h3>視点と展望</h3>
 
 <div class="cec-voice-box">
-<p>「図面の裏には現場の人がいる」という責任感や、明確な根拠を持って仕事を進める大切さを学びました。今後は自分の確認の甘さや癖を意識し、常に理由を持った説明や二重チェック、全体を意識した作図を大学でも継続していきます。</p>
+    <p>「図面の裏には現場の人がいる」という責任感や、明確な根拠を持って仕事を進める大切さを学びました。今後は自分の確認の甘さや癖を意識し、常に理由を持った説明や二重チェック、全体を意識した作図を大学でも継続していきます。</p>
 </div>
 
 <hr>
 
 <h2>産学連携の取り組みについて</h2>
 
-<p>当社では、高校生・専門学校生・大学生の皆さまを対象に、出前授業や職場体験、インターンシップの機会を継続して提供しています。</p>
+<p>
+    当社では、高校生・専門学校生・大学生の皆さまを対象に、出前授業や職場体験、インターンシップの機会を継続して提供しています。
+</p>
 
 <table>
-<thead>
-<tr><th>実施時期</th><th>受け入れ先</th><th>期間</th></tr>
-</thead>
-<tbody>
-<tr><td>2025年7月</td><td>磯子工業高等学校</td><td>3日間</td></tr>
-<tr><td>2025年12月</td><td>千葉日建工科専門学校</td><td>2日間</td></tr>
-<tr><td>2026年6〜8月</td><td>ものつくり大学 建設学科</td><td>およそ2か月間</td></tr>
-</tbody>
+    <thead>
+        <tr>
+            <th>実施時期</th>
+            <th>受け入れ先</th>
+            <th>期間</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2025年7月</td>
+            <td>磯子工業高等学校</td>
+            <td>3日間</td>
+        </tr>
+        <tr>
+            <td>2025年12月</td>
+            <td>千葉日建工科専門学校</td>
+            <td>2日間</td>
+        </tr>
+        <tr>
+            <td>2026年6〜8月</td>
+            <td>ものつくり大学 建設学科</td>
+            <td>およそ2か月間</td>
+        </tr>
+    </tbody>
 </table>
 
 <h3>学校関係者の皆さまへ</h3>
 
-<p>建築・土木系の学科をお持ちの学校関係者の皆さまで、出前授業やインターンシップの実施をご検討中の方は、お気軽にご相談ください。期間や内容は、学校側のご事情に合わせて調整させていただいております。</p>
-
-<p><a href="https://cectokyo.com/contact/">お問い合わせはこちら</a></p>
+<p>
+    建築・土木系の学科をお持ちの学校関係者の皆さまで、出前授業やインターンシップの実施をご検討中の方は、お気軽にご相談ください。期間や内容は、学校側のご事情に合わせて調整させていただいております。
+</p>
 
 <hr>
 
 <h2>設計の仕事に関心のある皆さまへ</h2>
 
-<p>当社は、発電所、石油化学プラント、セメント工場、LNGプラント、製鉄所などの土木・建築設計に携わっています。学生の皆さまの受け入れだけでなく、新卒・中途の採用も継続して行っております。</p>
+<p>
+    当社は、発電所、石油化学プラント、セメント工場、LNGプラント、製鉄所などの土木・建築設計に携わっています。学生の皆さまの受け入れだけでなく、新卒・中途の採用も継続して行っております。
+</p>
 
 <div class="cec-cta-box">
-<p><strong>コモンウェルスエンジニアーズの採用情報</strong></p>
-<a href="https://cectokyo.com/career/">採用情報を見る</a>
-<a href="https://cectokyo.com/entry/">エントリーはこちら</a>
+    <p>採用に関する情報はこちら</p>
+    <a href="https://cectokyo.com/career/">採用情報を見る</a>
 </div>
 
 <hr>
 
-<p><strong>株式会社コモンウェルスエンジニアーズより</strong></p>
+<p>
+    <strong>株式会社コモンウェルスエンジニアーズより</strong>
+</p>
+
+<hr>
+
+<h2>関連情報</h2>
+
+<ul>
+    <li><a href="https://cectokyo.com/career/">採用情報</a> — 現在の募集についてはこちらをご覧ください</li>
+    <li><a href="https://cectokyo.com/entry/">エントリーフォーム</a> — ご応募はこちらから受け付けております</li>
+    <li><a href="https://cectokyo.com/contact/">お問い合わせ</a> — 出前授業・インターンシップのご相談もこちらへ</li>
+</ul>
 
 </div>
 

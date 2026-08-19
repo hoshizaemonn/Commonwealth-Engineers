@@ -98,6 +98,7 @@ body { margin:0; background:#f1f1f1; font-family:"Helvetica Neue",Arial,"Hiragin
 .cec-article-body strong {
     font-weight: bold;
     color: #000;
+    font-size: inherit;
 }
 .cec-article-body table {
     width: 100%;
@@ -113,41 +114,47 @@ body { margin:0; background:#f1f1f1; font-family:"Helvetica Neue",Arial,"Hiragin
     padding: 1rem 1.2rem;
     text-align: left;
     line-height: 1.8;
+    font-size: 1.65rem;
 }
 .cec-article-body table th {
     background-color: #f5f5f5;
     font-weight: bold;
+    font-size: 1.725rem;
 }
-.cec-article-body ul, .cec-article-body ol {
+.cec-article-body table td strong {
+    font-size: inherit;
+    font-weight: bold;
+}
+.cec-article-body ul {
     margin: 1.5rem 0;
     padding-left: 2rem;
+}
+.cec-article-body ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    font-size: 1.725rem;
+    line-height: 2.0;
+}
+.cec-article-body hr + p strong {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 0.5em;
 }
 .cec-article-body a {
     color: #004080;
     text-decoration: underline;
+    font-size: inherit;
 }
 .cec-article-body a:hover {
     color: #0066cc;
     text-decoration: none;
-}
-.cec-voice-box {
-    background-color: #f9f9f9;
-    border-left: 6px solid #004080;
-    padding: 2rem 2.5rem;
-    margin: 2rem 0;
-    border-radius: 4px;
-}
-.cec-voice-box p {
-    font-size: 1.725rem;
-    line-height: 2.0;
-    margin-bottom: 0 !important;
 }
 .cec-cta-box {
     background: #f0f4f8;
     border: 2px solid #004080;
     border-radius: 8px;
     padding: 2rem;
-    margin: 3rem 0;
+    margin: 2.5rem 0;
     text-align: center;
 }
 .cec-cta-box p {
@@ -163,45 +170,84 @@ body { margin:0; background:#f1f1f1; font-family:"Helvetica Neue",Arial,"Hiragin
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: bold;
-    margin: 0 0.5rem 0.5rem 0;
 }
 .cec-cta-box a:hover {
     background: #0066cc;
     color: #fff;
 }
+/* --- 本記事の追加分（インターン生の声の引用ボックス） --- */
+.cec-voice-box {
+    background-color: #f9f9f9;
+    border-left: 6px solid #004080;
+    padding: 2rem 2.5rem;
+    margin: 2rem 0;
+    border-radius: 4px;
+}
+.cec-voice-box p {
+    font-size: 1.725rem;
+    line-height: 2.0;
+    margin-bottom: 0;
+}
 </style>
+
 <div class="cec-article-body">
 
-<!-- ★Featured image: set in WordPress. If photos from the internship are provided, those take priority. -->
+<!-- ★Featured image: set in WordPress. Photos from the internship take priority if provided. -->
 
 <h2>Program Overview</h2>
 
 <table>
-<tbody>
-<tr><th>Duration</th><td>June 11 &ndash; August 6, 2026 (approximately two months)</td></tr>
-<tr><th>Participant</th><td>Second-year student, Department of Building Technologists, Monotsukuri Institute of Technologists</td></tr>
-<tr><th>Activities</th><td>Drafting with AutoCAD, quantity take-off, and dimension measurement using 3D models, supporting our design work</td></tr>
-<tr><th>Supervision</th><td>Several of our engineers served as supervisors</td></tr>
-</tbody>
+    <tbody>
+        <tr>
+            <th>Duration</th>
+            <td>June 11 &ndash; August 6, 2026 (approximately two months)</td>
+        </tr>
+        <tr>
+            <th>Participant</th>
+            <td>Second-year student, Department of Building Technologists, Monotsukuri Institute of Technologists</td>
+        </tr>
+        <tr>
+            <th>Activities</th>
+            <td>Drafting with AutoCAD, quantity take-off, and dimension measurement using 3D models, supporting our design work</td>
+        </tr>
+        <tr>
+            <th>Supervision</th>
+            <td>Several of our engineers served as supervisors</td>
+        </tr>
+    </tbody>
 </table>
 
-<p>From June 11 to August 6, 2026, a period of approximately two months, we hosted an internship for a second-year student from the Department of Building Technologists at Monotsukuri Institute of Technologists.</p>
+<p>
+    From June 11 to August 6, 2026, a period of approximately two months, we hosted an internship for a second-year student from the Department of Building Technologists at Monotsukuri Institute of Technologists.
+</p>
 
-<p>Until now, our internships have mainly been short programs of two to three days for high school and technical college students. This time we hosted a student for <strong>around two months</strong>, which made for a rather different experience from our previous programs.</p>
+<p>
+    Until now, our internships have mainly been short programs of two to three days for high school and technical college students. This time we hosted a student for <strong>around two months</strong>, which made for a rather different experience from our previous programs.
+</p>
 
 <hr>
 
 <h2>What the Internship Involved</h2>
 
-<p>Over the course of the internship, the student took part in <strong>drafting with AutoCAD, quantity take-off, and dimension measurement using 3D models</strong>, supporting our design work.</p>
+<p>
+    Over the course of the internship, the student took part in <strong>drafting with AutoCAD, quantity take-off, and dimension measurement using 3D models</strong>, supporting our design work.
+</p>
 
-<p>In a short program, the participant generally works through exercises prepared in advance. Because we had more time on this occasion, the student was able to take part in the flow of our day-to-day design work itself. Rather than drafting alone, we hope the experience conveyed how <strong>each drawing connects to the steps that come before and after it</strong>.</p>
+<p>
+    In a short program, the participant generally works through exercises prepared in advance. Because we had more time on this occasion, the student was able to take part in the flow of our day-to-day design work itself. Rather than drafting alone, we hope the experience conveyed how <strong>each drawing connects to the steps that come before and after it</strong>.
+</p>
 
 <hr>
 
 <h2>Several of Our Engineers Served as Supervisors</h2>
 
-<p>Because the internship ran for two months, several of our engineers took on the role of supervisor. As a result, it also became <strong>a valuable opportunity for our own staff to gain new insights</strong>.</p>
+<p>
+    Because the internship ran for two months, several of our engineers took on the role of supervisor. As a result, it also became <strong>a valuable opportunity for our own staff to gain new insights</strong>.
+</p>
+
+<p>
+    When you take on the role of teaching, you have to put into words why a given step is done the way it is, even for procedures your hands carry out almost without thinking. There were many occasions to revisit and organise things that are easy to overlook in day-to-day work, and it proved to be an instructive two months for the engineers who supervised as well.
+</p>
 
 <!-- ★Placeholder: if a comment (1-2 lines) from a supervising engineer is provided, insert it here as a blockquote
 <blockquote class="wp-block-quote">
@@ -213,60 +259,94 @@ body { margin:0; background:#f1f1f1; font-family:"Helvetica Neue",Arial,"Hiragin
 
 <h2>In the Intern&rsquo;s Own Words</h2>
 
-<p>The following is taken from the notes the student prepared for the presentation given at the end of the internship. <em>(Translated from the original Japanese.)</em></p>
+<p>
+    The following is taken from the notes the student prepared for the presentation given at the end of the internship. <em>(Translated from the original Japanese.)</em>
+</p>
 
 <h3>Challenges and How I Addressed Them</h3>
 
 <div class="cec-voice-box">
-<p>I ran into problems such as losing data because I forgot to save my CAD files, struggling with calculations and unit conversions that I am not good at, and discrepancies between drawings when changes were made. In response, I made a point of saving frequently, double-checking my figures on a calculation sheet, and reviewing the whole set of drawings to confirm that everything was consistent.</p>
+    <p>I ran into problems such as losing data because I forgot to save my CAD files, struggling with calculations and unit conversions that I am not good at, and discrepancies between drawings when changes were made. In response, I made a point of saving frequently, double-checking my figures on a calculation sheet, and reviewing the whole set of drawings to confirm that everything was consistent.</p>
 </div>
 
 <h3>What I Learned and What Comes Next</h3>
 
 <div class="cec-voice-box">
-<p>I learned a sense of responsibility &mdash; that &ldquo;behind every drawing there are people on site&rdquo; &mdash; and how important it is to work with clear reasons for what you do. From now on I want to stay aware of where my own checking is weak and of my own habits, and to keep explaining things with reasons, double-checking my work, and drafting with the whole picture in mind, at university as well.</p>
+    <p>I learned a sense of responsibility &mdash; that &ldquo;behind every drawing there are people on site&rdquo; &mdash; and how important it is to work with clear reasons for what you do. From now on I want to stay aware of where my own checking is weak and of my own habits, and to keep explaining things with reasons, double-checking my work, and drafting with the whole picture in mind, at university as well.</p>
 </div>
 
 <hr>
 
 <h2>Our Industry-Academia Activities</h2>
 
-<p>We regularly offer guest lectures, workplace experience, and internships for high school, technical college, and university students.</p>
+<p>
+    We regularly offer guest lectures, workplace experience, and internships for high school, technical college, and university students.
+</p>
 
 <table>
-<thead>
-<tr><th>Date</th><th>Institution</th><th>Duration</th></tr>
-</thead>
-<tbody>
-<tr><td>July 2025</td><td>Isogo Technical High School</td><td>3 days</td></tr>
-<tr><td>December 2025</td><td>Chiba Nikkatsu Technical College</td><td>2 days</td></tr>
-<tr><td>June&ndash;August 2026</td><td>Monotsukuri Institute of Technologists, Dept. of Building Technologists</td><td>approx. 2 months</td></tr>
-</tbody>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Institution</th>
+            <th>Duration</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>July 2025</td>
+            <td>Isogo Technical High School</td>
+            <td>3 days</td>
+        </tr>
+        <tr>
+            <td>December 2025</td>
+            <td>Chiba Nikkatsu Technical College</td>
+            <td>2 days</td>
+        </tr>
+        <tr>
+            <td>June&ndash;August 2026</td>
+            <td>Monotsukuri Institute of Technologists, Dept. of Building Technologists</td>
+            <td>approx. 2 months</td>
+        </tr>
+    </tbody>
 </table>
 
 <h3>For Educators</h3>
 
-<p>If you are involved with an architecture or civil engineering program and are considering a guest lecture or an internship, please feel free to get in touch. We are happy to adjust the length and content to suit your school&rsquo;s circumstances.</p>
-
-<p><a href="https://cectokyo.com/en/contact/">Contact us</a></p>
+<p>
+    If you are involved with an architecture or civil engineering program and are considering a guest lecture or an internship, please feel free to get in touch. We are happy to adjust the length and content to suit your school&rsquo;s circumstances.
+</p>
 
 <hr>
 
 <h2>If You Are Interested in Design Work</h2>
 
-<p>We work on the civil and architectural design of power plants, petrochemical plants, cement plants, LNG plants, and steelworks. Alongside hosting students, we recruit both new graduates and experienced engineers on an ongoing basis.</p>
+<p>
+    We work on the civil and architectural design of power plants, petrochemical plants, cement plants, LNG plants, and steelworks. Alongside hosting students, we recruit both new graduates and experienced engineers on an ongoing basis.
+</p>
 
 <div class="cec-cta-box">
-<p><strong>Careers at Commonwealth Engineers</strong></p>
-<a href="https://cectokyo.com/en/career/">Careers</a>
-<a href="https://cectokyo.com/en/entry/">Apply here</a>
+    <p>Careers at Commonwealth Engineers</p>
+    <a href="https://cectokyo.com/en/career/">View careers</a>
 </div>
 
 <hr>
 
-<p><strong>From Commonwealth Engineers Co., Ltd.</strong></p>
+<p>
+    <strong>From Commonwealth Engineers Co., Ltd.</strong>
+</p>
+
+<hr>
+
+<h2>Related Links</h2>
+
+<ul>
+    <li><a href="https://cectokyo.com/en/career/">Careers</a> &mdash; details of our current openings</li>
+    <li><a href="https://cectokyo.com/en/entry/">Application form</a> &mdash; apply here</li>
+    <li><a href="https://cectokyo.com/en/contact/">Contact</a> &mdash; for guest lectures and internship enquiries</li>
+</ul>
 
 </div>
+
 
 <div class="snippet">
 <div class="snippet-label">検索結果での見え方（Google 想定・英語）</div>
