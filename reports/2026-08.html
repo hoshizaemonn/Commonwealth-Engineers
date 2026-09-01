@@ -134,6 +134,22 @@
     .slide-head { padding: 18px 22px; }
     .slide-head h2 { font-size: 18px; }
   }
+
+  /* --- スマホ導線図解 --- */
+  .flow-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+  .phone { width: 190px; margin: 0 auto; border: 8px solid #2d3344; border-radius: 22px; overflow: hidden; background: #fff; position: relative; }
+  .phone .scr { position: relative; }
+  .phone .sec { font-size: 10px; padding: 7px 8px; border-bottom: 1px solid var(--line); color: var(--gray); text-align: center; background: #fafbfd; }
+  .phone .sec.fv { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: #fff; padding: 16px 8px; font-weight: 700; font-size: 11px; }
+  .phone .sec.cta { background: var(--red-bg); color: var(--red); font-weight: 700; border-left: 4px solid var(--red); }
+  .phone .sec.cta-new { background: var(--green-bg); color: var(--green); font-weight: 700; border-left: 4px solid var(--green); }
+  .phone .sticky { position: absolute; left: 0; right: 0; bottom: 0; background: var(--green); color: #fff; font-size: 10px; font-weight: 700; text-align: center; padding: 8px 0; }
+  .scale { display: grid; grid-template-columns: 42px 1fr; gap: 8px; align-items: start; }
+  .scale .ticks { font-size: 9px; color: var(--gray-light); text-align: right; line-height: 1.9; padding-top: 6px; }
+  .flow-note { font-size: 11px; color: var(--gray); line-height: 1.7; margin-top: 10px; }
+  .flow-title { font-size: 13px; font-weight: 700; text-align: center; margin-bottom: 12px; padding: 6px; border-radius: 6px; }
+  .flow-title.now { background: var(--red-bg); color: var(--red); }
+  .flow-title.next { background: var(--green-bg); color: var(--green); }
 </style>
 </head>
 <body>
@@ -239,7 +255,7 @@
   </div>
   <div class="slide-footer">
     <span>株式会社コモンウェルスエンジニアーズ様 2026年8月 HP運用月次レポート</span>
-    <span>2 / 7</span>
+    <span>2 / 8</span>
   </div>
 </div>
 
@@ -303,7 +319,7 @@
   </div>
   <div class="slide-footer">
     <span>株式会社コモンウェルスエンジニアーズ様 2026年8月 HP運用月次レポート</span>
-    <span>3 / 7</span>
+    <span>3 / 8</span>
   </div>
 </div>
 
@@ -366,7 +382,7 @@
   </div>
   <div class="slide-footer">
     <span>株式会社コモンウェルスエンジニアーズ様 2026年8月 HP運用月次レポート</span>
-    <span>4 / 7</span>
+    <span>4 / 8</span>
   </div>
 </div>
 
@@ -444,11 +460,107 @@
   </div>
   <div class="slide-footer">
     <span>株式会社コモンウェルスエンジニアーズ様 2026年8月 HP運用月次レポート</span>
-    <span>5 / 7</span>
+    <span>5 / 8</span>
   </div>
 </div>
 
-<!-- SLIDE 6 : ACTION PLAN -->
+<!-- SLIDE 6 : MOBILE FLOW -->
+<div class="slide content-slide">
+  <div class="slide-head">
+    <h2>スマートフォンの導線（現状と改善案）</h2>
+    <div class="head-r">2026年8月 HP運用月次レポート</div>
+  </div>
+  <div class="slide-body">
+    <div class="insight watch">
+      <div class="ic">📱</div>
+      <div class="txt">ボタン自体は設置されていますが、<strong>「採用情報を詳しくみる」はページの約75%、「WEBからのお問い合わせ」は約82%の位置</strong>にあります。スマートフォンでは<strong>約8画面分のスクロール</strong>が必要で、最初の画面には導線がありません。</div>
+    </div>
+
+    <div class="flow-wrap">
+      <div>
+        <div class="flow-title now">現状（cectokyo.com トップページ）</div>
+        <div class="scale">
+          <div class="ticks">
+            1画面目<br>2画面目<br>3〜4画面目<br>5画面目<br>6画面目<br>7画面目<br>8画面目
+          </div>
+          <div class="phone">
+            <div class="scr">
+              <div class="sec fv">ロゴ ／ JP・EN ／ ≡<br><span style="font-weight:400;opacity:.85;">問い合わせ導線なし</span></div>
+              <div class="sec">メインビジュアル・新着情報</div>
+              <div class="sec">ABOUT US（会社案内）</div>
+              <div class="sec">BUSINESS（事業内容 4項目）</div>
+              <div class="sec">PROJECTS（実績 4件）</div>
+              <div class="sec cta">CAREER<br>「採用情報を詳しくみる」</div>
+              <div class="sec cta">CONTACT US<br>「WEBからのお問い合わせ」</div>
+              <div class="sec">フッター</div>
+            </div>
+          </div>
+        </div>
+        <div class="flow-note">
+          ヘッダーの「お問い合わせ」「採用エントリー」ボタンは、スマートフォン幅では非表示になります。
+          メニュー（≡）を開けば2タップで到達できますが、メニューを開かない方は
+          <strong>下まで読み進めない限りボタンに出会いません</strong>。
+        </div>
+      </div>
+
+      <div>
+        <div class="flow-title next">改善案</div>
+        <div class="scale">
+          <div class="ticks">
+            1画面目<br><br><br><br><br><br>常時表示
+          </div>
+          <div class="phone">
+            <div class="scr" style="padding-bottom:30px;">
+              <div class="sec fv">ロゴ ／ JP・EN ／ ≡</div>
+              <div class="sec cta-new">「採用情報を見る」「お問い合わせ」<br><span style="font-weight:400;">← 上部にも設置</span></div>
+              <div class="sec">メインビジュアル・新着情報</div>
+              <div class="sec">ABOUT US</div>
+              <div class="sec">BUSINESS</div>
+              <div class="sec">PROJECTS</div>
+              <div class="sec">CAREER ／ CONTACT US</div>
+              <div class="sticky">▼ スクロールに追従するボタン</div>
+            </div>
+          </div>
+        </div>
+        <div class="flow-note">
+          <strong>ご提案は2つです。</strong><br>
+          ① メインビジュアルの直後に、採用情報とお問い合わせへのボタンを配置する<br>
+          ② 画面下部に、スクロールしても消えない追従ボタンを設置する<br><br>
+          いずれもページの作り直しは不要で、<strong>既存の導線を上部・常時表示に足すだけ</strong>で対応できます。
+        </div>
+      </div>
+    </div>
+
+    <div class="data-row" style="margin-top:18px;">
+      <div class="data-card bad">
+        <div class="lbl">/contact/ 閲覧数（スマホ・8月）</div>
+        <div class="num">8</div>
+        <div class="delta">パソコンは 199 ／ <strong class="down">約25分の1</strong></div>
+      </div>
+      <div class="data-card bad">
+        <div class="lbl">フォーム操作の開始（スマホ）</div>
+        <div class="num">5</div>
+        <div class="delta">パソコンは 102</div>
+      </div>
+      <div class="data-card watch">
+        <div class="lbl">最初のボタンまでの位置</div>
+        <div class="num">約75%</div>
+        <div class="delta">「採用情報を詳しくみる」</div>
+      </div>
+      <div class="data-card watch">
+        <div class="lbl">必要なスクロール量</div>
+        <div class="num">約8画面</div>
+        <div class="delta">スマートフォン表示時</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>株式会社コモンウェルスエンジニアーズ様 2026年8月 HP運用月次レポート</span>
+    <span>6 / 8</span>
+  </div>
+</div>
+
+<!-- SLIDE 7 : ACTION PLAN -->
 <div class="slide content-slide">
   <div class="slide-head">
     <h2>9月の取り組み</h2>
@@ -510,11 +622,11 @@
   </div>
   <div class="slide-footer">
     <span>株式会社コモンウェルスエンジニアーズ様 2026年8月 HP運用月次レポート</span>
-    <span>6 / 7</span>
+    <span>7 / 8</span>
   </div>
 </div>
 
-<!-- SLIDE 7 : CLOSING -->
+<!-- SLIDE 8 : CLOSING -->
 <div class="slide closing">
   <h2>8月は <span class="accent">コンテンツを積み上げた</span> 1ヶ月<br>9月は <span class="accent">スマートフォン導線</span> を立て直します</h2>
   <div class="lead">
